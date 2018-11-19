@@ -24,6 +24,8 @@
 		01C1339F21A2E34D001C3665 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C1339D21A2E34D001C3665 /* Camera.storyboard */; };
 		01C133A121A2E382001C3665 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A021A2E382001C3665 /* Deals.storyboard */; };
 		01C133A421A2E3C8001C3665 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A221A2E3C8001C3665 /* Profile.storyboard */; };
+		01C133A821A2F04B001C3665 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A721A2F04B001C3665 /* GoogleService-Info.plist */; };
+		6CFF0DE2286B1360B6C7DB8E /* Pods_Tromit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6AF4CF4306671CC7B8E727 /* Pods_Tromit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,10 @@
 		01C1339E21A2E34D001C3665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tromit/Tromit/Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		01C133A021A2E382001C3665 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
 		01C133A321A2E3C8001C3665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tromit/Tromit/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		01C133A721A2F04B001C3665 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1267D232787A23BAC9E4AD15 /* Pods-Tromit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tromit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tromit/Pods-Tromit.debug.xcconfig"; sourceTree = "<group>"; };
+		2CCBDA6CFD09F9A56EC72717 /* Pods-Tromit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tromit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tromit/Pods-Tromit.release.xcconfig"; sourceTree = "<group>"; };
+		8A6AF4CF4306671CC7B8E727 /* Pods_Tromit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tromit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CFF0DE2286B1360B6C7DB8E /* Pods_Tromit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +71,8 @@
 			children = (
 				01BF338021A2AE6A00A8CD4B /* Tromit */,
 				01BF337F21A2AE6A00A8CD4B /* Products */,
+				EA18F4DB0B75D6EF14AB42D2 /* Pods */,
+				4DE55AA2C599C95CB9BEA16B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +93,7 @@
 				01BF338A21A2AE6D00A8CD4B /* Assets.xcassets */,
 				01BF338C21A2AE6D00A8CD4B /* LaunchScreen.storyboard */,
 				01BF338F21A2AE6D00A8CD4B /* Info.plist */,
+				01C133A721A2F04B001C3665 /* GoogleService-Info.plist */,
 			);
 			path = Tromit;
 			sourceTree = "<group>";
@@ -116,6 +126,23 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		4DE55AA2C599C95CB9BEA16B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A6AF4CF4306671CC7B8E727 /* Pods_Tromit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA18F4DB0B75D6EF14AB42D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1267D232787A23BAC9E4AD15 /* Pods-Tromit.debug.xcconfig */,
+				2CCBDA6CFD09F9A56EC72717 /* Pods-Tromit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01BF339221A2AE6D00A8CD4B /* Build configuration list for PBXNativeTarget "Tromit" */;
 			buildPhases = (
+				21DC888A24B99F109A39331A /* [CP] Check Pods Manifest.lock */,
 				01BF337A21A2AE6A00A8CD4B /* Sources */,
 				01BF337B21A2AE6A00A8CD4B /* Frameworks */,
 				01BF337C21A2AE6A00A8CD4B /* Resources */,
+				68A1867531A8BB984D9178BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,12 +210,66 @@
 				01BF338B21A2AE6D00A8CD4B /* Assets.xcassets in Resources */,
 				01BF338921A2AE6A00A8CD4B /* Start.storyboard in Resources */,
 				01C133A421A2E3C8001C3665 /* Profile.storyboard in Resources */,
+				01C133A821A2F04B001C3665 /* GoogleService-Info.plist in Resources */,
 				01C1339C21A2E2DE001C3665 /* Search.storyboard in Resources */,
 				01C1339721A2DDC4001C3665 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21DC888A24B99F109A39331A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tromit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68A1867531A8BB984D9178BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tromit/Pods-Tromit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tromit/Pods-Tromit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01BF337A21A2AE6A00A8CD4B /* Sources */ = {
@@ -376,6 +459,7 @@
 		};
 		01BF339321A2AE6D00A8CD4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1267D232787A23BAC9E4AD15 /* Pods-Tromit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,6 +478,7 @@
 		};
 		01BF339421A2AE6D00A8CD4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CCBDA6CFD09F9A56EC72717 /* Pods-Tromit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -144,6 +144,7 @@
                                             <color key="titleColor" white="1" alpha="0.6640089897" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="signupButtonTapped:" destination="v2P-Xn-T7v" eventType="touchUpInside" id="WL1-3p-l7d"/>
                                             <segue destination="0UG-2k-YwS" kind="presentation" id="WyU-N6-add"/>
                                         </connections>
                                     </button>
