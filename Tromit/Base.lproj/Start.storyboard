@@ -45,7 +45,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kQG-YE-Hjy"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
@@ -88,6 +87,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nm5-UH-yfP"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="HnI-FY-IoY" id="dTy-TX-sLF"/>
+                        <outlet property="passwordTextField" destination="CMv-qh-kaf" id="6hf-p9-Nlh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajo-LM-PbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="nHw-xf-08l">
-                                <rect key="frame" x="20" y="269" width="335" height="221"/>
+                                <rect key="frame" x="20" y="266" width="335" height="221"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHf-jS-7c1">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -158,10 +161,10 @@
                                     <action selector="dismissOnClick:" destination="v2P-Xn-T7v" eventType="touchUpInside" id="TBY-sm-CgY"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimage2" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-Km-u8k">
-                                <rect key="frame" x="130" y="73" width="115" height="123"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man2" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-Km-u8k">
+                                <rect key="frame" x="130" y="73" width="115" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="123" id="TED-ll-g8J"/>
+                                    <constraint firstAttribute="height" constant="120" id="TED-ll-g8J"/>
                                     <constraint firstAttribute="width" constant="115" id="eWb-Pa-9Lj"/>
                                 </constraints>
                             </imageView>
@@ -181,6 +184,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gpK-bf-ium"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="806-8h-yGq" id="Gz3-ry-GdU"/>
+                        <outlet property="passwordTextField" destination="GKr-Gn-rXo" id="Ixp-uO-SHV"/>
+                        <outlet property="profileImage" destination="Fmp-Km-u8k" id="r4X-Rt-B4i"/>
+                        <outlet property="usernameTextField" destination="KHf-jS-7c1" id="8aI-bO-fOn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajm-ID-hAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +205,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="profileimage2" width="316" height="316"/>
+        <image name="man2" width="2464" height="2409"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WyU-N6-add"/>
