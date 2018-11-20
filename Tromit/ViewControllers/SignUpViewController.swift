@@ -72,7 +72,7 @@ class SignUpViewController: UIViewController {
             
             let iduser = user?.user.uid
             let newUserRefence = usersReference.child(iduser!)
-            newUserRefence.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!])
+            newUserRefence.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!]) 
         })
     }
 }
