@@ -134,18 +134,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RO1-5B-ipo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RO1-5B-ipo">
                                         <rect key="frame" x="0.0" y="174" width="335" height="47"/>
                                         <color key="backgroundColor" red="0.99215686270000003" green="0.57647058819999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="Stg-k6-WQk"/>
                                         </constraints>
-                                        <state key="normal" title="Sign Up">
-                                            <color key="titleColor" white="1" alpha="0.6640089897" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <action selector="signupButtonTapped:" destination="v2P-Xn-T7v" eventType="touchUpInside" id="WL1-3p-l7d"/>
-                                            <segue destination="0UG-2k-YwS" kind="presentation" id="WyU-N6-add"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -189,6 +186,7 @@
                         <outlet property="emailTextField" destination="806-8h-yGq" id="Gz3-ry-GdU"/>
                         <outlet property="passwordTextField" destination="GKr-Gn-rXo" id="Ixp-uO-SHV"/>
                         <outlet property="profileImage" destination="Fmp-Km-u8k" id="r4X-Rt-B4i"/>
+                        <outlet property="signUpButton" destination="RO1-5B-ipo" id="BIQ-XQ-U8t"/>
                         <outlet property="usernameTextField" destination="KHf-jS-7c1" id="8aI-bO-fOn"/>
                     </connections>
                 </viewController>
@@ -208,7 +206,4 @@
     <resources>
         <image name="man2" width="2464" height="2409"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="WyU-N6-add"/>
-    </inferredMetricsTieBreakers>
 </document>
