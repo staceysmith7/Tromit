@@ -28,7 +28,7 @@ class SignUpViewController: UIViewController {
         usernameTextField.backgroundColor = UIColor.clear
         usernameTextField.delegate = self
         let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleTap))
-        usernameTextField.addGestureRecognizer(dismissGesture)
+        self.view.addGestureRecognizer(dismissGesture)
         usernameTextField.tintColor = UIColor.white
         usernameTextField.textColor = UIColor.white
         usernameTextField.attributedPlaceholder = NSAttributedString(string: usernameTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
@@ -141,6 +141,7 @@ class SignUpViewController: UIViewController {
                 })
             }
         })
+        view.endEditing(true)
     }
 }
 
