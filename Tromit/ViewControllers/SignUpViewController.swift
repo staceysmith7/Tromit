@@ -26,6 +26,9 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         usernameTextField.backgroundColor = UIColor.clear
+        usernameTextField.delegate = self
+        let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleTap))
+        usernameTextField.addGestureRecognizer(dismissGesture)
         usernameTextField.tintColor = UIColor.white
         usernameTextField.textColor = UIColor.white
         usernameTextField.attributedPlaceholder = NSAttributedString(string: usernameTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
@@ -59,7 +62,12 @@ class SignUpViewController: UIViewController {
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
         
-         handleTextField()
+//         handleTextField()
+    }
+    
+    @objc func handleTap() {
+        print("handle tap")
+        view.endEditing(true)
     }
     
     func handleTextField() {
@@ -70,13 +78,17 @@ class SignUpViewController: UIViewController {
     
     @objc func textFieldDidChange() {
         guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
-
-            self.signUpButton.setTitleColor(.red, for: UIControl.State.normal)
+            
+            
+            self.signUpButton.setTitleColor(.blue, for: UIControl.State.normal)
+            self.signUpButton.isEnabled = false
             return
         }
-
-        self.signUpButton.setTitleColor(.red, for: .normal)
-
+        
+        
+//        self.signUpButton.setTitleColor(.red, for: UIControl.State.normal)
+        self.signUpButton.isEnabled = true
+//        return
     }
     
     @objc func handleSelectProfileImageView() {
@@ -112,9 +124,9 @@ class SignUpViewController: UIViewController {
                         return
                     }
                     
-                    storageRef.downloadURL(completion: { ( url, error ) in
+                    storageRef.downloadURL(completion: { ( url, err) in
                         
-                        if error != nil {
+                        if err != nil {
                             
                             print(error!.localizedDescription)
                             return
@@ -141,5 +153,13 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
         }
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+//dismiss keyboard
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
