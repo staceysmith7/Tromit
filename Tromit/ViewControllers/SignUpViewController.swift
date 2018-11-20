@@ -59,7 +59,7 @@ class SignUpViewController: UIViewController {
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
         
-        
+         handleTextField()
     }
     
     func handleTextField() {
