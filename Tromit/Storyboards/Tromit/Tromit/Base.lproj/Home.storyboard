@@ -20,11 +20,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="enw-8T-dsL"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="gTc-ZE-yxq"/>
+                    <navigationItem key="navigationItem" title="Home" id="gTc-ZE-yxq">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="5pU-ql-7ZW">
+                            <connections>
+                                <action selector="LogOutTapped:" destination="Xth-zT-JFS" id="ysw-ZP-yXV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aI6-hI-HhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660" y="-750"/>
+            <point key="canvasLocation" x="1377" y="-774"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l8s-IE-qQP">

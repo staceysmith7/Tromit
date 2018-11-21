@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010FC44D21A55B4000EFD7B6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010FC44C21A55B4000EFD7B6 /* AuthService.swift */; };
 		0140F71E21A2D9D40099D68E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F71D21A2D9D40099D68E /* HomeViewController.swift */; };
 		0140F72021A2D9E60099D68E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F71F21A2D9E60099D68E /* SearchViewController.swift */; };
 		0140F72221A2D9FD0099D68E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F72121A2D9FD0099D68E /* CameraViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010FC44C21A55B4000EFD7B6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0140F71D21A2D9D40099D68E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0140F71F21A2D9E60099D68E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0140F72121A2D9FD0099D68E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				01BF338121A2AE6A00A8CD4B /* AppDelegate.swift */,
+				010FC44C21A55B4000EFD7B6 /* AuthService.swift */,
 				01C133A621A2EE14001C3665 /* ViewControllers */,
 				01C133A521A2EDA3001C3665 /* Storyboards */,
 				01BF338A21A2AE6D00A8CD4B /* Assets.xcassets */,
@@ -279,6 +282,7 @@
 				0140F72421A2DA160099D68E /* DealsViewController.swift in Sources */,
 				0140F72021A2D9E60099D68E /* SearchViewController.swift in Sources */,
 				01BF339821A2C4AF00A8CD4B /* SignUpViewController.swift in Sources */,
+				010FC44D21A55B4000EFD7B6 /* AuthService.swift in Sources */,
 				01BF339621A2BB6200A8CD4B /* LoginViewController.swift in Sources */,
 				01BF338221A2AE6A00A8CD4B /* AppDelegate.swift in Sources */,
 				0140F71E21A2D9D40099D68E /* HomeViewController.swift in Sources */,

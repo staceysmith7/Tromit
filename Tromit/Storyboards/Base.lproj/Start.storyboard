@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="qHX-IS-f6G">
             <objects>
-                <viewController id="Oii-J8-kbX" customClass="LoginViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Oii-J8-kbX" customClass="LoginViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="go9-wh-Xt4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,11 +63,12 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="6Ui-1J-meQ"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Login">
-                                            <color key="titleColor" white="1" alpha="0.6640089897260274" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="0UG-2k-YwS" kind="presentation" id="O21-Ak-hVU"/>
+                                            <action selector="LoginButtonTapped:" destination="Oii-J8-kbX" eventType="touchUpInside" id="y3p-Hx-L5M"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -91,6 +92,7 @@
                         <outlet property="LoginButton" destination="AzT-Jr-kU7" id="THE-of-Duw"/>
                         <outlet property="emailTextField" destination="HnI-FY-IoY" id="dTy-TX-sLF"/>
                         <outlet property="passwordTextField" destination="CMv-qh-kaf" id="6hf-p9-Nlh"/>
+                        <segue destination="0UG-2k-YwS" kind="presentation" identifier="loginToTabBarVC" id="LbE-Pe-hyY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajo-LM-PbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,7 +174,6 @@
                         <constraints>
                             <constraint firstItem="QU4-ve-wWL" firstAttribute="trailing" secondItem="gpK-bf-ium" secondAttribute="trailing" id="9d1-8X-ysq"/>
                             <constraint firstItem="Fmp-Km-u8k" firstAttribute="top" secondItem="gpK-bf-ium" secondAttribute="top" constant="53" id="HKm-lb-5jW"/>
-                            <constraint firstItem="nHw-xf-08l" firstAttribute="centerX" secondItem="QU4-ve-wWL" secondAttribute="centerX" id="RM9-zp-Ddx"/>
                             <constraint firstItem="Fmp-Km-u8k" firstAttribute="centerX" secondItem="DZp-JI-xku" secondAttribute="centerX" id="ZX9-CX-mpq"/>
                             <constraint firstItem="QU4-ve-wWL" firstAttribute="leading" secondItem="gpK-bf-ium" secondAttribute="leading" id="byR-NC-4J2"/>
                             <constraint firstItem="nHw-xf-08l" firstAttribute="leading" secondItem="gpK-bf-ium" secondAttribute="leading" constant="20" id="cCr-fF-CX7"/>
@@ -189,6 +190,7 @@
                         <outlet property="profileImage" destination="Fmp-Km-u8k" id="r4X-Rt-B4i"/>
                         <outlet property="signUpButton" destination="RO1-5B-ipo" id="BIQ-XQ-U8t"/>
                         <outlet property="usernameTextField" destination="KHf-jS-7c1" id="8aI-bO-fOn"/>
+                        <segue destination="0UG-2k-YwS" kind="presentation" identifier="signUpTabBarVC" id="Wbd-Zi-RMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajm-ID-hAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,4 +209,7 @@
     <resources>
         <image name="profileimage2" width="316" height="316"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LbE-Pe-hyY"/>
+    </inferredMetricsTieBreakers>
 </document>

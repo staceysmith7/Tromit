@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -32,8 +34,16 @@ class LoginViewController: UIViewController {
         bottomLayerPassword.frame = CGRect (x: 0, y: 29, width: 1000, height: 0.6)
         bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
-        
+        self.LoginButton.isEnabled = false
         handleTextField()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "loginToTabBarVC", sender: nil)
+        }
     }
     
     func handleTextField() {
@@ -51,5 +61,15 @@ class LoginViewController: UIViewController {
             return
         }
          self.LoginButton.isEnabled = true
+}
+    
+    @IBAction func LoginButtonTapped(_ sender: Any) {
+        AuthService.logIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+            self.performSegue(withIdentifier: "loginToTabBarVC", sender: nil)
+        }, onError: {error in
+            print(error!)
+            
+        })
+    
 }
 }

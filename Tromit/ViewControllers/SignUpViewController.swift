@@ -61,8 +61,9 @@ class SignUpViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
+          self.signUpButton.isEnabled = false
         
-//         handleTextField()
+       handleTextField()
     }
     
     @objc func handleTap() {
@@ -137,7 +138,9 @@ class SignUpViewController: UIViewController {
                         let usersReference = ref.child("users")
                         let newUserReference = usersReference.child(userId!)
                         newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
+                        self.performSegue(withIdentifier: "signUpToTabBarVC", sender: nil)
                     })
+                    
                 })
             }
         })
