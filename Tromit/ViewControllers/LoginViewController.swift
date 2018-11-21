@@ -52,8 +52,8 @@ class LoginViewController: UIViewController {
     
     func handleTextField() {
         
-        emailTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
-        passwordTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
+        emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
     }
     
     @objc func textFieldDidChange() {
@@ -69,10 +69,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func LoginButtonTapped(_ sender: Any) {
         view.endEditing(true)
+        ProgressHUD.show("Waiting...", interaction: false)
         AuthService.logIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+            ProgressHUD.showSuccess("Success")
             self.performSegue(withIdentifier: "loginToTabBarVC", sender: nil)
         }, onError: {error in
-            print(error!)
+            ProgressHUD.showError(error!)
             
         })
     

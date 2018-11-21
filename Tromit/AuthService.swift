@@ -36,25 +36,25 @@ class AuthService {
             
             let userId = user?.user.uid
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("profileImage").child(userId!)
-                storageRef.putData(imageData, metadata: nil, completion: { (metadata,  error) in
+            storageRef.putData(imageData, metadata: nil, completion: { (metadata,  error) in
+                
+                if error != nil {
+                    return
+                }
+                
+                storageRef.downloadURL(completion: { ( url, error ) in
                     
                     if error != nil {
                         return
                     }
                     
-                    storageRef.downloadURL(completion: { ( url, error ) in
+                    if let profileImageUrl = url?.absoluteString {
                         
-                        if error != nil {
-                            return
-                        }
-                        
-                        if let profileImageUrl = url?.absoluteString {
-                            
-                            let values = ["username": username, "email": email, "profileImageUrl": profileImageUrl]
-                            self.registerUserIntoDatabaseWithUID(uid: userId!, values: values, onSuccess: onSuccess)
-                        }
-                    })
+                        let values = ["username": username, "email": email, "profileImageUrl": profileImageUrl]
+                        self.registerUserIntoDatabaseWithUID(uid: userId!, values: values, onSuccess: onSuccess)
+                    }
                 })
+            })
         })
     }
     

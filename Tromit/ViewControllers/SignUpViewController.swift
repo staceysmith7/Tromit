@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController {
         profileImage.layer.cornerRadius = 60
         profileImage.clipsToBounds = true
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
         self.signUpButton.isEnabled = false
@@ -68,9 +68,9 @@ class SignUpViewController: UIViewController {
     }
     
     func handleTextField() {
-        usernameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
-        emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
-        passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
+        usernameTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+        emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
     }
     
     @objc func textFieldDidChange() {
@@ -102,14 +102,16 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signupButtonTapped(_ sender: Any) {
         view.endEditing(true)
+        ProgressHUD.show("Waiting...", interaction: false)
         if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
             AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+                ProgressHUD.showSuccess("Success")
                 self.performSegue(withIdentifier: "signUpToTabBarVC", sender: nil)
             }, onError: { (errorString) in
-                print(errorString!)
+                ProgressHUD.showError(errorString!)
             })
         } else {
-            print("profile Image can't be Empty")
+            ProgressHUD.showError("profile Image can't be Empty")
         }
     }
 }
