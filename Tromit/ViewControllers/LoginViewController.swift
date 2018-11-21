@@ -8,9 +8,11 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var LoginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.backgroundColor = UIColor.clear
@@ -31,5 +33,23 @@ class SignInViewController: UIViewController {
         bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
+        handleTextField()
     }
+    
+    func handleTextField() {
+        
+        emailTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
+    }
+    
+    @objc func textFieldDidChange() {
+        guard  let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            
+            
+            self.LoginButton.setTitleColor(.blue, for: UIControl.State.normal)
+            self.LoginButton.isEnabled = false
+            return
+        }
+         self.LoginButton.isEnabled = true
+}
 }

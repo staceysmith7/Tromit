@@ -26,11 +26,13 @@
             </objects>
             <point key="canvasLocation" x="3678" y="-750"/>
         </scene>
-        <!--Deals-->
+        <!--Navigation Controller-->
         <scene sceneID="Xau-UT-fRU">
             <objects>
                 <navigationController storyboardIdentifier="NavigationDeals" automaticallyAdjustsScrollViewInsets="NO" id="xlL-YU-G3o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Deals" image="second" selectedImage="second" id="MMD-4m-ctl"/>
+                    <tabBarItem key="tabBarItem" title="" image="deals" selectedImage="deals" id="MMD-4m-ctl">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RJE-5k-yUm">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -47,6 +49,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="deals" width="30" height="30"/>
     </resources>
 </document>

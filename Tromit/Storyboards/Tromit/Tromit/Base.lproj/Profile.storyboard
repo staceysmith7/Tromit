@@ -26,11 +26,13 @@
             </objects>
             <point key="canvasLocation" x="4361" y="-751"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="W8C-NH-URH">
             <objects>
                 <navigationController storyboardIdentifier="NavigationProfile" automaticallyAdjustsScrollViewInsets="NO" id="A8K-9N-eAd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="first" selectedImage="first" id="DDu-J4-tYa"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profile" id="DDu-J4-tYa">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tiw-ad-EXT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -47,6 +49,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="profile" width="30" height="30"/>
     </resources>
 </document>

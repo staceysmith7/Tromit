@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="1660" y="-750"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="l8s-IE-qQP">
             <objects>
                 <navigationController storyboardIdentifier="NavigationHome" automaticallyAdjustsScrollViewInsets="NO" id="iDw-Yt-FM6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="first" selectedImage="first" id="QX7-Rs-Eee">
+                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="home" id="QX7-Rs-Eee">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -49,6 +49,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
     </resources>
 </document>
