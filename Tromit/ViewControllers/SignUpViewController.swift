@@ -80,16 +80,15 @@ class SignUpViewController: UIViewController {
     @objc func textFieldDidChange() {
         guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             
-            
             self.signUpButton.setTitleColor(.blue, for: UIControl.State.normal)
             self.signUpButton.isEnabled = false
             return
         }
         
         
-//        self.signUpButton.setTitleColor(.red, for: UIControl.State.normal)
+        self.signUpButton.setTitleColor(.red, for: UIControl.State.normal)
         self.signUpButton.isEnabled = true
-//        return
+
     }
     
     @objc func handleSelectProfileImageView() {
@@ -106,11 +105,11 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signupButtonTapped(_ sender: Any) {
-        
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { ( user, error) in
+        print("1")
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { ( user, error ) in
             
             if error != nil {
-                
+            
                 print(error!.localizedDescription)
                 return
             }
@@ -119,32 +118,38 @@ class SignUpViewController: UIViewController {
             let storageRef = Storage.storage().reference(forURL: "gs://tromit-f9651.appspot.com").child("profileImage").child(userId!)
             if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
                 storageRef.putData(imageData, metadata: nil, completion: { (metadata,  error) in
-                    
+                  
+                    print("2")
                     if error != nil {
-                        
                         return
                     }
                     
-                    storageRef.downloadURL(completion: { ( url, err) in
+                    storageRef.downloadURL(completion: { ( url, error ) in
                         
-                        if err != nil {
-                            
-                            print(error!.localizedDescription)
+                        if error != nil {
                             return
                         }
                         
-                        let profileImageUrl = url?.absoluteString
-                        let ref = Database.database().reference()
-                        let usersReference = ref.child("users")
-                        let newUserReference = usersReference.child(userId!)
-                        newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
-                        self.performSegue(withIdentifier: "signUpToTabBarVC", sender: nil)
+                        if let profileImageUrl = url?.absoluteString {
+                        
+                        let values = ["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl]
+                        self.registerUserIntoDatabaseWithUID(uid: userId!, values: values)
+                            
+                        }
                     })
                     
                 })
             }
         })
         view.endEditing(true)
+    }
+    
+    private func registerUserIntoDatabaseWithUID(uid: String, values: [String: String]) {
+        let ref = Database.database().reference()
+        let usersReference = ref.child("users").child(uid)
+        
+        usersReference.updateChildValues(values)
+        self.performSegue(withIdentifier: "signUpToTabBarVC", sender: nil)
     }
 }
 

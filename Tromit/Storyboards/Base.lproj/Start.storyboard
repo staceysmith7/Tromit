@@ -190,7 +190,7 @@
                         <outlet property="profileImage" destination="Fmp-Km-u8k" id="r4X-Rt-B4i"/>
                         <outlet property="signUpButton" destination="RO1-5B-ipo" id="BIQ-XQ-U8t"/>
                         <outlet property="usernameTextField" destination="KHf-jS-7c1" id="8aI-bO-fOn"/>
-                        <segue destination="0UG-2k-YwS" kind="presentation" identifier="signUpTabBarVC" id="Wbd-Zi-RMS"/>
+                        <segue destination="0UG-2k-YwS" kind="presentation" identifier="signUpToTabBarVC" id="Wbd-Zi-RMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajm-ID-hAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,6 +210,6 @@
         <image name="profileimage2" width="316" height="316"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LbE-Pe-hyY"/>
+        <segue reference="Wbd-Zi-RMS"/>
     </inferredMetricsTieBreakers>
 </document>
