@@ -8,6 +8,8 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 class AuthService {
     
@@ -17,25 +19,49 @@ class AuthService {
                 onError(error!.localizedDescription)
                 return
             }
-        onSuccess()
+            onSuccess()
             
         })
         
     }
     
-
-
-static func  signUp (email: String,  password: String, onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
-    Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+    static func  signUp(username: String, email: String,  password: String, imageData: Data, onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
         
-        if error != nil{
-            onError(error!.localizedDescription)
-            return
-        }
-        onSuccess()
-        
-    })
+        Auth.auth().createUser(withEmail: email, password: password, completion: { ( user, error ) in
+            
+            if error != nil {
+                onError(error!.localizedDescription)
+                return
+            }
+            
+            let userId = user?.user.uid
+            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("profileImage").child(userId!)
+                storageRef.putData(imageData, metadata: nil, completion: { (metadata,  error) in
+                    
+                    if error != nil {
+                        return
+                    }
+                    
+                    storageRef.downloadURL(completion: { ( url, error ) in
+                        
+                        if error != nil {
+                            return
+                        }
+                        
+                        if let profileImageUrl = url?.absoluteString {
+                            
+                            let values = ["username": username, "email": email, "profileImageUrl": profileImageUrl]
+                            self.registerUserIntoDatabaseWithUID(uid: userId!, values: values, onSuccess: onSuccess)
+                        }
+                    })
+                })
+        })
+    }
     
-}
-
+    static func registerUserIntoDatabaseWithUID(uid: String, values: [String: String], onSuccess: @escaping () -> Void) {
+        let ref = Database.database().reference()
+        let usersReference = ref.child("users").child(uid)
+        usersReference.updateChildValues(values)
+        onSuccess()
+    }
 }

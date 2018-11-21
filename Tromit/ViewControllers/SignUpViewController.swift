@@ -26,9 +26,6 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         usernameTextField.backgroundColor = UIColor.clear
-        usernameTextField.delegate = self
-        let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleTap))
-        self.view.addGestureRecognizer(dismissGesture)
         usernameTextField.tintColor = UIColor.white
         usernameTextField.textColor = UIColor.white
         usernameTextField.attributedPlaceholder = NSAttributedString(string: usernameTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
@@ -61,15 +58,11 @@ class SignUpViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
-          self.signUpButton.isEnabled = false
+        self.signUpButton.isEnabled = false
         
-       handleTextField()
+        handleTextField()
     }
     
-    @objc func handleTap() {
-        print("handle tap")
-        view.endEditing(true)
-    }
     
     func handleTextField() {
         usernameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
@@ -88,7 +81,7 @@ class SignUpViewController: UIViewController {
         
         self.signUpButton.setTitleColor(.red, for: UIControl.State.normal)
         self.signUpButton.isEnabled = true
-
+        
     }
     
     @objc func handleSelectProfileImageView() {
@@ -105,57 +98,23 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signupButtonTapped(_ sender: Any) {
-        print("1")
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { ( user, error ) in
-            
-            if error != nil {
-            
-                print(error!.localizedDescription)
-                return
-            }
-            
-            let userId = user?.user.uid
-            let storageRef = Storage.storage().reference(forURL: "gs://tromit-f9651.appspot.com").child("profileImage").child(userId!)
-            if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
-                storageRef.putData(imageData, metadata: nil, completion: { (metadata,  error) in
-                  
-                    print("2")
-                    if error != nil {
-                        return
-                    }
-                    
-                    storageRef.downloadURL(completion: { ( url, error ) in
-                        
-                        if error != nil {
-                            return
-                        }
-                        
-                        if let profileImageUrl = url?.absoluteString {
-                        
-                        let values = ["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl]
-                        self.registerUserIntoDatabaseWithUID(uid: userId!, values: values)
-                            
-                        }
-                    })
-                    
-                })
-            }
-        })
-        view.endEditing(true)
-    }
-    
-    private func registerUserIntoDatabaseWithUID(uid: String, values: [String: String]) {
-        let ref = Database.database().reference()
-        let usersReference = ref.child("users").child(uid)
-        
-        usersReference.updateChildValues(values)
-        self.performSegue(withIdentifier: "signUpToTabBarVC", sender: nil)
+        if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
+            AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+                self.performSegue(withIdentifier: "signUpToTabBarVC", sender: nil)
+            }, onError: { (errorString) in
+                print(errorString!)
+            })
+        } else {
+            print("profile Image can't be Empty")
+        }
     }
 }
 
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ _picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        
         if  let  image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
             selectedImage = image
             profileImage.image = image
             
@@ -165,10 +124,3 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
 }
 
-//dismiss keyboard
-extension SignUpViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
