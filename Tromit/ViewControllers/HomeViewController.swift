@@ -8,28 +8,55 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class HomeViewController: UIViewController {
-
+    
+    var posts = [Post]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
+        loadPosts()
+    }
+    
+    func loadPosts() {
+        Database.database().reference().child("post").observe(.childAdded) { (snapshot: DataSnapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                
+                let newPost = Post.transformPostPhoto(dict: dict)
+                self.posts.append(newPost)
+                print(self.posts)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func LogOutTapped(_ sender: Any) {
-       
+        
         do {
             try Auth.auth().signOut()
-        }catch let logoutError {
+            let storyboard = UIStoryboard(name: "Start", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController" )
+            self.present(loginVC, animated: true, completion: nil)
+            
+        } catch let logoutError {
             print(logoutError)
         }
-            
-        
-        let storyboard = UIStoryboard(name: "Start", bundle: nil)
-        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController" )
-        
-        self.present(loginVC, animated: true, completion: nil)
-        
-        }
     }
+}
 
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
+        cell.textLabel?.text = posts[indexPath.row].caption
+        return cell
+    }
+}

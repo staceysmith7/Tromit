@@ -29,6 +29,7 @@
 		01C133A121A2E382001C3665 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A021A2E382001C3665 /* Deals.storyboard */; };
 		01C133A421A2E3C8001C3665 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A221A2E3C8001C3665 /* Profile.storyboard */; };
 		01C133A821A2F04B001C3665 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A721A2F04B001C3665 /* GoogleService-Info.plist */; };
+		5E06F39221A8221F0039A58B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06F39121A8221F0039A58B /* Post.swift */; };
 		6CFF0DE2286B1360B6C7DB8E /* Pods_Tromit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6AF4CF4306671CC7B8E727 /* Pods_Tromit.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		01C133A721A2F04B001C3665 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1267D232787A23BAC9E4AD15 /* Pods-Tromit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tromit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tromit/Pods-Tromit.debug.xcconfig"; sourceTree = "<group>"; };
 		2CCBDA6CFD09F9A56EC72717 /* Pods-Tromit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tromit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tromit/Pods-Tromit.release.xcconfig"; sourceTree = "<group>"; };
+		5E06F39121A8221F0039A58B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8A6AF4CF4306671CC7B8E727 /* Pods_Tromit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tromit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				01BF338121A2AE6A00A8CD4B /* AppDelegate.swift */,
 				010FC44C21A55B4000EFD7B6 /* AuthService.swift */,
 				010FC44E21A593FC00EFD7B6 /* Config.swift */,
+				5E06F39021A821F20039A58B /* Model */,
 				01C133A621A2EE14001C3665 /* ViewControllers */,
 				01C133A521A2EDA3001C3665 /* Storyboards */,
 				01BF338A21A2AE6D00A8CD4B /* Assets.xcassets */,
@@ -148,6 +151,14 @@
 				8A6AF4CF4306671CC7B8E727 /* Pods_Tromit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E06F39021A821F20039A58B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E06F39121A8221F0039A58B /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EA18F4DB0B75D6EF14AB42D2 /* Pods */ = {
@@ -299,6 +310,7 @@
 				0140F72421A2DA160099D68E /* DealsViewController.swift in Sources */,
 				0140F72021A2D9E60099D68E /* SearchViewController.swift in Sources */,
 				01BF339821A2C4AF00A8CD4B /* SignUpViewController.swift in Sources */,
+				5E06F39221A8221F0039A58B /* Post.swift in Sources */,
 				010FC44D21A55B4000EFD7B6 /* AuthService.swift in Sources */,
 				01BF339621A2BB6200A8CD4B /* LoginViewController.swift in Sources */,
 				01BF338221A2AE6A00A8CD4B /* AppDelegate.swift in Sources */,

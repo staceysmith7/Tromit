@@ -24,7 +24,6 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="upA-Hm-I5T">
                                         <rect key="frame" x="96" y="10" width="271" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -73,11 +72,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YEH-Gh-qhh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Camera" id="Ts4-cm-wjH"/>
+                    <navigationItem key="navigationItem" title="Camera" id="Ts4-cm-wjH">
+                        <barButtonItem key="leftBarButtonItem" title="Remove" id="PuQ-gT-q5q">
+                            <connections>
+                                <action selector="removeTapped:" destination="GGG-ru-Y9j" id="FmC-1K-ajY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="captionTextView" destination="upA-Hm-I5T" id="dB0-pF-35c"/>
                         <outlet property="photo" destination="moq-KL-Z3S" id="Lg6-8g-cBv"/>
                         <outlet property="postButton" destination="Ruh-R6-x4y" id="6bj-LX-1f9"/>
+                        <outlet property="removeButton" destination="PuQ-gT-q5q" id="xI3-cH-oP7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXp-7F-77c" userLabel="First Responder" sceneMemberID="firstResponder"/>
