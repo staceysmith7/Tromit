@@ -11,4 +11,5 @@ target 'Tromit' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'ProgressHUD'
+  pod 'SDWebImage'
 end

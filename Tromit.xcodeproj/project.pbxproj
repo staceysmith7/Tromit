@@ -30,6 +30,16 @@
 		01C133A421A2E3C8001C3665 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A221A2E3C8001C3665 /* Profile.storyboard */; };
 		01C133A821A2F04B001C3665 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A721A2F04B001C3665 /* GoogleService-Info.plist */; };
 		5E06F39221A8221F0039A58B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06F39121A8221F0039A58B /* Post.swift */; };
+		5E0F36FF21A9C0D400ACAE16 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0F36FE21A9C0D400ACAE16 /* HomeTableViewCell.swift */; };
+		5E0F370221A9D0F700ACAE16 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0F370121A9D0F700ACAE16 /* User.swift */; };
+		5EEB017C21AAD64500738084 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB017B21AAD64500738084 /* CommentViewController.swift */; };
+		5EEB017E21AAD68D00738084 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB017D21AAD68D00738084 /* CommentTableViewCell.swift */; };
+		5EEB018021AAECAF00738084 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB017F21AAECAF00738084 /* Comment.swift */; };
+		5EEB018221AB050800738084 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB018121AB050800738084 /* PostApi.swift */; };
+		5EEB018421AB076C00738084 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB018321AB076C00738084 /* UserApi.swift */; };
+		5EEB018621AB0B1E00738084 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB018521AB0B1E00738084 /* Api.swift */; };
+		5EEB018821AB0CE800738084 /* CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB018721AB0CE800738084 /* CommentApi.swift */; };
+		5EEB018A21AB10EC00738084 /* Post_CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB018921AB10EC00738084 /* Post_CommentApi.swift */; };
 		6CFF0DE2286B1360B6C7DB8E /* Pods_Tromit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6AF4CF4306671CC7B8E727 /* Pods_Tromit.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +73,16 @@
 		1267D232787A23BAC9E4AD15 /* Pods-Tromit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tromit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tromit/Pods-Tromit.debug.xcconfig"; sourceTree = "<group>"; };
 		2CCBDA6CFD09F9A56EC72717 /* Pods-Tromit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tromit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tromit/Pods-Tromit.release.xcconfig"; sourceTree = "<group>"; };
 		5E06F39121A8221F0039A58B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		5E0F36FE21A9C0D400ACAE16 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		5E0F370121A9D0F700ACAE16 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5EEB017B21AAD64500738084 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		5EEB017D21AAD68D00738084 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		5EEB017F21AAECAF00738084 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		5EEB018121AB050800738084 /* PostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
+		5EEB018321AB076C00738084 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		5EEB018521AB0B1E00738084 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		5EEB018721AB0CE800738084 /* CommentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentApi.swift; sourceTree = "<group>"; };
+		5EEB018921AB10EC00738084 /* Post_CommentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_CommentApi.swift; sourceTree = "<group>"; };
 		8A6AF4CF4306671CC7B8E727 /* Pods_Tromit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tromit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +122,12 @@
 				01BF338121A2AE6A00A8CD4B /* AppDelegate.swift */,
 				010FC44C21A55B4000EFD7B6 /* AuthService.swift */,
 				010FC44E21A593FC00EFD7B6 /* Config.swift */,
+				5EEB018121AB050800738084 /* PostApi.swift */,
+				5EEB018321AB076C00738084 /* UserApi.swift */,
+				5EEB018521AB0B1E00738084 /* Api.swift */,
+				5EEB018721AB0CE800738084 /* CommentApi.swift */,
+				5EEB018921AB10EC00738084 /* Post_CommentApi.swift */,
+				5E0F370021A9C0E100ACAE16 /* Views */,
 				5E06F39021A821F20039A58B /* Model */,
 				01C133A621A2EE14001C3665 /* ViewControllers */,
 				01C133A521A2EDA3001C3665 /* Storyboards */,
@@ -120,9 +146,9 @@
 		01C133A521A2EDA3001C3665 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				01C1339821A2E17C001C3665 /* Home.storyboard */,
 				01BF338721A2AE6A00A8CD4B /* Start.storyboard */,
 				01C1339521A2DDC4001C3665 /* Main.storyboard */,
-				01C1339821A2E17C001C3665 /* Home.storyboard */,
 				01C1339B21A2E2DE001C3665 /* Search.storyboard */,
 				01C1339D21A2E34D001C3665 /* Camera.storyboard */,
 				01C133A021A2E382001C3665 /* Deals.storyboard */,
@@ -134,11 +160,12 @@
 		01C133A621A2EE14001C3665 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0140F71D21A2D9D40099D68E /* HomeViewController.swift */,
+				5EEB017B21AAD64500738084 /* CommentViewController.swift */,
+				0140F72121A2D9FD0099D68E /* CameraViewController.swift */,
 				01BF339521A2BB6200A8CD4B /* LoginViewController.swift */,
 				01BF339721A2C4AF00A8CD4B /* SignUpViewController.swift */,
-				0140F71D21A2D9D40099D68E /* HomeViewController.swift */,
 				0140F71F21A2D9E60099D68E /* SearchViewController.swift */,
-				0140F72121A2D9FD0099D68E /* CameraViewController.swift */,
 				0140F72321A2DA160099D68E /* DealsViewController.swift */,
 				0140F72521A2DA2A0099D68E /* ProfileViewController.swift */,
 			);
@@ -157,8 +184,19 @@
 			isa = PBXGroup;
 			children = (
 				5E06F39121A8221F0039A58B /* Post.swift */,
+				5E0F370121A9D0F700ACAE16 /* User.swift */,
+				5EEB017F21AAECAF00738084 /* Comment.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5E0F370021A9C0E100ACAE16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E0F36FE21A9C0D400ACAE16 /* HomeTableViewCell.swift */,
+				5EEB017D21AAD68D00738084 /* CommentTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EA18F4DB0B75D6EF14AB42D2 /* Pods */ = {
@@ -309,16 +347,26 @@
 			files = (
 				0140F72421A2DA160099D68E /* DealsViewController.swift in Sources */,
 				0140F72021A2D9E60099D68E /* SearchViewController.swift in Sources */,
+				5E0F36FF21A9C0D400ACAE16 /* HomeTableViewCell.swift in Sources */,
 				01BF339821A2C4AF00A8CD4B /* SignUpViewController.swift in Sources */,
 				5E06F39221A8221F0039A58B /* Post.swift in Sources */,
+				5EEB018021AAECAF00738084 /* Comment.swift in Sources */,
+				5EEB018821AB0CE800738084 /* CommentApi.swift in Sources */,
+				5EEB017C21AAD64500738084 /* CommentViewController.swift in Sources */,
+				5EEB018A21AB10EC00738084 /* Post_CommentApi.swift in Sources */,
 				010FC44D21A55B4000EFD7B6 /* AuthService.swift in Sources */,
+				5E0F370221A9D0F700ACAE16 /* User.swift in Sources */,
 				01BF339621A2BB6200A8CD4B /* LoginViewController.swift in Sources */,
 				01BF338221A2AE6A00A8CD4B /* AppDelegate.swift in Sources */,
 				010E102721A5993800CFE18C /* ProgressHUD.m in Sources */,
+				5EEB017E21AAD68D00738084 /* CommentTableViewCell.swift in Sources */,
 				0140F71E21A2D9D40099D68E /* HomeViewController.swift in Sources */,
 				010FC44F21A593FC00EFD7B6 /* Config.swift in Sources */,
 				0140F72621A2DA2A0099D68E /* ProfileViewController.swift in Sources */,
+				5EEB018221AB050800738084 /* PostApi.swift in Sources */,
 				0140F72221A2D9FD0099D68E /* CameraViewController.swift in Sources */,
+				5EEB018621AB0B1E00738084 /* Api.swift in Sources */,
+				5EEB018421AB076C00738084 /* UserApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

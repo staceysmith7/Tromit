@@ -8,5 +8,6 @@
 
 import Foundation
 struct Config {
+    
     static var STORAGE_ROOT_REF = "gs://tromit-f9651.appspot.com"
 }

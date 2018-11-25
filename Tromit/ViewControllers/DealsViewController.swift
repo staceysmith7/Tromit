@@ -13,5 +13,4 @@ class DealsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 }

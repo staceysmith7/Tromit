@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         bottomLayer.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         emailTextField.layer.addSublayer(bottomLayer)
         
-       passwordTextField.backgroundColor = UIColor.clear
+        passwordTextField.backgroundColor = UIColor.clear
         passwordTextField.tintColor = UIColor.white
         passwordTextField.textColor = UIColor.white
         passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         self.LoginButton.isEnabled = false
+        
         handleTextField()
         
     }
@@ -57,26 +58,27 @@ class LoginViewController: UIViewController {
     }
     
     @objc func textFieldDidChange() {
+        
         guard  let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
-            
-            
             self.LoginButton.setTitleColor(.blue, for: UIControl.State.normal)
             self.LoginButton.isEnabled = false
             return
         }
-         self.LoginButton.isEnabled = true
-}
+        self.LoginButton.isEnabled = true
+    }
     
     @IBAction func LoginButtonTapped(_ sender: Any) {
+        
         view.endEditing(true)
         ProgressHUD.show("Waiting...", interaction: false)
         AuthService.logIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
             ProgressHUD.showSuccess("Success")
             self.performSegue(withIdentifier: "loginToTabBarVC", sender: nil)
-        }, onError: {error in
-            ProgressHUD.showError(error!)
             
+        }, onError: {error in
+            
+            ProgressHUD.showError(error!)
         })
-    
-}
+        
+    }
 }

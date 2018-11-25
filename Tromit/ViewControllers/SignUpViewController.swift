@@ -68,23 +68,22 @@ class SignUpViewController: UIViewController {
     }
     
     func handleTextField() {
+        
         usernameTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
         emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
         passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
     }
     
     @objc func textFieldDidChange() {
+        
         guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
-            
             self.signUpButton.setTitleColor(.blue, for: UIControl.State.normal)
             self.signUpButton.isEnabled = false
             return
         }
         
-        
         self.signUpButton.setTitleColor(.red, for: UIControl.State.normal)
         self.signUpButton.isEnabled = true
-        
     }
     
     @objc func handleSelectProfileImageView() {
@@ -96,13 +95,14 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func dismissOnClick(_ sender: Any) {
-        
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func signupButtonTapped(_ sender: Any) {
+        
         view.endEditing(true)
         ProgressHUD.show("Waiting...", interaction: false)
+        
         if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
             AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
                 ProgressHUD.showSuccess("Success")
@@ -111,19 +111,19 @@ class SignUpViewController: UIViewController {
                 ProgressHUD.showError(errorString!)
             })
         } else {
+            
             ProgressHUD.showError("profile Image can't be Empty")
         }
     }
 }
 
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ _picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         if  let  image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            
             selectedImage = image
             profileImage.image = image
-            
         }
         
         dismiss(animated: true, completion: nil)

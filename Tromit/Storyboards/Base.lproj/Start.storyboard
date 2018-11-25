@@ -162,7 +162,7 @@
                                     <action selector="dismissOnClick:" destination="v2P-Xn-T7v" eventType="touchUpInside" id="TBY-sm-CgY"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimage2" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-Km-u8k">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImg" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-Km-u8k">
                                 <rect key="frame" x="130" y="73" width="115" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="TED-ll-g8J"/>
@@ -207,7 +207,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="profileimage2" width="316" height="316"/>
+        <image name="placeholderImg" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Wbd-Zi-RMS"/>

@@ -14,13 +14,14 @@ import FirebaseStorage
 class AuthService {
     
     static func logIn (email: String,  password: String, onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
+        
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil{
                 onError(error!.localizedDescription)
                 return
             }
-            onSuccess()
             
+            onSuccess()
         })
         
     }
@@ -59,6 +60,7 @@ class AuthService {
     }
     
     static func registerUserIntoDatabaseWithUID(uid: String, values: [String: String], onSuccess: @escaping () -> Void) {
+        
         let ref = Database.database().reference()
         let usersReference = ref.child("users").child(uid)
         usersReference.updateChildValues(values)

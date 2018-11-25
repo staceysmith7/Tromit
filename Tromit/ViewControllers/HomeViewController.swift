@@ -9,29 +9,43 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import SDWebImage
 
 class HomeViewController: UIViewController {
     
     var posts = [Post]()
+    var users = [User]()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 521
+        tableView.rowHeight = UITableViewAutomationDimension
         tableView.dataSource = self
         loadPosts()
     }
     
     func loadPosts() {
-        Database.database().reference().child("post").observe(.childAdded) { (snapshot: DataSnapshot) in
-            if let dict = snapshot.value as? [String: Any] {
-                
-                let newPost = Post.transformPostPhoto(dict: dict)
-                self.posts.append(newPost)
-                print(self.posts)
+        activityIndicatorView.startAnimating()
+        Api.Post.observePosts() { (post) in
+            self.fetchUser(uid: post.uid!, completed: {
+                self.posts.append(post)
+                self.activityIndicatorView.stopAnimating()
                 self.tableView.reloadData()
-            }
+            })
         }
+    }
+    
+    func fetchUser(uid: String, completed: @escaping () -> Void ) {
+        
+        Api.User.observeUser(withId: uid, completion: {
+            user in
+            self.users.append(user)
+            completed()
+        })
     }
     
     @IBAction func LogOutTapped(_ sender: Any) {
@@ -46,6 +60,14 @@ class HomeViewController: UIViewController {
             print(logoutError)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "commentSegue" {
+            let commentVC = segue.destination as! CommentViewController
+            let postId = sender as! String
+            commentVC.postId = postId
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -55,8 +77,13 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
-        cell.textLabel?.text = posts[indexPath.row].caption
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! HomeTableViewCell
+        let post = posts[indexPath.row]
+        let user = users[indexPath.row]
+        cell.post = post
+        cell.user = user
+        cell.homeVC = self
+        
         return cell
     }
 }
