@@ -43,8 +43,13 @@ class HomeTableViewCell: UITableViewCell {
             let photoUrl = URL(string: photoUrlString)
             postImageView.sd_setImage(with: photoUrl)
         }
+        Api.Post.REF_POSTS.child(post!.id!).observeSingleEvent(of: .value, with: {
+            snapshot in
+            if let value = snapshot.value as? Int {
+                self.likeCountButton.setTitle("\(value) likes", for: UIControl.State.normal)
+            }
+        })
         
-        updateLike(post: post!)
         Api.Post.REF_POSTS.child(post!.id!).observe(.childChanged, with: {
             snapshot in
             if let value = snapshot.value as? Int {
@@ -63,7 +68,7 @@ class HomeTableViewCell: UITableViewCell {
         if count != 0 {
             likeCountButton.setTitle("\(count) likes", for: UIControl.State.normal)
         } else {
-            likeCountButton.setTitle("be the first", for: UIControl.State.normal)
+            likeCountButton.setTitle("be the first to", for: UIControl.State.normal)
         }
     }
     
