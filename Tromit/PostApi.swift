@@ -13,13 +13,13 @@ class PostApi {
     
     var REF_POSTS = Database.database().reference().child("posts")
     
-    func observePosts(completaion: @escaping () -> Void) {
+    func observePosts(completion: @escaping (Post) -> Void) {
         
-        REF_POSTS.observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+        REF_POSTS.observe(.childAdded) { (snapshot: DataSnapshot) in
             
             if let dict = snapshot.value as? [String: Any] {
                 let newPost = Post.transformPostPhoto(dict: dict, key: snapshot.key)
-                completaion(newPost)
+                completion(newPost)
             }
         }
     }

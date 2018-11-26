@@ -101,7 +101,7 @@ class CameraViewController: UIViewController {
         let newPostId = postsReference.childByAutoId().key
         let newPostReference = postsReference.child(newPostId!)
         
-        guard let currentUser = Auth.auth()?.currentUser else {
+        guard let currentUser = Auth.auth().currentUser else {
             return
         }
         

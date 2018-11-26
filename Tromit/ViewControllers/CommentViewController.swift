@@ -19,20 +19,20 @@ class CommentViewController: UIViewController {
     
     var postId: String!
     var comments = [Comment]()
-    var users = [Users]()
+    var users = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Comments"
         tableView.dataSource = self
         tableView.estimatedRowHeight = 77
-        tableView.rowHeight = UITableViewAutomationDimension
+        tableView.rowHeight = UITableView.automaticDimension
         empty()
         handleTextField()
         loadComments()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:  NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:  NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:  UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:  UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
@@ -40,15 +40,15 @@ class CommentViewController: UIViewController {
         view.endEditing(true)
     }
     
-    func keyboardWillShow(_ notification: NSNotification) {
-        let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
-        UIView.animate(withDuration: 0.3)
-        self.constraintToBottom.constant = keyboardFrame?.height
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+//        UIView.animate(withDuration: 0.3) {}
+        self.constraintToBottom.constant = (keyboardFrame?.height)!
         self.view.layoutIfNeeded()
     }
     
-    func keyboardWillHide(_ notification: NSNotification) {
-        UIView.animate(withDuration: 0.3)
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+//        UIView.animate(withDuration: 0.3)
         self.constraintToBottom.constant = 0
         self.view.layoutIfNeeded()
     }
@@ -83,12 +83,12 @@ class CommentViewController: UIViewController {
     
     @objc func textFieldDidChange() {
         if let commentText = commentTextField.text, !commentText.isEmpty {
-            sendButton.setTitle(UIColor.black, for: UIControlState.normal)
+            sendButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
             sendButton.isEnabled = true
             return
         }
         
-        sendButton.setTitle(UIColor.lightGray, for: UIControlState.normal)
+        sendButton.setTitleColor(UIColor.lightGray, for: UIControl.State.normal)
         sendButton.isEnabled = false
     }
     
@@ -107,7 +107,7 @@ class CommentViewController: UIViewController {
         let commentsReference = Api.Comment.REF_COMMENTS
         let newCommentId = commentsReference.childByAutoId().key
         let newCommentReference = commentsReference.child(newCommentId!)
-        guard let currentUser = Auth.auth()?.currentUser else {
+        guard let currentUser = Auth.auth().currentUser else {
             return
         }
         let currentUserId = currentUser.uid
@@ -118,7 +118,7 @@ class CommentViewController: UIViewController {
                 return
             }
             
-            let postCommentRef = Api.Post_Comment.REF_POSTS_COMMENTS.child(self.postId).child(newCommentId)
+            let postCommentRef = Api.Post_Comment.REF_POSTS_COMMENTS.child(self.postId).child(newCommentId!)
             postCommentRef.setValue(true, withCompletionBlock: {
                 ( error, ref ) in
                 if error != nil {
@@ -134,7 +134,7 @@ class CommentViewController: UIViewController {
     func empty() {
         self.commentTextField.text = ""
         self.sendButton.isEnabled = false
-        self.sendButton.setTitleColor(UIColor.lightGray, for: UIControlState.normal)
+        self.sendButton.setTitleColor(UIColor.lightGray, for: UIControl.State.normal)
     }
 }
 

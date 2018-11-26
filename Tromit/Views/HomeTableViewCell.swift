@@ -28,18 +28,18 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     var user: User? {
-        didset {
+        didSet {
             setupUserInfo()
         }
     }
     
     func updateView() {
         
-        captionLabel.text = post.caption
+        captionLabel.text = post!.caption
         
-        if let photoUrlString = post.photoUrl {
+        if let photoUrlString = post!.photoUrl {
             let photoUrl = URL(string: photoUrlString)
-            cell.postImageView.sd_setImage(with: photoUrl)
+            postImageView.sd_setImage(with: photoUrl)
         }
     }
     
@@ -63,7 +63,7 @@ class HomeTableViewCell: UITableViewCell {
         commentImageView.isUserInteractionEnabled = true
     }
     
-    func commentImageViewTapped() {
+    @objc func commentImageViewTapped() {
         
         if let id = post?.id {
             homeVC?.performSegue(withIdentifier: "commentSegue", sender: id)

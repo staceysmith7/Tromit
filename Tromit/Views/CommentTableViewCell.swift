@@ -21,7 +21,7 @@ class CommentTableViewCell: UITableViewCell {
     }
     
     var user: User? {
-        didset {
+        didSet {
             setupUserInfo()
         }
     }
