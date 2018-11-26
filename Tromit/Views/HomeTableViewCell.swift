@@ -45,6 +45,12 @@ class HomeTableViewCell: UITableViewCell {
         }
         
         updateLike(post: post!)
+        Api.Post.REF_POSTS.child(post!.id!).observe(.childChanged, with: {
+            snapshot in
+            if let value = snapshot.value as? Int {
+                self.likeCountButton.setTitle("\(value) likes", for: UIControl.State.normal)
+            }
+        })
     }
     
     func updateLike(post: Post) {
@@ -101,18 +107,15 @@ class HomeTableViewCell: UITableViewCell {
                 likes = post["likes"] as? [String : Bool] ?? [:]
                 var likeCount = post["likeCount"] as? Int ?? 0
                 if let _ = likes[uid] {
-                    // Unstar the post and remove self from stars
                     likeCount -= 1
                     likes.removeValue(forKey: uid)
                 } else {
-                    // Star the post and add self to stars
                     likeCount += 1
                     likes[uid] = true
                 }
                 post["likeCount"] = likeCount as AnyObject?
                 post["likes"] = likes as AnyObject?
                 
-                // Set value and report transaction success
                 currentData.value = post
                 
                 return TransactionResult.success(withValue: currentData)
