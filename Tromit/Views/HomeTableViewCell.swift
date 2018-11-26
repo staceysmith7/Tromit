@@ -38,11 +38,11 @@ class HomeTableViewCell: UITableViewCell {
     func updateView() {
         
         captionLabel.text = post!.caption
-        
         if let photoUrlString = post!.photoUrl {
             let photoUrl = URL(string: photoUrlString)
             postImageView.sd_setImage(with: photoUrl)
         }
+        
         Api.Post.REF_POSTS.child(post!.id!).observeSingleEvent(of: .value, with: {
             snapshot in
             if let value = snapshot.value as? Int {

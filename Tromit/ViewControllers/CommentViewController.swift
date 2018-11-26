@@ -69,7 +69,6 @@ class CommentViewController: UIViewController {
     }
     
     func fetchUser(uid: String, completed: @escaping () -> Void ) {
-        
         Api.User.observeUser(withId: uid, completion: {
             user in
             self.users.append(user)
