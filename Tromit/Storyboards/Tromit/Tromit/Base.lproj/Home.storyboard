@@ -81,8 +81,8 @@
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                     <state key="normal" title="Like this"/>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwS-CQ-UeI">
-                                                    <rect key="frame" x="15" y="439" width="360" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwS-CQ-UeI">
+                                                    <rect key="frame" x="15" y="439" width="360" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -109,8 +109,8 @@
                                                 <constraint firstItem="hJS-k8-Le0" firstAttribute="top" secondItem="0Sc-G6-Uif" secondAttribute="bottom" constant="8" id="Rh8-gb-VoF"/>
                                                 <constraint firstItem="VOs-KG-vqB" firstAttribute="width" secondItem="u6c-6b-l8n" secondAttribute="width" id="UUB-DT-kbC"/>
                                                 <constraint firstItem="E6o-W5-hW9" firstAttribute="top" secondItem="gNS-RF-AgA" secondAttribute="bottom" constant="7" id="VRg-Yn-5MJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="6Iw-bF-e5E" secondAttribute="trailing" constant="261" id="Vvt-5A-imF"/>
                                                 <constraint firstItem="VOs-KG-vqB" firstAttribute="leading" secondItem="u6c-6b-l8n" secondAttribute="trailing" constant="20" id="Zy6-La-kfY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6Iw-bF-e5E" secondAttribute="trailing" priority="250" constant="261" id="bjz-QV-EQf"/>
                                                 <constraint firstItem="cwS-CQ-UeI" firstAttribute="trailing" secondItem="ky2-YY-Dtu" secondAttribute="trailingMargin" constant="15" id="crY-8G-Sv6"/>
                                                 <constraint firstItem="E6o-W5-hW9" firstAttribute="leading" secondItem="ky2-YY-Dtu" secondAttribute="leading" constant="15" id="fAU-xs-KCv"/>
                                                 <constraint firstItem="iDg-Jf-EQ9" firstAttribute="centerY" secondItem="u6c-6b-l8n" secondAttribute="centerY" id="fBR-xe-OAB"/>
