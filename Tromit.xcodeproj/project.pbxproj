@@ -15,6 +15,7 @@
 		01311FA821AD5BD300FB3B7E /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01311FA721AD5BD300FB3B7E /* PeopleViewController.swift */; };
 		01311FAA21AD5C2B00FB3B7E /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01311FA921AD5C2B00FB3B7E /* PeopleTableViewCell.swift */; };
 		01311FAC21AD689900FB3B7E /* FollowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01311FAB21AD689900FB3B7E /* FollowApi.swift */; };
+		01311FAE21AD8CC600FB3B7E /* FeedApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01311FAD21AD8CC600FB3B7E /* FeedApi.swift */; };
 		0140F71E21A2D9D40099D68E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F71D21A2D9D40099D68E /* HomeViewController.swift */; };
 		0140F72021A2D9E60099D68E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F71F21A2D9E60099D68E /* SearchViewController.swift */; };
 		0140F72221A2D9FD0099D68E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F72121A2D9FD0099D68E /* CameraViewController.swift */; };
@@ -62,6 +63,7 @@
 		01311FA721AD5BD300FB3B7E /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		01311FA921AD5C2B00FB3B7E /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		01311FAB21AD689900FB3B7E /* FollowApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowApi.swift; sourceTree = "<group>"; };
+		01311FAD21AD8CC600FB3B7E /* FeedApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedApi.swift; sourceTree = "<group>"; };
 		0140F71D21A2D9D40099D68E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0140F71F21A2D9E60099D68E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0140F72121A2D9FD0099D68E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				5EEB018121AB050800738084 /* PostApi.swift */,
 				5EEB018321AB076C00738084 /* UserApi.swift */,
 				01311FAB21AD689900FB3B7E /* FollowApi.swift */,
+				01311FAD21AD8CC600FB3B7E /* FeedApi.swift */,
 				5EEB018521AB0B1E00738084 /* Api.swift */,
 				5EEB018721AB0CE800738084 /* CommentApi.swift */,
 				5EEB018921AB10EC00738084 /* Post_CommentApi.swift */,
@@ -395,6 +398,7 @@
 				0140F71E21A2D9D40099D68E /* HomeViewController.swift in Sources */,
 				01311FA621AD403500FB3B7E /* HelperService.swift in Sources */,
 				010FC44F21A593FC00EFD7B6 /* Config.swift in Sources */,
+				01311FAE21AD8CC600FB3B7E /* FeedApi.swift in Sources */,
 				0140F72621A2DA2A0099D68E /* ProfileViewController.swift in Sources */,
 				5EEB018221AB050800738084 /* PostApi.swift in Sources */,
 				0140F72221A2D9FD0099D68E /* CameraViewController.swift in Sources */,

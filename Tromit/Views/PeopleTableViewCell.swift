@@ -28,32 +28,56 @@ class PeopleTableViewCell: UITableViewCell {
             profileImage.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
         }
         
-        if user!.isFollowing! == true {
+       
+        if user!.isFollowing! {
             configureUnfollowButton()
         } else {
-            confiureFollowButton ()
+            configureFollowButton ()
         }
         
-        followButton.addTarget(self, action: #selector(self.followAction), for: UIControl.Event.touchUpInside)
-//        followButton.addTarget(self, action: #selector(self.unFollowAction), for: UIControl.Event.touchUpInside)
     }
     
-    func confiureFollowButton () {
+    func configureFollowButton () {
+        followButton.layer.borderWidth = 1
+        followButton.layer.borderColor = UIColor(red: 226/255, green: 228/255, blue: 232/255, alpha: 1).cgColor
+        followButton.layer.cornerRadius = 5
+        followButton.clipsToBounds = true
+        
+        followButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        followButton.backgroundColor = UIColor.clear
         self.followButton.setTitle("Follow", for: UIControl.State.normal)
+        followButton.addTarget(self, action: #selector(self.followAction), for: UIControl.Event.touchUpInside)
+
     }
     
     func configureUnfollowButton() {
+        followButton.layer.borderWidth = 1
+        followButton.layer.borderColor = UIColor(red: 226/255, green: 228/255, blue: 232/255, alpha: 1).cgColor
+        followButton.layer.cornerRadius = 5
+        followButton.clipsToBounds = true
+        
+        followButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        followButton.backgroundColor = UIColor(red: 253/255, green: 147/255, blue: 56/255, alpha: 1)
         self.followButton.setTitle("Following", for: UIControl.State.normal)
+        followButton.addTarget(self, action: #selector(self.unFollowAction), for: UIControl.Event.touchUpInside)
+
     }
     
     @objc func followAction () {
-        
-        Api.Follow.followAction(withUser: user!.id!)
+        if user!.isFollowing! == false {
+            Api.Follow.followAction(withUser: user!.id!)
+            configureUnfollowButton()
+            user!.isFollowing! = true
+        }
     }
+        
     
     @objc func unFollowAction () {
-        
+        if user!.isFollowing! == true {
         Api.Follow.unFollowAction(withUser: user!.id!)
+        configureFollowButton()
+        user?.isFollowing! = false
+        }
     }
     
     override func awakeFromNib() {
