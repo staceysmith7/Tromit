@@ -51,7 +51,7 @@ class AuthService {
                     
                     if let profileImageUrl = url?.absoluteString {
                         
-                        let values = ["username": username, "email": email, "profileImageUrl": profileImageUrl]
+                        let values = ["username": username, "usernameLowercase": username.lowercased(), "email": email, "profileImageUrl": profileImageUrl]
                         self.registerUserIntoDatabaseWithUID(uid: userId!, values: values, onSuccess: onSuccess)
                     }
                 })
