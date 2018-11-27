@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="6uQ-FS-2Bk">
             <objects>
                 <viewController id="c6s-f6-H2c" customClass="ProfileViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sTc-jV-wvm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="GfJ-U8-iVZ">
+                    <navigationItem key="navigationItem" id="GfJ-U8-iVZ">
                         <barButtonItem key="leftBarButtonItem" image="discover" id="8Xe-Vg-TFy">
                             <connections>
                                 <segue destination="vVW-FC-Qw8" kind="show" id="s2z-sf-SVT"/>
