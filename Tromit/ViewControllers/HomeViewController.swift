@@ -52,16 +52,13 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func LogOutTapped(_ sender: Any) {
-        
-        do {
-            try Auth.auth().signOut()
+        AuthService.logout(onSuccess: {
             let storyboard = UIStoryboard(name: "Start", bundle: nil)
             let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController" )
             self.present(loginVC, animated: true, completion: nil)
-            
-        } catch let logoutError {
-            print(logoutError)
-        }
+        }) { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
+    }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
