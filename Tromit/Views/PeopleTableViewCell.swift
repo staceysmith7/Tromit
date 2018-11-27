@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PeopleTableViewCell: UITableViewCell {
     
@@ -26,6 +27,33 @@ class PeopleTableViewCell: UITableViewCell {
             let photoUrl = URL(string: photoUrlString)
             profileImage.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
         }
+        
+        if user!.isFollowing! == true {
+            configureUnfollowButton()
+        } else {
+            confiureFollowButton ()
+        }
+        
+        followButton.addTarget(self, action: #selector(self.followAction), for: UIControl.Event.touchUpInside)
+//        followButton.addTarget(self, action: #selector(self.unFollowAction), for: UIControl.Event.touchUpInside)
+    }
+    
+    func confiureFollowButton () {
+        self.followButton.setTitle("Follow", for: UIControl.State.normal)
+    }
+    
+    func configureUnfollowButton() {
+        self.followButton.setTitle("Following", for: UIControl.State.normal)
+    }
+    
+    @objc func followAction () {
+        
+        Api.Follow.followAction(withUser: user!.id!)
+    }
+    
+    @objc func unFollowAction () {
+        
+        Api.Follow.unFollowAction(withUser: user!.id!)
     }
     
     override func awakeFromNib() {
