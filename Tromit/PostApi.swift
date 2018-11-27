@@ -44,6 +44,15 @@ class PostApi {
     }
 })
 }
+    
+    func observeTopPosts() {
+        REF_POSTS.queryOrdered(byChild: "likeCount").observeSingleEvent(of: .value) {
+            (snapshot) in
+            let
+        }
+    }
+    
+    
     func incrementLikes(postId: String, onSuccess: @escaping (Post) -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
         let postRef = Api.Post.REF_POSTS.child(postId)
        postRef.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
