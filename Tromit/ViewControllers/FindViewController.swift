@@ -2,7 +2,7 @@
 //  FindViewController.swift
 //  Tromit
 //
-//  Created by Casse on 27/11/18.
+//
 //  Copyright © 2018 Devstek. All rights reserved.
 //
 
