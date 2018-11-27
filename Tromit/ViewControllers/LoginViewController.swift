@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Api.User .CURRENT_USER != nil {
+        if Auth.auth().currentUser != nil {
             self.performSegue(withIdentifier: "loginToTabBarVC", sender: nil)
         }
     }
