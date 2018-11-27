@@ -112,7 +112,7 @@ class SignUpViewController: UIViewController {
             })
         } else {
             
-            ProgressHUD.showError("profile Image can't be Empty")
+            profileImage.image = UIImage(named: "placeholderImg")
         }
     }
 }
