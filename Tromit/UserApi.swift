@@ -29,7 +29,6 @@ class UserApi {
         guard let currentUser = Auth.auth().currentUser else {
             return
         }
-        
         REF_USERS.child(currentUser.uid).observeSingleEvent(of: .value, with: {
             snapshot in
             if let dict = snapshot.value as? [String: Any] {
@@ -38,6 +37,14 @@ class UserApi {
             }
         })
     }
+//
+//    var CURRENT_USER: User? {
+//        if Auth.auth().currentUser != nil {
+//            return CURRENT_USER
+//        }
+//
+//        return nil
+//    }
     
     var REF_CURRENT_USER: DatabaseReference? {
         guard let currentUser = Auth.auth().currentUser else {
