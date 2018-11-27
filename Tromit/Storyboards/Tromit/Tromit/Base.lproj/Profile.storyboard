@@ -202,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="4360.8000000000002" y="-751.57421289355329"/>
         </scene>
-        <!--View Controller-->
+        <!--People View Controller-->
         <scene sceneID="uSh-Sd-BxP">
             <objects>
-                <viewController id="vVW-FC-Qw8" sceneMemberID="viewController">
+                <viewController id="vVW-FC-Qw8" customClass="PeopleViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MYb-h2-4cS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,7 +214,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="81" id="M2w-7t-Cga">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PeopleTableViewCell" rowHeight="81" id="M2w-7t-Cga" customClass="PeopleTableViewCell" customModule="Tromit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M2w-7t-Cga" id="toP-C8-mYJ">
@@ -258,8 +258,16 @@
                                                 <constraint firstItem="fIE-uV-sjK" firstAttribute="centerY" secondItem="toP-C8-mYJ" secondAttribute="centerY" id="rI4-Y8-fPv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="followButton" destination="jcw-KS-2JC" id="D20-9c-Q3K"/>
+                                            <outlet property="nameLabel" destination="Hy1-x9-Za6" id="1kL-f3-gb1"/>
+                                            <outlet property="profileImage" destination="fIE-uV-sjK" id="5Ow-6m-RQ0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vVW-FC-Qw8" id="TNY-Lz-73Q"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -271,6 +279,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WrP-eG-Aue"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="DPI-60-VuX" id="h3O-nE-kOx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYB-FH-aqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
