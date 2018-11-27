@@ -30,6 +30,15 @@ class FollowApi {
     }
     
     func unFollowAction(withUser id: String) {
+        Api.MyPosts.REF_MYPOSTS.child(id).observeSingleEvent(of: .value, with: {
+            snapshot in
+            if let dict = snapshot.value as? [String: Any] {
+                for key in dict.keys {
+                    Database.database().reference().child("feed").child(Auth.auth().currentUser!.uid).child(key).removeValue()
+                }
+            }
+            
+        })
         REF_FOLLOWERS.child(id).child(Auth.auth().currentUser!.uid).setValue(NSNull())
         REF_FOLLOWING.child(Auth.auth().currentUser!.uid).child(id).setValue(NSNull())
     }

@@ -30,6 +30,28 @@ class HomeViewController: UIViewController {
     
     func loadPosts() {
         
+        Api.Feed.observeFeed(withId: Auth.auth().currentUser!.uid) {
+            (post) in
+            guard let postId = post.uid else {
+                            return
+                        }
+                        self.fetchUser(uid: postId, completed: {
+                            self.posts.append(post)
+                            //self.activityIndicatorView.stopAnimating()
+                            self.tableView.reloadData()
+                        })
+                    }
+        
+        Api.Feed.observeFeedRemoved(withID: Auth.auth().currentUser!.uid) { (key) in
+            
+            for (index, post ) in self.posts.enumerated() {
+                if post.id == key {
+                    self.posts.remove(at: index)
+                }
+            }
+            self.tableView.reloadData()
+            
+        }
         
         
 //        activityIndicatorView.startAnimating()
