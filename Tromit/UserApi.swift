@@ -37,6 +37,16 @@ class UserApi {
             }
         })
     }
+    
+    func observeUsers(completion: @escaping (User) -> Void ) {
+        REF_USERS.observe(.childAdded, with: {
+            snapshot in
+            if let dict = snapshot.value as? [String: Any] {
+                let user = User.transformUser(dict: dict)
+                completion(user)
+            }
+        })
+    }
 //
 //    var CURRENT_USER: User? {
 //        if Auth.auth().currentUser != nil {
