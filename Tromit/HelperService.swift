@@ -43,7 +43,7 @@ class HelperService {
             return
         }
         let currentUserId = currentUser.uid
-        newPostReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "caption": caption], withCompletionBlock: {
+        newPostReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "caption": caption, "likeCount": 0], withCompletionBlock: {
             (error, ref) in
             
             if error != nil {

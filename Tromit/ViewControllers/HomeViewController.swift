@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-//        tableView.estimatedRowHeight = 521
+        //        tableView.estimatedRowHeight = 521
         tableView.rowHeight = 521
         tableView.dataSource = self
         loadPosts()
@@ -33,22 +33,20 @@ class HomeViewController: UIViewController {
         Api.Feed.observeFeed(withId: Auth.auth().currentUser!.uid) {
             (post) in
             guard let postId = post.uid else {
-                            return
-                        }
-                        self.fetchUser(uid: postId, completed: {
-                            self.posts.append(post)
-                            //self.activityIndicatorView.stopAnimating()
-                            self.tableView.reloadData()
-                        })
-                    }
-        
-        Api.Feed.observeFeedRemoved(withID: Auth.auth().currentUser!.uid) { (key) in
-            
-
-           self.posts = self.posts.filter { $0.id != key }
-           self.tableView.reloadData()
+                return
+            }
+            self.fetchUser(uid: postId, completed: {
+                self.posts.append(post)
+                //self.activityIndicatorView.stopAnimating()
+                self.tableView.reloadData()
+            })
         }
         
+        Api.Feed.observeFeedRemoved(withID: Auth.auth().currentUser!.uid) { (post) in
+            self.posts = self.posts.filter { $0.id != post.id }
+            self.users = self.users.filter { $0.id != post.uid }
+            self.tableView.reloadData()
+        }
     }
     
     func fetchUser(uid: String, completed: @escaping () -> Void ) {
@@ -67,7 +65,7 @@ class HomeViewController: UIViewController {
             self.present(loginVC, animated: true, completion: nil)
         }) { (errorMessage) in
             ProgressHUD.showError(errorMessage)
-    }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

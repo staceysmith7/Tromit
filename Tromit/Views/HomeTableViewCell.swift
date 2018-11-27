@@ -10,6 +10,7 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
+    var homeVC: HomeViewController?
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var likeImageView: UIImageView!
@@ -19,7 +20,6 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCountButton: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
     
-    var homeVC: HomeViewController?
     var post: Post? {
         didSet {
             updateView()
@@ -33,20 +33,15 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     func updateView() {
-        
         captionLabel.text = post!.caption
         if let photoUrlString = post!.photoUrl {
             let photoUrl = URL(string: photoUrlString)
             postImageView.sd_setImage(with: photoUrl)
         }
-        
-       
         self.updateLike(post: self.post!)
-        
     }
     
     func updateLike(post: Post) {
-        
         let imageName = post.likes == nil || !post.isLiked! ? "like" : "likeSelected"
         likeImageView.image = UIImage(named: imageName)
         guard let count = post.likeCount else {
@@ -60,9 +55,7 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     func setupUserInfo() {
-        
         nameLabel.text = user?.username
-        
         if let photoUrlString = user?.profileImageUrl {
             let photoUrl = URL(string: photoUrlString)
             profileImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
@@ -94,7 +87,7 @@ class HomeTableViewCell: UITableViewCell {
             self.post?.likeCount = post.likeCount
         }) {  (errorMessage) in
             ProgressHUD.showError(errorMessage)
-        
+            
         }
         //incrementLikes(forRef: postRef)
     }
@@ -102,7 +95,6 @@ class HomeTableViewCell: UITableViewCell {
     
     
     @objc func commentImageViewTapped() {
-        
         if let id = post?.id {
             homeVC?.performSegue(withIdentifier: "commentSegue", sender: id)
         }
