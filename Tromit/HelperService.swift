@@ -9,7 +9,6 @@
 import Foundation
 import  FirebaseStorage
 import FirebaseAuth
-import FirebaseDatabase
 
 
 class HelperService {
@@ -52,7 +51,9 @@ class HelperService {
                 return
             }
             
-            Database.database().reference().child("feed").child(Auth.auth().currentUser!.uid).child(newPostId!).setValue(true)
+            Api.Feed.REF_FEED.child(Auth.auth().currentUser!.uid).child(newPostId!).setValue(true)
+            
+           
             
             let myPostRef = Api.MyPosts.REF_MYPOSTS.child(currentUserId).child((newPostId!))
             myPostRef.setValue(true, withCompletionBlock: { (error, ref) in
