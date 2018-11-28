@@ -50,6 +50,7 @@ class SearchViewController: UIViewController {
             let profileVC = segue.destination as! ProfileUserViewController
             let userId = sender as! String
             profileVC.userId = userId
+            profileVC.delegate = self
         }
     }
 }
@@ -85,3 +86,15 @@ extension SearchViewController: PeopleTableViewCellDelegate {
         performSegue(withIdentifier: "SearchToProfileSegue", sender: userId)
     }
 }
+
+extension SearchViewController: HeaderProfileCollectionReusableViewDelegate {
+    func updateFollowButton(forUser user: User) {
+        for u in self.users {
+            if u.id == user.id{
+                u.isFollowing = user.isFollowing
+                self.tableView.reloadData()
+            }
+        }
+    }
+}
+
