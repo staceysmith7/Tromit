@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     var searchBar = UISearchBar()
     var users: [User] = [ ]
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { 
         super.viewDidLoad()
         
         searchBar.delegate = self
