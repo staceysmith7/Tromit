@@ -199,11 +199,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Xrb-ac-wCl" id="13O-NS-Mdo"/>
+                        <segue destination="8ro-mf-LiC" kind="show" identifier="ProfileDetailSegue" id="McY-EK-JTs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23f-9T-2Vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4414" y="-752"/>
+        </scene>
+        <!--DetailViewController-->
+        <scene sceneID="pUw-ef-2fb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" referencedIdentifier="DetailViewController" id="8ro-mf-LiC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="laa-71-vih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4414" y="-254"/>
         </scene>
         <!--People View Controller-->
         <scene sceneID="uSh-Sd-BxP">

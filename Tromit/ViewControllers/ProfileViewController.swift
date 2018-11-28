@@ -37,19 +37,24 @@ class ProfileViewController: UIViewController {
         })
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProfileToSetting" {
+            let settingVC = segue.destination as! SettingTableViewController
+            settingVC.delegate = self
+        }
+        
+        if segue.identifier == "ProfileDetailSegue" {
+            let detailVC = segue.destination as! DetailViewController
+            let postId = sender as! String
+            detailVC.postId = postId
+        }
+    }
+    
     func fetchUser() {
         Api.User.observeCurrentUser { (user) in
             self.user = user
             self.navigationItem.title = user.username
             self.collectionView.reloadData()
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DiscoverDetailSegue" {
-            let detailVC = segue.destination as! DetailViewController
-            let postId = sender as! String
-            detailVC.postId = postId
         }
     }
 }

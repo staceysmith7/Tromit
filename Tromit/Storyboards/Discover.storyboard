@@ -86,7 +86,7 @@
         <!--Detail View Controller-->
         <scene sceneID="1lk-hl-IbV">
             <objects>
-                <viewController id="NYV-1j-iPD" customClass="DetailViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="NYV-1j-iPD" customClass="DetailViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qUp-Jh-SVe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
