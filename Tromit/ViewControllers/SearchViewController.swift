@@ -24,23 +24,27 @@ class SearchViewController: UIViewController {
         let searchItem = UIBarButtonItem(customView: searchBar)
         self.navigationItem.rightBarButtonItem = searchItem
         
-        self.users.removeAll()  
+        doSearch()
     }
     
     func doSearch() {
-        self.users.removeAll()
-        self.tableView.reloadData()
-        if let searchText = searchBar.text?.lowercased() {
+        if let searchText = searchBar.text?.lowercased() {self.users.removeAll()
+            self.tableView.reloadData()
             Api.User.queryUsers(withText: searchText) { (user) in
                 self.isFollowing(userId: user.id!, completed: {
                     (value) in
                     user.isFollowing = value
                     self.users.append(user)
                     self.tableView.reloadData()
+                    
                 })
             }
         }
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        doSearch()
+//    }
     
     func isFollowing(userId: String, completed: @escaping (Bool) -> Void) {
         Api.Follow.isFollowing(userId: userId, completed: completed)

@@ -19,7 +19,7 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var myPostsCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
-    @IBOutlet weak var followersCounterLabel: UILabel!
+    @IBOutlet weak var followerCounterLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
     
     var delegate: HeaderProfileCollectionReusableViewDelegate?
@@ -50,7 +50,7 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         }
         
         Api.Follow.fetchCountFollowers(userId: user!.id!) { (count) in
-            self.followersCounterLabel.text = "\(count)"
+            self.followerCounterLabel.text = "\(count)"
         }
          
         

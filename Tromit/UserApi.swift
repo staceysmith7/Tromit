@@ -49,20 +49,18 @@ class UserApi {
     }
     
     func queryUsers(withText text: String, completion: @escaping (User) -> Void) {
-        REF_USERS.queryOrdered(byChild: "usernameLowercase").queryStarting(atValue: text).queryEnding(atValue: text+"\u{f8ff}").queryLimited(toLast: 10).observeSingleEvent(of: .value) {
+        REF_USERS.queryOrdered(byChild: "usernameLowercase").queryStarting(atValue: text).queryEnding(atValue: text+"\u{f8ff}").queryLimited(toFirst: 10).observeSingleEvent(of: .value, with: {
             (snapshot) in
-            
             snapshot.children.forEach({ (s) in
                 let child = s as! DataSnapshot
                 if let dict = child.value as? [String: Any] {
                     let user = User.transformUser(dict: dict, key: child.key)
                     if user.id! != Auth.auth().currentUser?.uid {
                         completion(user)
-                    }
-                    completion(user)
+                }
                 }
             })
-        }
+        })
     }
     //
     //    var CURRENT_USER: User? {

@@ -173,7 +173,7 @@
                                     </constraints>
                                     <connections>
                                         <outlet property="followButton" destination="Uww-J6-hXT" id="vPq-NJ-8wC"/>
-                                        <outlet property="followerCounterLabel" destination="JUE-Nd-EOc" id="7jr-Dz-SpI"/>
+                                        <outlet property="followerCounterLabel" destination="JUE-Nd-EOc" id="Cnh-kI-nQw"/>
                                         <outlet property="followingCountLabel" destination="gpZ-dp-UjA" id="ru9-T1-8EH"/>
                                         <outlet property="myPostsCountLabel" destination="9gn-N5-suf" id="4cZ-hG-Vzm"/>
                                         <outlet property="nameLabel" destination="cgb-sQ-k8V" id="8sd-eX-c6h"/>
