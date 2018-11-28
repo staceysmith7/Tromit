@@ -72,6 +72,13 @@ extension SearchViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleTableViewCell", for: indexPath) as! PeopleTableViewCell
         let user = users[indexPath.row]
         cell.user = user
+        cell.delegate = self
         return cell
+    }
+}
+
+extension SearchViewController: PeopleTableViewCellDelegate {
+    func goToProfileUserVC (userId: String) {
+        performSegue(withIdentifier: "SearchToProfileSegue", sender: userId)
     }
 }

@@ -60,6 +60,6 @@ extension PeopleViewController: UITableViewDataSource {
 
 extension PeopleViewController: PeopleTableViewCellDelegate {
     func goToProfileUserVC (userId: String) {
-        performSegue(withIdentifier: "Profilesegue", sender: userId)
+        performSegue(withIdentifier: "ProfileSegue", sender: userId)
     }
 }
