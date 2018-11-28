@@ -7,10 +7,13 @@
 //
 
 import UIKit
-
+protocol HomeTableViewCellDelegate {
+    func goToCommentVC (postId: String)
+    func goToProfileUserVC(userId: String)
+}
 class HomeTableViewCell: UITableViewCell {
     
-    var homeVC: HomeViewController?
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var likeImageView: UIImageView!
@@ -20,6 +23,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCountButton: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
     
+    var delegate: HomeTableViewCellDelegate?
     var post: Post? {
         didSet {
             updateView()
@@ -74,9 +78,17 @@ class HomeTableViewCell: UITableViewCell {
         let tapGestureForLikeImageView = UITapGestureRecognizer(target: self, action: #selector(self.likeImageViewTapped))
         likeImageView.addGestureRecognizer(tapGestureForLikeImageView)
         likeImageView.isUserInteractionEnabled = true
-        
-        
+        let tapGestureForNameLabel = UITapGestureRecognizer(target: self, action: #selector(self.nameLabelTapped))
+        nameLabel.addGestureRecognizer(tapGestureForNameLabel)
+        nameLabel.isUserInteractionEnabled = true
     }
+    
+    @objc func nameLabelTapped() {
+        if let id = user?.id {
+            delegate?.goToProfileUserVC(userId: id)
+        }
+    }
+    
     
     @objc func likeImageViewTapped() {
         
@@ -96,7 +108,8 @@ class HomeTableViewCell: UITableViewCell {
     
     @objc func commentImageViewTapped() {
         if let id = post?.id {
-            homeVC?.performSegue(withIdentifier: "commentSegue", sender: id)
+            delegate?.goToCommentVC(postId: id)
+           
         }
     }
     

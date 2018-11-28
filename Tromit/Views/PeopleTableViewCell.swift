@@ -8,13 +8,17 @@
 
 import UIKit
 import FirebaseAuth
+protocol PeopleTableViewCellDelegate  {
+    func goToProfileUserVC(userId: String)
+}
 
 class PeopleTableViewCell: UITableViewCell {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
-    var peopleVC: PeopleViewController?
+    
+    var delegate: PeopleTableViewCellDelegate?
     var user: User? {
         didSet {
             updateView()
@@ -89,7 +93,7 @@ class PeopleTableViewCell: UITableViewCell {
     
     @objc func nameLabelTapped() {
         if let id = user?.id {
-            peopleVC?.performSegue(withIdentifier: "Profile", sender: id)
+            delegate?.goToProfileUserVC(userId: id)
         }
     }
    
