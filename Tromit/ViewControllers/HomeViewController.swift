@@ -69,7 +69,7 @@ class HomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "commentSegue" {
+       if segue.identifier == "CommentSegue" {
             let commentVC = segue.destination as! CommentViewController
             let postId = sender as! String
             commentVC.postId = postId
