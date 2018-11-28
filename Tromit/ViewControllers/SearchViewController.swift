@@ -24,7 +24,7 @@ class SearchViewController: UIViewController {
         let searchItem = UIBarButtonItem(customView: searchBar)
         self.navigationItem.rightBarButtonItem = searchItem
         
-        self.users.removeAll()
+        self.users.removeAll()  
     }
     
     func doSearch() {
