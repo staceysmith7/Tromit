@@ -29,7 +29,7 @@
 		01BF339821A2C4AF00A8CD4B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BF339721A2C4AF00A8CD4B /* SignUpViewController.swift */; };
 		01C1339721A2DDC4001C3665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C1339521A2DDC4001C3665 /* Main.storyboard */; };
 		01C1339A21A2E17C001C3665 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C1339821A2E17C001C3665 /* Home.storyboard */; };
-		01C1339C21A2E2DE001C3665 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C1339B21A2E2DE001C3665 /* Search.storyboard */; };
+		01C1339C21A2E2DE001C3665 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C1339B21A2E2DE001C3665 /* Discover.storyboard */; };
 		01C1339F21A2E34D001C3665 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C1339D21A2E34D001C3665 /* Camera.storyboard */; };
 		01C133A121A2E382001C3665 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A021A2E382001C3665 /* Deals.storyboard */; };
 		01C133A421A2E3C8001C3665 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A221A2E3C8001C3665 /* Profile.storyboard */; };
@@ -81,7 +81,7 @@
 		01BF339721A2C4AF00A8CD4B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		01C1339621A2DDC4001C3665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tromit/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01C1339921A2E17C001C3665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tromit/Tromit/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
-		01C1339B21A2E2DE001C3665 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		01C1339B21A2E2DE001C3665 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		01C1339E21A2E34D001C3665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tromit/Tromit/Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		01C133A021A2E382001C3665 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
 		01C133A321A2E3C8001C3665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tromit/Tromit/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 				01C1339821A2E17C001C3665 /* Home.storyboard */,
 				01BF338721A2AE6A00A8CD4B /* Start.storyboard */,
 				01C1339521A2DDC4001C3665 /* Main.storyboard */,
-				01C1339B21A2E2DE001C3665 /* Search.storyboard */,
+				01C1339B21A2E2DE001C3665 /* Discover.storyboard */,
 				01C1339D21A2E34D001C3665 /* Camera.storyboard */,
 				01C133A021A2E382001C3665 /* Deals.storyboard */,
 				01C133A221A2E3C8001C3665 /* Profile.storyboard */,
@@ -311,7 +311,7 @@
 				01BF338921A2AE6A00A8CD4B /* Start.storyboard in Resources */,
 				01C133A421A2E3C8001C3665 /* Profile.storyboard in Resources */,
 				01C133A821A2F04B001C3665 /* GoogleService-Info.plist in Resources */,
-				01C1339C21A2E2DE001C3665 /* Search.storyboard in Resources */,
+				01C1339C21A2E2DE001C3665 /* Discover.storyboard in Resources */,
 				01C1339721A2DDC4001C3665 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
