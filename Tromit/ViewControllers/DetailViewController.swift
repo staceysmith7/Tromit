@@ -53,10 +53,31 @@ extension DetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! HomeTableViewCell
         cell.post = post
         cell.user = user
-//        cell.delegate = self
+        cell.delegate = self
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailCommentSegue" {
+            let commentVC = segue.destination as! CommentViewController
+            let postId = sender as! String
+            commentVC.postId = postId
+        }
+//        if segue.identifier == "HomeToProfileSegue" {
+//            let profileVC = segue.destination as! ProfileUserViewController
+//            let userId = sender as! String
+//            profileVC.userId = userId
+//        }
+        
+    }
 }
 
-//extension DetailViewController: 
+extension DetailViewController: HomeTableViewCellDelegate {
+    func goToCommentVC(postId: String) {
+        performSegue(withIdentifier: "DetailCommentSegue", sender: postId)
+    }
+    func goToProfileUserVC(userId: String) {
+//        performSegue(withIdentifier: "HomeToProfileSegue", sender: userId)
+    }
+}

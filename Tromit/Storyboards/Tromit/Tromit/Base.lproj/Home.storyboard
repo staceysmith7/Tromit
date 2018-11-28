@@ -185,7 +185,7 @@
         <!--Comment View Controller-->
         <scene sceneID="8EJ-gQ-4Y6">
             <objects>
-                <viewController id="wMW-7M-p1n" customClass="CommentViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentViewController" id="wMW-7M-p1n" customClass="CommentViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gRc-wl-101">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
