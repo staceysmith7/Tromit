@@ -81,7 +81,7 @@ extension DiscoverViewController: UICollectionViewDelegate {
 
 extension DiscoverViewController: PhotoCollectionViewCellDelegate {
     
-    func goToDetailCV(posId: String) {
-        performSegue(withIdentifier: "DiscoverDetailSegue", sender: posId)
+    func goToDetailVC(postId: String) {
+        performSegue(withIdentifier: "DiscoverDetailSegue", sender: postId)
     }
 }

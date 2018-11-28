@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PhotoCollectionViewCellDelegate {
-    func goToDetailCV(postId: String)
+    func goToDetailVC(postId: String)
 }
 
 class PhotoCollectionViewCell: UICollectionViewCell {
@@ -35,7 +35,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     @objc func photoTapped() {
         if let id = post?.id {
-            delegate?.goToDetailCV(postId: id)
+            delegate?.goToDetailVC(postId: id)
         }
     }
 }

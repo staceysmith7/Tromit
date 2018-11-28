@@ -64,11 +64,11 @@ extension DetailViewController: UITableViewDataSource {
             let postId = sender as! String
             commentVC.postId = postId
         }
-//        if segue.identifier == "HomeToProfileSegue" {
-//            let profileVC = segue.destination as! ProfileUserViewController
-//            let userId = sender as! String
-//            profileVC.userId = userId
-//        }
+        if segue.identifier == "DetailProfileUserSegue" {
+            let profileVC = segue.destination as! ProfileUserViewController
+            let userId = sender as! String
+            profileVC.userId = userId
+        }
         
     }
 }
@@ -78,6 +78,6 @@ extension DetailViewController: HomeTableViewCellDelegate {
         performSegue(withIdentifier: "DetailCommentSegue", sender: postId)
     }
     func goToProfileUserVC(userId: String) {
-//        performSegue(withIdentifier: "HomeToProfileSegue", sender: userId)
+        performSegue(withIdentifier: "DetailProfileUserSegue", sender: userId)
     }
 }
