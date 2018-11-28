@@ -64,14 +64,14 @@ class UserApi {
             })
         }
     }
-//
-//    var CURRENT_USER: User? {
-//        if Auth.auth().currentUser != nil {
-//            return CURRENT_USER
-//        }
-//
-//        return nil
-//    }
+    //
+    //    var CURRENT_USER: User? {
+    //        if Auth.auth().currentUser != nil {
+    //            return CURRENT_USER
+    //        }
+    //
+    //        return nil
+    //    }
     
     var REF_CURRENT_USER: DatabaseReference? {
         guard let currentUser = Auth.auth().currentUser else {
