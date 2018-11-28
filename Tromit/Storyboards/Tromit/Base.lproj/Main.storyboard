@@ -43,7 +43,7 @@
         <!--NavigationSearch-->
         <scene sceneID="1EE-TU-pfo">
             <objects>
-                <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="NavigationSearch" id="AZA-Bh-dBe" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Discover" referencedIdentifier="NavigationSearch" id="AZA-Bh-dBe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="BRV-c5-Yjj"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsw-4E-S18" userLabel="First Responder" sceneMemberID="firstResponder"/>
