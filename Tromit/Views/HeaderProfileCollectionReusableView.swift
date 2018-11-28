@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HeaderProfileCollectionReusableView: UICollectionReusableView {
     
@@ -32,6 +33,12 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
                 self.profileImage.sd_setImage(with: photoUrl)
                 
             }
+            
+        }
+        if user?.id == Auth.auth().currentUser?.uid {
+            
+        } else {
+            
         }
     }
 }

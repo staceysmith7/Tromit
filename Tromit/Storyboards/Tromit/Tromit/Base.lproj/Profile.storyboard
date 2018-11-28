@@ -193,7 +193,7 @@
                     <navigationItem key="navigationItem" id="GfJ-U8-iVZ">
                         <barButtonItem key="leftBarButtonItem" image="discover" id="8Xe-Vg-TFy">
                             <connections>
-                                <segue destination="vVW-FC-Qw8" kind="show" id="s2z-sf-SVT"/>
+                                <segue destination="vVW-FC-Qw8" kind="show" identifier="Profile" id="s2z-sf-SVT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -286,12 +286,12 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="DPI-60-VuX" id="h3O-nE-kOx"/>
-                        <segue destination="qb9-1A-q2b" kind="show" identifier="Profile" id="U1j-rm-wB5"/>
+                        <segue destination="qb9-1A-q2b" kind="show" identifier="ProfileSegue" id="U1j-rm-wB5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYB-FH-aqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5094" y="-752"/>
+            <point key="canvasLocation" x="5049" y="-752"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W8C-NH-URH">
@@ -493,7 +493,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZKp-EZ-dOL"/>
                     <connections>
-                        <outlet property="collectionView" destination="d11-g9-A3K" id="zgL-IT-Tux"/>
+                        <outlet property="collectionView" destination="d11-g9-A3K" id="ePD-AR-zGn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NxS-i1-7Ex" userLabel="First Responder" sceneMemberID="firstResponder"/>
