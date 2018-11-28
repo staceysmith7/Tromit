@@ -200,11 +200,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Xrb-ac-wCl" id="13O-NS-Mdo"/>
+                        <segue destination="8ro-mf-LiC" kind="show" identifier="ProfileDetailSegue" id="McY-EK-JTs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23f-9T-2Vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4414" y="-752"/>
+        </scene>
+        <!--DetailViewController-->
+        <scene sceneID="pUw-ef-2fb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" referencedIdentifier="DetailViewController" id="8ro-mf-LiC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="laa-71-vih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4414" y="-254"/>
         </scene>
         <!--People View Controller-->
         <scene sceneID="uSh-Sd-BxP">
@@ -498,6 +507,7 @@
                     <navigationItem key="navigationItem" id="ZKp-EZ-dOL"/>
                     <connections>
                         <outlet property="collectionView" destination="d11-g9-A3K" id="ePD-AR-zGn"/>
+                        <segue destination="8ro-mf-LiC" kind="show" identifier="ProfileUserDetailSegue" id="m1T-nI-N1n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NxS-i1-7Ex" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -509,4 +519,7 @@
         <image name="discover" width="22" height="22"/>
         <image name="profile" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="m1T-nI-N1n"/>
+    </inferredMetricsTieBreakers>
 </document>

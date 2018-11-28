@@ -69,7 +69,6 @@ extension DetailViewController: UITableViewDataSource {
             let userId = sender as! String
             profileVC.userId = userId
         }
-        
     }
 }
 
