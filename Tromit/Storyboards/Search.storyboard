@@ -230,6 +230,7 @@
                     <connections>
                         <outlet property="tableView" destination="NiQ-uB-hHy" id="pgV-Wl-aQK"/>
                         <segue destination="XZn-SB-rpv" kind="show" identifier="DetailCommentSegue" id="HRq-mw-oy0"/>
+                        <segue destination="AzW-zV-ujO" kind="show" identifier="DetailProfileUserSegue" id="2yX-Fw-OEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbp-Oa-Bv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,6 +244,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NeA-HO-9JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2996" y="-250"/>
+        </scene>
+        <!--ProfileUserViewController-->
+        <scene sceneID="pUq-5t-srH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileUserViewController" id="AzW-zV-ujO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GUD-VP-4CG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3002" y="-97"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="s4k-jy-Gig">
