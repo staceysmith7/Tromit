@@ -51,29 +51,29 @@ class AuthService {
                     
                     if let profileImageUrl = url?.absoluteString {
                         
-                        let values = ["username": username, "usernameLowercase": username.lowercased(), "email": email, "profileImageUrl": profileImageUrl]
-                        self.registerUserIntoDatabaseWithUID(uid: userId!, values: values, onSuccess: onSuccess)
+                    self.setUserInformation(profileImageUrl: profileImageUrl, username: username, email: email, uid: userId!, onSuccess: onSuccess)
                     }
                 })
             })
         })
     }
     
-    static func registerUserIntoDatabaseWithUID(uid: String, values: [String: String], onSuccess: @escaping () -> Void) {
+    static func setUserInformation(profileImageUrl: String, username: String, email: String, uid: String, onSuccess: @escaping () -> Void) {
         
         let ref = Database.database().reference()
-        let usersReference = ref.child("users").child(uid)
-        usersReference.updateChildValues(values)
+        let usersReference = ref.child("users")
+        let newUserReference = usersReference.child(uid)
+        newUserReference.setValue(["username": username, "usernameLowercase": username.lowercased(), "email": email, "profileImageUrl": profileImageUrl])
         onSuccess()
     }
     static func logout(onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
-    do {
-    try Auth.auth().signOut()
-    onSuccess()
-    
-    } catch let logoutError {
-onError(logoutError.localizedDescription)
-    }
+        do {
+            try Auth.auth().signOut()
+            onSuccess()
+            
+        } catch let logoutError {
+            onError(logoutError.localizedDescription)
+        }
     }
     
 }

@@ -11,20 +11,17 @@ import UIKit
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     var searchBar = UISearchBar()
     var users: [User] = [ ]
     
-    override func viewDidLoad() { 
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         searchBar.delegate = self
         searchBar.frame.size.width = view.frame.size.width - 60
         searchBar.searchBarStyle = .minimal
         searchBar.placeholder = "Search"
-        
         let searchItem = UIBarButtonItem(customView: searchBar)
-        
         self.navigationItem.rightBarButtonItem = searchItem
         
         doSearch()
@@ -54,15 +51,13 @@ class SearchViewController: UIViewController {
             let userId = sender as! String
             profileVC.userId = userId
         }
-        
     }
-    
 }
 
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        doSearch()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
