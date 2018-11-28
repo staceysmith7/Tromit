@@ -20,7 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //change color of tab bar items
         UITabBar.appearance().tintColor = .black
         FirebaseApp.configure()
-        return true
+        //return true
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 253/255, green: 147/255, blue: 56/255, alpha: 1)
+        //UINavigationBar.appearance().barTintColor = UIColor(red: 118/255, green: 214/255, blue: 255/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        
+           return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

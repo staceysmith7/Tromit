@@ -56,7 +56,7 @@ class PostApi {
                 }
             })
         })
-    }
+    } 
     
     func removeObserveLikeCount(id: String, likeHandler: UInt) {
         Api.Post.REF_POSTS.child(id).removeObserver(withHandle: likeHandler)
