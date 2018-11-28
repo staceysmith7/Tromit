@@ -38,10 +38,10 @@ class ProfileViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ProfileToSetting" {
-            let settingVC = segue.destination as! SettingTableViewController
-            settingVC.delegate = self
-        }
+//        if segue.identifier == "ProfileToSetting" {
+//            let settingVC = segue.destination as! SettingTableViewController
+//            settingVC.delegate = self
+//        }
         
         if segue.identifier == "ProfileDetailSegue" {
             let detailVC = segue.destination as! DetailViewController
