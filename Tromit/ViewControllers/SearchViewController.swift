@@ -1,46 +1,77 @@
 //
-//  SearchViewController.swift
+//  FindViewController.swift
 //  Tromit
 //
-//  Created by Stacey Smith on 11/19/18.
+//
 //  Copyright © 2018 Devstek. All rights reserved.
 //
 
 import UIKit
 
 class SearchViewController: UIViewController {
-
-    @IBOutlet weak var collectionView: UICollectionView!
     
-    var posts: [Post] = []
+    @IBOutlet weak var tableView: UITableView!
+    
+    var searchBar = UISearchBar()
+    var users: [User] = [ ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
+        searchBar.delegate = self
+        searchBar.frame.size.width = view.frame.size.width - 60
+        searchBar.searchBarStyle = .minimal
+        searchBar.placeholder = "Search"
         
-        loadTopPosts()
+        let searchItem = UIBarButtonItem(customView: searchBar)
+        
+        self.navigationItem.rightBarButtonItem = searchItem
+        
+        doSearch()
     }
     
-    func loadTopPosts() {
-        Api.Post.observeTopPosts { (post) in
-            self.posts.append(post)
-            self.collectionView.reloadData()
+    func doSearch() {
+        self.users.removeAll()
+        self.tableView.reloadData()
+        if let searchText = searchBar.text?.lowercased() {
+            Api.User.queryUsers(withText: searchText) { (user) in
+                self.isFollowing(userId: user.id!, completed: {
+                    (value) in
+                    user.isFollowing = value
+                    self.users.append(user)
+                    self.tableView.reloadData()
+                })
+            }
         }
+    }
+    
+    func isFollowing(userId: String, completed: @escaping (Bool) -> Void) {
+        Api.Follow.isFollowing(userId: userId, completed: completed)
+    }
+    
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        doSearch()
     }
 }
 
-//extension SearchViewController: UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return users.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCollectionViewCell", for: indexPath) as! PeopleTableViewCell
-//        let user = users[indexPath.row]
-//        cell.user = user
-//        return cell
-//    }
-//}
+extension SearchViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleTableViewCell", for: indexPath) as! PeopleTableViewCell
+        let user = users[indexPath.row]
+        cell.user = user
+        return cell
+    }
+}

@@ -56,6 +56,9 @@ class UserApi {
                 let child = s as! DataSnapshot
                 if let dict = child.value as? [String: Any] {
                     let user = User.transformUser(dict: dict, key: snapshot.key)
+                    if user.id! != Auth.auth().currentUser?.uid {
+                        completion(user)
+                    }
                     completion(user)
                 }
             })

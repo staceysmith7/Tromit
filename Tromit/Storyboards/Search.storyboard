@@ -13,7 +13,7 @@
         <!--Search-->
         <scene sceneID="zbG-fv-nEI">
             <objects>
-                <viewController id="BId-LS-I54" customClass="SearchViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BId-LS-I54" customClass="DiscoverViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wVY-mx-ri4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,17 +70,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="c8O-it-bRc" id="q01-wY-GBi"/>
+                        <outlet property="collectionView" destination="c8O-it-bRc" id="HEU-ZR-h6n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajp-GB-C0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2340" y="-750"/>
         </scene>
-        <!--Find View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="s4k-jy-Gig">
             <objects>
-                <viewController id="TV0-aS-u5z" customClass="FindViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TV0-aS-u5z" customClass="SearchViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tq3-bY-4wb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,7 @@
                         <viewLayoutGuide key="safeArea" id="L26-re-smE"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="GDQ-vF-ssY" id="guk-Mp-s06"/>
+                        <outlet property="tableView" destination="GDQ-vF-ssY" id="nWw-fK-NJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coN-g7-Wcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
