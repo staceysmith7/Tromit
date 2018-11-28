@@ -332,6 +332,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="GDQ-vF-ssY" id="nWw-fK-NJn"/>
+                        <segue destination="Fam-ro-fhW" kind="show" identifier="SearchToProfileSegue" id="41T-Y0-sOp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coN-g7-Wcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -358,6 +359,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0d-ke-lR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2340" y="-1611"/>
+        </scene>
+        <!--ProfileUserViewController-->
+        <scene sceneID="zzs-Tc-Mbh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileUserViewController" id="Fam-ro-fhW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fd8-3F-it3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3630" y="-1073"/>
         </scene>
     </scenes>
     <resources>

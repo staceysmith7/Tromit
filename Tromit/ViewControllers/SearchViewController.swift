@@ -48,6 +48,14 @@ class SearchViewController: UIViewController {
     func isFollowing(userId: String, completed: @escaping (Bool) -> Void) {
         Api.Follow.isFollowing(userId: userId, completed: completed)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SearchToProfileSegue" {
+            let profileVC = segue.destination as! ProfileUserViewController
+            let userId = sender as! String
+            profileVC.userId = userId
+        }
+        
+    }
     
 }
 
