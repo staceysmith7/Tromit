@@ -12,7 +12,7 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var searchBar = UISearchBar()
-    var users: [User] = [ ]
+    var users: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class SearchViewController: UIViewController {
         let searchItem = UIBarButtonItem(customView: searchBar)
         self.navigationItem.rightBarButtonItem = searchItem
         
-        doSearch()
+        self.users.removeAll()
     }
     
     func doSearch() {
