@@ -193,7 +193,7 @@
                     <navigationItem key="navigationItem" id="GfJ-U8-iVZ">
                         <barButtonItem key="leftBarButtonItem" image="discover" id="8Xe-Vg-TFy">
                             <connections>
-                                <segue destination="vVW-FC-Qw8" kind="show" id="s2z-sf-SVT"/>
+                                <segue destination="vVW-FC-Qw8" kind="show" identifier="Profile" id="s2z-sf-SVT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

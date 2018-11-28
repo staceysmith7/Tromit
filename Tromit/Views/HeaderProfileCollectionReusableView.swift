@@ -35,6 +35,10 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
             }
             
         }
-        
+        if user?.id == Auth.auth().currentUser?.uid {
+            
+        } else {
+            
+        }
     }
 }
