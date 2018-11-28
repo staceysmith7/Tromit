@@ -167,11 +167,20 @@
                         <outlet property="activityIndicatorView" destination="zzE-xv-sqX" id="aDX-7K-2l1"/>
                         <outlet property="tableView" destination="1EU-fR-45X" id="gx1-qx-KLj"/>
                         <segue destination="wMW-7M-p1n" kind="show" identifier="commentSegue" id="g0i-B2-0yw"/>
+                        <segue destination="9C4-ce-5VE" kind="show" identifier="HomeToProfileSegue" id="zi5-U6-vtu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aI6-hI-HhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660" y="-774.06296851574223"/>
+        </scene>
+        <!--ProfileUserViewController-->
+        <scene sceneID="2gB-4X-8Jx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileUserViewController" id="9C4-ce-5VE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwG-XA-KtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2314" y="-1202"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="8EJ-gQ-4Y6">
@@ -304,11 +313,12 @@
                         <outlet property="constraintToBottom" destination="3F9-pn-yAC" id="LDj-0b-2B3"/>
                         <outlet property="sendButton" destination="SCr-gq-AET" id="qRG-ba-TWg"/>
                         <outlet property="tableView" destination="Wk1-wc-oe0" id="zgE-EA-HlX"/>
+                        <segue destination="9C4-ce-5VE" kind="show" identifier="CommentToProfileSegue" id="ZBb-Tg-0kw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVn-9o-d8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2448.8000000000002" y="-774.06296851574223"/>
+            <point key="canvasLocation" x="2550" y="-774"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l8s-IE-qQP">
@@ -338,4 +348,7 @@
         <image name="like" width="46" height="41"/>
         <image name="share" width="37" height="41"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZBb-Tg-0kw"/>
+    </inferredMetricsTieBreakers>
 </document>

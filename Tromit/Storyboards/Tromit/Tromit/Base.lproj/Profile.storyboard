@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23f-9T-2Vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4302" y="-752"/>
+            <point key="canvasLocation" x="4414" y="-752"/>
         </scene>
         <!--People View Controller-->
         <scene sceneID="uSh-Sd-BxP">
@@ -317,7 +317,7 @@
         <!--Profile User View Controller-->
         <scene sceneID="nGQ-7H-y9X">
             <objects>
-                <viewController id="qb9-1A-q2b" customClass="ProfileUserViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileUserViewController" id="qb9-1A-q2b" customClass="ProfileUserViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cGY-m2-M4r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

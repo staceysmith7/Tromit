@@ -74,6 +74,12 @@ class HomeViewController: UIViewController {
             let postId = sender as! String
             commentVC.postId = postId
         }
+        if segue.identifier == "HomeToProfileSegue" {
+            let profileVC = segue.destination as! ProfileUserViewController
+            let userId = sender as! String
+            profileVC.userId = userId
+        }
+        
     }
 }
 
@@ -89,8 +95,17 @@ extension HomeViewController: UITableViewDataSource {
         let user = users[indexPath.row]
         cell.post = post
         cell.user = user
-        cell.homeVC = self
+        cell.delegate = self
         
         return cell
+    }
+}
+
+extension HomeViewController: HomeTableViewCellDelegate {
+    func goToCommentVC(postId: String) {
+        performSegue(withIdentifier: "CommentSegue", sender: postId)
+    }
+    func goToProfileUserVC(userId: String) {
+        performSegue(withIdentifier: "HomeToProfileSegue", sender: userId)
     }
 }
