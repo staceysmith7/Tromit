@@ -162,11 +162,11 @@
                                     <action selector="dismissOnClick:" destination="v2P-Xn-T7v" eventType="touchUpInside" id="TBY-sm-CgY"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImg" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-Km-u8k">
-                                <rect key="frame" x="130" y="73" width="115" height="120"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImg" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-Km-u8k">
+                                <rect key="frame" x="130" y="73" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="TED-ll-g8J"/>
-                                    <constraint firstAttribute="width" constant="115" id="eWb-Pa-9Lj"/>
+                                    <constraint firstAttribute="width" constant="120" id="eWb-Pa-9Lj"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -174,7 +174,7 @@
                         <constraints>
                             <constraint firstItem="QU4-ve-wWL" firstAttribute="trailing" secondItem="gpK-bf-ium" secondAttribute="trailing" id="9d1-8X-ysq"/>
                             <constraint firstItem="Fmp-Km-u8k" firstAttribute="top" secondItem="gpK-bf-ium" secondAttribute="top" constant="53" id="HKm-lb-5jW"/>
-                            <constraint firstItem="Fmp-Km-u8k" firstAttribute="centerX" secondItem="DZp-JI-xku" secondAttribute="centerX" id="ZX9-CX-mpq"/>
+                            <constraint firstItem="Fmp-Km-u8k" firstAttribute="centerX" secondItem="DZp-JI-xku" secondAttribute="centerX" constant="2.5" id="ZX9-CX-mpq"/>
                             <constraint firstItem="QU4-ve-wWL" firstAttribute="leading" secondItem="gpK-bf-ium" secondAttribute="leading" id="byR-NC-4J2"/>
                             <constraint firstItem="nHw-xf-08l" firstAttribute="leading" secondItem="gpK-bf-ium" secondAttribute="leading" constant="20" id="cCr-fF-CX7"/>
                             <constraint firstItem="nHw-xf-08l" firstAttribute="top" secondItem="Fmp-Km-u8k" secondAttribute="bottom" constant="73" id="gzM-PF-IJb"/>
