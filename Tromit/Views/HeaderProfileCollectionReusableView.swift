@@ -52,7 +52,7 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         Api.Follow.fetchCountFollowers(userId: user!.id!) { (count) in
             self.followersCounterLabel.text = "\(count)"
         }
-        
+         
         
         if user?.id == Auth.auth().currentUser?.uid {
             followButton.setTitle("Edit Profile", for: UIControl.State.normal)
