@@ -24,7 +24,7 @@ class DiscoverViewController: UIViewController {
     @IBAction func refreshButtonTapped(_ sender: Any) {
         loadTopPosts()
     }
-    
+      
     func loadTopPosts() {
         ProgressHUD.show("Loading...", interaction: false)
         self.posts.removeAll()
