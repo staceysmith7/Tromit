@@ -21,17 +21,26 @@ class DiscoverViewController: UIViewController {
         
         loadTopPosts()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    @IBAction func refreshButtonTapped(_ sender: Any) {
         loadTopPosts()
     }
     
     func loadTopPosts() {
+        ProgressHUD.show("Loading...", interaction: false)
         self.posts.removeAll()
+        self.collectionView.reloadData()
         Api.Post.observeTopPosts { (post) in
             self.posts.append(post)
             self.collectionView.reloadData()
+            ProgressHUD.dismiss()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DiscoverDetailSegue" {
+            let detailVC = segue.destination as! DetailViewController
+            let postId = sender as! String
+            detailVC.postId = postId
         }
     }
 }
@@ -46,6 +55,7 @@ extension DiscoverViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
         let post = posts[indexPath.row]
         cell.post = post
+        cell.delegate = self
         return cell
     }
 }
@@ -69,3 +79,9 @@ extension DiscoverViewController: UICollectionViewDelegate {
     }
 }
 
+extension DiscoverViewController: PhotoCollectionViewCellDelegate {
+    
+    func goToDetailCV(posId: String) {
+        performSegue(withIdentifier: "DiscoverDetailSegue", sender: posId)
+    }
+}

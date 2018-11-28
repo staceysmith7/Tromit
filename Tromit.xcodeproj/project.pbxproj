@@ -40,6 +40,7 @@
 		5E17590021AC792A00F52D02 /* HeaderProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1758FF21AC792A00F52D02 /* HeaderProfileCollectionReusableView.swift */; };
 		5E17590221AC86BF00F52D02 /* MyPostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E17590121AC86BF00F52D02 /* MyPostsApi.swift */; };
 		5E17590421AC91A900F52D02 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E17590321AC91A900F52D02 /* PhotoCollectionViewCell.swift */; };
+		5E94D20121AE8A58006A5151 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94D20021AE8A58006A5151 /* DetailViewController.swift */; };
 		5E9CA4B621ADDF4C00079A6F /* ProfileUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9CA4B521ADDF4C00079A6F /* ProfileUserViewController.swift */; };
 		5E9E6EF621AD53AA006510AA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E6EF521AD53AA006510AA /* SearchViewController.swift */; };
 		5EEB017C21AAD64500738084 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB017B21AAD64500738084 /* CommentViewController.swift */; };
@@ -93,6 +94,7 @@
 		5E1758FF21AC792A00F52D02 /* HeaderProfileCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProfileCollectionReusableView.swift; sourceTree = "<group>"; };
 		5E17590121AC86BF00F52D02 /* MyPostsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsApi.swift; sourceTree = "<group>"; };
 		5E17590321AC91A900F52D02 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E94D20021AE8A58006A5151 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5E9CA4B521ADDF4C00079A6F /* ProfileUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserViewController.swift; sourceTree = "<group>"; };
 		5E9E6EF521AD53AA006510AA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5EEB017B21AAD64500738084 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				0140F72121A2D9FD0099D68E /* CameraViewController.swift */,
 				5EEB017B21AAD64500738084 /* CommentViewController.swift */,
 				0140F72321A2DA160099D68E /* DealsViewController.swift */,
+				5E94D20021AE8A58006A5151 /* DetailViewController.swift */,
 				0140F71F21A2D9E60099D68E /* DiscoverViewController.swift */,
 				0140F71D21A2D9D40099D68E /* HomeViewController.swift */,
 				01311FA721AD5BD300FB3B7E /* PeopleViewController.swift */,
@@ -377,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E94D20121AE8A58006A5151 /* DetailViewController.swift in Sources */,
 				5E17590021AC792A00F52D02 /* HeaderProfileCollectionReusableView.swift in Sources */,
 				01311FA821AD5BD300FB3B7E /* PeopleViewController.swift in Sources */,
 				0140F72421A2DA160099D68E /* DealsViewController.swift in Sources */,
