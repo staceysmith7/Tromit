@@ -27,7 +27,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="moq-KL-Z3S">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture2" translatesAutoresizingMaskIntoConstraints="NO" id="moq-KL-Z3S">
                                         <rect key="frame" x="8" y="10" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="2e7-kp-5JD"/>
@@ -113,7 +113,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Placeholder-image" width="840" height="600"/>
         <image name="camera" width="30" height="30"/>
+        <image name="picture2" width="128" height="128"/>
     </resources>
 </document>

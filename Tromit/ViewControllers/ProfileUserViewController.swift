@@ -84,8 +84,16 @@ extension ProfileUserViewController: UICollectionViewDataSource {
         if let user = self.user {
             headerViewCell.user = user
             headerViewCell.delegate = self.delegate
+            headerViewCell.delegate2 = self
         }
         return headerViewCell
+    }
+}
+
+extension ProfileUserViewController: HeaderProfileCollectionReusableViewDelegateSwitchSettingVC {
+    func goToSettingVC(){
+        performSegue(withIdentifier: "ProfileUserToSettingSegue", sender: nil)
+        
     }
 }
 
