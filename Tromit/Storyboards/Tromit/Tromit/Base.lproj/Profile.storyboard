@@ -200,7 +200,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Xrb-ac-wCl" id="13O-NS-Mdo"/>
-                        <segue destination="8ro-mf-LiC" kind="show" identifier="ProfileDetailSegue" id="McY-EK-JTs"/>
+                        <segue destination="8ro-mf-LiC" kind="show" identifier="ProfileToDetailSegue" id="McY-EK-JTs"/>
                         <segue destination="elF-kb-qOE" kind="show" identifier="ProfileToSettingSegue" id="3e6-cs-CBD"/>
                     </connections>
                 </viewController>
@@ -520,7 +520,7 @@
         <scene sceneID="MlA-q8-hNR">
             <objects>
                 <tableViewController id="elF-kb-qOE" customClass="SettingViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ABE-p7-sQ7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ABE-p7-sQ7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -528,7 +528,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="Xax-Xc-xcO">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImg" translatesAutoresizingMaskIntoConstraints="NO" id="Xax-Xc-xcO">
                                     <rect key="frame" x="147.5" y="46" width="80" height="80"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="aUh-9N-rNd"/>
@@ -704,8 +704,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Placeholder-image" width="840" height="600"/>
         <image name="discover" width="22" height="22"/>
+        <image name="placeholderImg" width="225" height="225"/>
         <image name="profile" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
