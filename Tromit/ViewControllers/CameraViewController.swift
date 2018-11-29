@@ -81,7 +81,7 @@ class CameraViewController: UIViewController {
     
     func clean() {
         
-        self.captionTextView.text = ""
+        self.captionTextView.text = "" 
         self.photo.image = UIImage(named: "profileimage2")
         self.selectedImage = nil
     }
@@ -90,6 +90,7 @@ class CameraViewController: UIViewController {
         if segue.identifier == "FilterSegue" {
             let filterVC = segue.destination as! FilterViewController
             filterVC.selectedImage = self.selectedImage
+            filterVC.delegate = self
         }
     }
 }
@@ -127,5 +128,11 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
         }
         
         return nil
+    }
+}
+
+extension CameraViewController: FilterViewControllerDelegate {
+    func updatePhoto(image: UIImage) {
+        self.photo.image = image
     }
 }
