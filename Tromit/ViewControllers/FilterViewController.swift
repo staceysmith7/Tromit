@@ -29,6 +29,15 @@ class FilterViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
     }
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext(<#T##size: CGSize##CGSize#>)
+    }
 }
 
 extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -38,7 +47,9 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
+        let newImage = resizeImage(image: selectedImage, newWidth: 150)
         let ciImage = CIImage(image: selectedImage)
         let filter = CIFilter(name: "CISepiaTone")
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
