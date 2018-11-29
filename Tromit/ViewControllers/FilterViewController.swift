@@ -8,12 +8,28 @@
 
 import UIKit
 
+protocol  FilterViewControllerDelegate {
+    func updatePhoto(image: UIImage)
+}
+
 class FilterViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterPhoto: UIImageView!
-    
+    var delegate: FilterViewControllerDelegate?
     var selectedImage: UIImage!
+    var CIFilterNames = [
+        "CIPhotoEffectChrome",
+        "CIPhotoEffectFade",
+        "CIPhotoEffectInstant",
+        "CIPhotoEffectNoir",
+        "CIPhotoEffectProcess",
+        "CIPhotoEffectTonal",
+        "CIPhotoEffectTransfer",
+        "CISepiaTone"
+    ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         filterPhoto.image = selectedImage
@@ -28,6 +44,8 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        delegate?.updatePhoto(image: self.filterPhoto.image!)
     }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
@@ -45,20 +63,30 @@ class FilterViewController: UIViewController {
 extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return CIFilterNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
         let newImage = resizeImage(image: selectedImage, newWidth: 150)
-        let ciImage = CIImage(image: selectedImage)
-        let filter = CIFilter(name: "CISepiaTone")
+        let ciImage = CIImage(image: newImage)
+        let filter = CIFilter(name: CIFilterNames[indexPath.item])
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
         if let filteredImage = filter?.value(forKey: kCIInputImageKey) as? CIImage {
             cell.filterPhoto.image = UIImage(ciImage: filteredImage)
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let ciImage = CIImage(image: selectedImage)
+        let filter = CIFilter(name: CIFilterNames[indexPath.item])
+        filter?.setValue(ciImage, forKey: kCIInputImageKey)
+        if let filteredImage = filter?.value(forKey: kCIInputImageKey) as? CIImage {
+            self.filterPhoto.image = UIImage(ciImage: filteredImage)
+        }
     }
 }
