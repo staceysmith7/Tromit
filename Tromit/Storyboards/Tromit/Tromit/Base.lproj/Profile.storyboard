@@ -643,6 +643,9 @@
                                                     <state key="normal" title="Save">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="saveButtonTapped:" destination="elF-kb-qOE" eventType="touchUpInside" id="khM-fF-5td"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -667,6 +670,9 @@
                                                     <state key="normal" title="Log Out">
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="logoutButtonTapped:" destination="elF-kb-qOE" eventType="touchUpInside" id="rpp-xP-kos"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -683,6 +689,11 @@
                             <outlet property="delegate" destination="elF-kb-qOE" id="TKl-Sm-Z9J"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="emailTextField" destination="5hs-az-k2r" id="dzL-bn-KGW"/>
+                        <outlet property="profileImage" destination="Xax-Xc-xcO" id="En6-Hd-kzk"/>
+                        <outlet property="usernameTextField" destination="g7J-P5-INp" id="qZ6-sA-y7f"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gt1-Cg-Ruc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
