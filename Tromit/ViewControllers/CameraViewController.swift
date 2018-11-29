@@ -10,6 +10,7 @@ import UIKit
 import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
+import AVFoundation
 
 class CameraViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var removeButton: UIBarButtonItem!
     var selectedImage: UIImage?
+    var videoUrl: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,13 +56,15 @@ class CameraViewController: UIViewController {
         
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
+        pickerController.mediaTypes = ["public.image", "public.movie"]
         present (pickerController, animated: true, completion: nil)
     }
     
     @IBAction func postButtonTapped(_ sender: Any) {
         ProgressHUD.show("Waiting...", interaction: false)
-        if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
-            HelperService.uploadDataToServer(data: imageData, caption: captionTextView.text!, onSuccess: {
+        if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.5) {
+            let ratio = profileImg.size.width / profileImg.size.height
+            HelperService.uploadDataToServer(data: imageData, videoUrl: self.videoUrl, ratio: ratio, caption: captionTextView.text!, onSuccess: {
                 self.clean()
                 self.tabBarController?.selectedIndex = 0
                 })
@@ -87,12 +91,31 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerController(_ _picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
-        if  let  image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            
+        if let videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
+            if let thumbnailImage = self.thumbnailImageForFileUrl(videoUrl) {
+                selectedImage = thumbnailImage
+                photo.image = thumbnailImage
+                self.videoUrl = videoUrl
+            }
+        }
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             selectedImage = image
             photo.image = image
         }
-        
         dismiss(animated: true, completion: nil)
+    }
+    
+    func thumbnailImageForFileUrl(_ fileUrl: URL) -> UIImage? {
+        let asset = AVAsset(url: fileUrl)
+        let imageGenerator = AVAssetImageGenerator(asset: asset)
+        do {
+            let thumbnailCGImage = try imageGenerator.copyCGImage(at: CMTimeMake(value: 6, timescale: 1), actualTime: nil)
+            return UIImage(cgImage: thumbnailCGImage)
+        } catch let err {
+            print(err)
+        }
+        
+        return nil
     }
 }

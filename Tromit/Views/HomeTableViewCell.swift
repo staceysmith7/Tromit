@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 protocol HomeTableViewCellDelegate {
     func goToCommentVC (postId: String)
     func goToProfileUserVC(userId: String)
@@ -22,8 +24,11 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeCountButton: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var heightConstraintPhoto: NSLayoutConstraint!
     
     var delegate: HomeTableViewCellDelegate?
+    var player: AVPlayer?
+    var playerLayer: AVPlayerLayer?
     var post: Post? {
         didSet {
             updateView()
@@ -38,10 +43,24 @@ class HomeTableViewCell: UITableViewCell {
     
     func updateView() {
         captionLabel.text = post!.caption
+        if let ratio = post?.ratio {
+            heightConstraintPhoto.constant = UIScreen.main.bounds.width / ratio
+            layoutIfNeeded()
+        }
         if let photoUrlString = post!.photoUrl {
             let photoUrl = URL(string: photoUrlString)
             postImageView.sd_setImage(with: photoUrl)
         }
+        if let videoUrlString = post?.videoUrl, let videoUrl = URL(string: videoUrlString) {
+            
+            player = AVPlayer(url: videoUrl)
+            playerLayer = AVPlayerLayer(player: player)
+            playerLayer?.frame = postImageView.frame
+            playerLayer?.frame.size.width = UIScreen.main.bounds.width
+            self.contentView.layer.addSublayer(playerLayer!)
+            player?.play()
+        }
+        
         self.updateLike(post: self.post!)
     }
     
@@ -89,7 +108,6 @@ class HomeTableViewCell: UITableViewCell {
         }
     }
     
-    
     @objc func likeImageViewTapped() {
         
         Api.Post.incrementLikes(postId: post!.id!, onSuccess: { (post) in
@@ -104,19 +122,17 @@ class HomeTableViewCell: UITableViewCell {
         //incrementLikes(forRef: postRef)
     }
     
-    
-    
     @objc func commentImageViewTapped() {
         if let id = post?.id {
             delegate?.goToCommentVC(postId: id)
-           
         }
     }
     
     override func prepareForReuse() {
         super.awakeFromNib()
-        
         profileImageView.image = UIImage(named: "placeholderImg")
+        playerLayer?.removeFromSuperlayer()
+        player?.pause()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

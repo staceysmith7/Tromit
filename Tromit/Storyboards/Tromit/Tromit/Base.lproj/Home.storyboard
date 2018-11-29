@@ -50,7 +50,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hJS-k8-Le0">
                                                     <rect key="frame" x="0.0" y="63" width="375" height="290"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="290" id="K11-ty-CT4"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="290" id="K11-ty-CT4"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="u6c-6b-l8n">
@@ -131,6 +131,7 @@
                                         <connections>
                                             <outlet property="captionLabel" destination="cwS-CQ-UeI" id="ayS-DH-cb8"/>
                                             <outlet property="commentImageView" destination="VOs-KG-vqB" id="WXR-S2-bsq"/>
+                                            <outlet property="heightConstraintPhoto" destination="K11-ty-CT4" id="EA1-cZ-8fc"/>
                                             <outlet property="likeCountButton" destination="E6o-W5-hW9" id="R4y-aY-HA8"/>
                                             <outlet property="likeImageView" destination="u6c-6b-l8n" id="e17-f7-ImN"/>
                                             <outlet property="nameLabel" destination="6Iw-bF-e5E" id="9gd-JQ-BsV"/>
