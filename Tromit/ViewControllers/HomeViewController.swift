@@ -22,7 +22,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        //        tableView.estimatedRowHeight = 521
+        tableView.estimatedRowHeight = 509
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.rowHeight = 521
         tableView.dataSource = self
         loadPosts()

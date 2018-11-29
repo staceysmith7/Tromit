@@ -96,20 +96,33 @@
                                                         <constraint firstAttribute="height" constant="22" id="itZ-sK-SKf"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59K-NU-m2I">
+                                                <view hidden="YES" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59K-NU-m2I">
                                                     <rect key="frame" x="10" y="319" width="24" height="24"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XW-UK-VmH">
-                                                            <rect key="frame" x="-8" y="-6" width="46" height="30"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" title="Button"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XW-UK-VmH">
+                                                            <rect key="frame" x="6" y="6" width="12" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="12" id="VLL-BI-5Oe"/>
+                                                                <constraint firstAttribute="width" constant="12" id="fgD-Dy-jrx"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Icon_Mute"/>
+                                                            <connections>
+                                                                <action selector="volumeButtonTapped:" destination="0ns-ee-LMC" eventType="touchUpInside" id="6nX-ge-5ju"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="2XW-UK-VmH" firstAttribute="centerX" secondItem="59K-NU-m2I" secondAttribute="centerX" id="Ad4-3t-qPL"/>
+                                                        <constraint firstItem="2XW-UK-VmH" firstAttribute="centerY" secondItem="59K-NU-m2I" secondAttribute="centerY" id="Nqe-zu-FDb"/>
                                                         <constraint firstAttribute="width" constant="24" id="QGw-xD-KQH"/>
                                                         <constraint firstAttribute="height" constant="24" id="VHD-Mf-usY"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,6 +168,8 @@
                                             <outlet property="postImageView" destination="hJS-k8-Le0" id="k1l-cp-ju1"/>
                                             <outlet property="profileImageView" destination="0Sc-G6-Uif" id="lF1-VB-xGU"/>
                                             <outlet property="shareImageView" destination="iDg-Jf-EQ9" id="aEa-1b-lWB"/>
+                                            <outlet property="volumeButton" destination="2XW-UK-VmH" id="j1e-kM-Z1f"/>
+                                            <outlet property="volumeView" destination="59K-NU-m2I" id="Y5c-kl-6yP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -362,11 +377,12 @@
     </scenes>
     <resources>
         <image name="Comment" width="43" height="41"/>
+        <image name="Icon_Mute" width="25" height="25"/>
         <image name="home" width="30" height="30"/>
         <image name="like" width="46" height="41"/>
         <image name="share" width="37" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZBb-Tg-0kw"/>
+        <segue reference="zi5-U6-vtu"/>
     </inferredMetricsTieBreakers>
 </document>

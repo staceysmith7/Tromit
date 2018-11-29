@@ -18,7 +18,6 @@ protocol HeaderProfileCollectionReusableViewDelegateSwitchSettingVC {
 
 class HeaderProfileCollectionReusableView: UICollectionReusableView {
     
-    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var myPostsCountLabel: UILabel!
@@ -35,6 +34,11 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        clear()
+    }
+    
     func updateView() {
         
         //Api.User.observeCurrentUser { (user) in
@@ -44,7 +48,6 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
                 self.profileImage.sd_setImage(with: photoUrl)
                 
             }
-            
         //}
         
         Api.MyPosts.fetchCountMyPosts(userId: user!.id!) { (count) in
@@ -58,7 +61,6 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         Api.Follow.fetchCountFollowers(userId: user!.id!) { (count) in
             self.followerCounterLabel.text = "\(count)"
         }
-         
         
         if user?.id == Auth.auth().currentUser?.uid {
             followButton.setTitle("Edit Profile", for: UIControl.State.normal)
@@ -68,9 +70,15 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         }
     }
     
+    func clear() {
+        self.nameLabel.text = "--"
+        self.myPostsCountLabel.text = "--"
+        self.followingCountLabel.text = "--"
+        self.followerCounterLabel.text = "--"
+    }
+    
     @objc func goToSettingVC () {
         delegate2?.goToSettingVC()
-        
     }
     
     func updatStateFollowButton () {
@@ -79,7 +87,6 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         } else {
             configureFollowButton ()
         }
-        
     }
     
     func configureFollowButton () {
@@ -126,7 +133,6 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
             delegate?.updateFollowButton(forUser: user!)
         }
     }
-    
 }
 
 

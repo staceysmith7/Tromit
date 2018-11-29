@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pcc-nQ-g3z">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pcc-nQ-g3z">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="101"/>
                                                 </imageView>
                                             </subviews>
@@ -126,6 +126,34 @@
                                                         <constraint firstAttribute="height" priority="999" constant="290" id="el4-bI-8dv"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view hidden="YES" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cz1-oz-YI0">
+                                                    <rect key="frame" x="10" y="319" width="24" height="24"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ua-rG-jF0">
+                                                            <rect key="frame" x="6" y="6" width="12" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="12" id="1fJ-Rs-zPq"/>
+                                                                <constraint firstAttribute="width" constant="12" id="mR7-c5-352"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Icon_Mute"/>
+                                                            <connections>
+                                                                <action selector="volumeButtonTapped:" destination="GOH-sQ-WOu" eventType="touchUpInside" id="FiW-Hw-CVF"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="7Ua-rG-jF0" firstAttribute="centerY" secondItem="cz1-oz-YI0" secondAttribute="centerY" id="7V8-r2-z4L"/>
+                                                        <constraint firstAttribute="width" constant="24" id="Jdo-tE-CUs"/>
+                                                        <constraint firstAttribute="height" constant="24" id="h9Z-8q-mRA"/>
+                                                        <constraint firstItem="7Ua-rG-jF0" firstAttribute="centerX" secondItem="cz1-oz-YI0" secondAttribute="centerX" id="zAl-93-zVZ"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="1pm-j8-MZv">
                                                     <rect key="frame" x="15" y="361" width="22" height="22"/>
                                                     <constraints>
@@ -172,6 +200,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="cz1-oz-YI0" firstAttribute="leading" secondItem="EUy-qx-45w" secondAttribute="leading" constant="10" id="1Iv-Ns-Fhz"/>
                                                 <constraint firstItem="eNI-eB-oye" firstAttribute="leading" secondItem="IN1-s3-v5c" secondAttribute="trailing" constant="20" id="2MZ-20-VpO"/>
                                                 <constraint firstItem="eEE-dV-DbP" firstAttribute="leading" secondItem="tkP-ed-SrL" secondAttribute="leading" constant="15" id="39w-wh-Id8"/>
                                                 <constraint firstAttribute="trailing" secondItem="EUy-qx-45w" secondAttribute="trailing" id="8xs-Kp-YEc"/>
@@ -192,6 +221,7 @@
                                                 <constraint firstItem="VXy-1x-sGJ" firstAttribute="leading" secondItem="tkP-ed-SrL" secondAttribute="leading" constant="15" id="gH4-6u-mV4"/>
                                                 <constraint firstItem="IN1-s3-v5c" firstAttribute="leading" secondItem="1pm-j8-MZv" secondAttribute="trailing" constant="20" id="gXZ-hO-4Qs"/>
                                                 <constraint firstItem="Egf-Le-17a" firstAttribute="centerY" secondItem="lY2-vn-G7N" secondAttribute="centerY" id="gy5-BR-MLm"/>
+                                                <constraint firstItem="cz1-oz-YI0" firstAttribute="bottom" secondItem="EUy-qx-45w" secondAttribute="bottom" constant="-10" id="lMB-aS-xTb"/>
                                                 <constraint firstItem="lY2-vn-G7N" firstAttribute="top" secondItem="tkP-ed-SrL" secondAttribute="top" constant="15" id="mRI-R5-W8c"/>
                                                 <constraint firstItem="IN1-s3-v5c" firstAttribute="height" secondItem="1pm-j8-MZv" secondAttribute="height" id="oVd-gw-I6H"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Egf-Le-17a" secondAttribute="trailing" priority="250" constant="261" id="qV5-IC-7Mh"/>
@@ -211,6 +241,8 @@
                                             <outlet property="postImageView" destination="EUy-qx-45w" id="qsm-Ta-r5T"/>
                                             <outlet property="profileImageView" destination="lY2-vn-G7N" id="Iex-3O-33W"/>
                                             <outlet property="shareImageView" destination="eNI-eB-oye" id="7PG-Jy-9mR"/>
+                                            <outlet property="volumeButton" destination="7Ua-rG-jF0" id="gbv-0n-2Qh"/>
+                                            <outlet property="volumeView" destination="cz1-oz-YI0" id="lfE-Ys-hxI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -273,7 +305,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5TR-f9-QIe">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5TR-f9-QIe">
                                                     <rect key="frame" x="15" y="7" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="gKr-39-H6I"/>
@@ -372,6 +404,7 @@
     </scenes>
     <resources>
         <image name="Comment" width="43" height="41"/>
+        <image name="Icon_Mute" width="25" height="25"/>
         <image name="like" width="46" height="41"/>
         <image name="search" width="30" height="30"/>
         <image name="share" width="37" height="41"/>
