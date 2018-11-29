@@ -528,7 +528,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimage2" translatesAutoresizingMaskIntoConstraints="NO" id="Xax-Xc-xcO">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="Xax-Xc-xcO">
                                     <rect key="frame" x="147.5" y="46" width="80" height="80"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="aUh-9N-rNd"/>
@@ -704,9 +704,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Placeholder-image" width="840" height="600"/>
         <image name="discover" width="22" height="22"/>
         <image name="profile" width="30" height="30"/>
-        <image name="profileimage2" width="316" height="316"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Uyf-fM-kvU"/>
