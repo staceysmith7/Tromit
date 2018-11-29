@@ -28,11 +28,12 @@ class FilterViewController: UIViewController {
         "CIPhotoEffectTransfer",
         "CISepiaTone"
     ]
-    
+    var context = CIContext(options: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         filterPhoto.image = selectedImage
+//        filterPhoto.image =
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -74,7 +75,8 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let filter = CIFilter(name: "CIPhotoEffectNoir")
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
         if let filteredImage = filter?.value(forKey: kCIInputImageKey) as? CIImage {
-            cell.filterPhoto.image = UIImage(ciImage: filteredImage)
+            let result = context.createCGImage(filteredImage, from: filteredImage.extent)
+            cell.filterPhoto.image = UIImage(cgImage: result!)
         }
         
         return cell
@@ -86,7 +88,8 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let filter = CIFilter(name: CIFilterNames[indexPath.item])
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
         if let filteredImage = filter?.value(forKey: kCIInputImageKey) as? CIImage {
-            self.filterPhoto.image = UIImage(ciImage: filteredImage)
+            let result = context.createCGImage(filteredImage, from: filteredImage.extent)
+            self.filterPhoto.image = UIImage(cgImage: result!)
         }
     }
 }

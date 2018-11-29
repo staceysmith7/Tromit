@@ -66,6 +66,7 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.3):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.0)
+  - KILabel (1.0.1)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - KILabel
   - ProgressHUD
   - SDWebImage
 
@@ -98,6 +100,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
+    - KILabel
     - leveldb-library
     - nanopb
     - ProgressHUD
@@ -115,11 +118,12 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 2b3a023a61239c8d002e6e4fcf4abce8eddce0e0
   GoogleUtilities: 8208aee3e97a1ae93d44c57e96c476a5a3b03f0a
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  KILabel: 4797807cdc0b4992dad8bf91175ddc973c3b569b
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: 53f418bcde2581790c353424f9f9f30894b53d2d
+PODFILE CHECKSUM: 74006c5df6b8181fc30080d811b715b0793dbc03
 
 COCOAPODS: 1.5.3

@@ -43,6 +43,7 @@
 		5E17590421AC91A900F52D02 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E17590321AC91A900F52D02 /* PhotoCollectionViewCell.swift */; };
 		5E61D6AF21AFFE56001768E4 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61D6AE21AFFE56001768E4 /* FilterViewController.swift */; };
 		5E61D6B121B009A1001768E4 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61D6B021B009A1001768E4 /* FilterCollectionViewCell.swift */; };
+		5E61D6B321B021E0001768E4 /* HashTagApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61D6B221B021E0001768E4 /* HashTagApi.swift */; };
 		5E94D20121AE8A58006A5151 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94D20021AE8A58006A5151 /* DetailViewController.swift */; };
 		5E9CA4B621ADDF4C00079A6F /* ProfileUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9CA4B521ADDF4C00079A6F /* ProfileUserViewController.swift */; };
 		5E9E6EF621AD53AA006510AA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E6EF521AD53AA006510AA /* SearchViewController.swift */; };
@@ -100,6 +101,7 @@
 		5E17590321AC91A900F52D02 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E61D6AE21AFFE56001768E4 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		5E61D6B021B009A1001768E4 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E61D6B221B021E0001768E4 /* HashTagApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagApi.swift; sourceTree = "<group>"; };
 		5E94D20021AE8A58006A5151 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5E9CA4B521ADDF4C00079A6F /* ProfileUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserViewController.swift; sourceTree = "<group>"; };
 		5E9E6EF521AD53AA006510AA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				010FC44E21A593FC00EFD7B6 /* Config.swift */,
 				01311FAD21AD8CC600FB3B7E /* FeedApi.swift */,
 				01311FAB21AD689900FB3B7E /* FollowApi.swift */,
+				5E61D6B221B021E0001768E4 /* HashTagApi.swift */,
 				01311FA521AD403500FB3B7E /* HelperService.swift */,
 				5E17590121AC86BF00F52D02 /* MyPostsApi.swift */,
 				5EEB018121AB050800738084 /* PostApi.swift */,
@@ -361,6 +364,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tromit/Pods-Tromit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KILabel/KILabel.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -372,6 +376,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KILabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -398,6 +403,7 @@
 				0140F72021A2D9E60099D68E /* DiscoverViewController.swift in Sources */,
 				5E0F36FF21A9C0D400ACAE16 /* HomeTableViewCell.swift in Sources */,
 				01BF339821A2C4AF00A8CD4B /* SignUpViewController.swift in Sources */,
+				5E61D6B321B021E0001768E4 /* HashTagApi.swift in Sources */,
 				5E9E6EF621AD53AA006510AA /* SearchViewController.swift in Sources */,
 				5E61D6B121B009A1001768E4 /* FilterCollectionViewCell.swift in Sources */,
 				5E06F39221A8221F0039A58B /* Post.swift in Sources */,

@@ -82,10 +82,18 @@ class HelperService {
         
         let currentUserId = currentUser.uid
         
-        var timestamp = Int(Date().timeIntervalSince1970)
-     
+        let words = caption.components(separatedBy: CharacterSet.whitespacesAndNewlines)
         
-        var dict = ["uid": currentUserId, "photoUrl": photoUrl, "caption": caption, "likeCount": 0, "ratio": ratio, "timestamp": timestamp] as [String : Any]
+        for var word in words {
+            if word.hasPrefix("#") {
+                word = word.trimmingCharacters(in: CharacterSet.punctuationCharacters)
+                let newHashTagRef = Api.HashTag.REF_HASHTAG.child(word.lowercased())
+                newHashTagRef.updateChildValues([newPostId: true])
+            }
+            
+        }
+        
+        var dict = ["uid": currentUserId, "photoUrl": photoUrl, "caption": caption, "likeCount": 0, "ratio": ratio] as [String : Any]
         
         if let videoUrl = videoUrl {
             dict["videoUrl"] = videoUrl
