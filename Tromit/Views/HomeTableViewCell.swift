@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import KILabel
 
 protocol HomeTableViewCellDelegate {
     func goToCommentVC (postId: String)

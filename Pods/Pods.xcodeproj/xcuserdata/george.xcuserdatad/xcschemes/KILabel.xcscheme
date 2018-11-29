@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6388862D09E4CD2825AD51DE2CB9D97E"
-               BlueprintName = "ProgressHUD"
+               BlueprintIdentifier = "3C9F77B5540C71192070F5A600F6BB28"
+               BlueprintName = "KILabel"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "ProgressHUD.framework">
+               BuildableName = "KILabel.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

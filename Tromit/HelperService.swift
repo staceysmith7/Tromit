@@ -82,6 +82,17 @@ class HelperService {
         
         let currentUserId = currentUser.uid
         
+        let words = caption.components(separatedBy: CharacterSet.whitespacesAndNewlines)
+        
+        for var word in words {
+            if word.hasPrefix("#") {
+                word = word.trimmingCharacters(in: CharacterSet.punctuationCharacters)
+                let newHashTagRef = Api.HashTag.REF_HASHTAG.child(word.lowercased())
+                newHashTagRef.updateChildValues([newPostId: true])
+            }
+            
+        }
+        
         var dict = ["uid": currentUserId, "photoUrl": photoUrl, "caption": caption, "likeCount": 0, "ratio": ratio] as [String : Any]
         
         if let videoUrl = videoUrl {

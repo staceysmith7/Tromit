@@ -12,4 +12,5 @@ target 'Tromit' do
   pod 'Firebase/Storage'
   pod 'ProgressHUD'
   pod 'SDWebImage'
+  pod 'KILabel'
 end

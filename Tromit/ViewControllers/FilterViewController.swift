@@ -28,11 +28,12 @@ class FilterViewController: UIViewController {
         "CIPhotoEffectTransfer",
         "CISepiaTone"
     ]
-    
+    var context = CIContext(options: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         filterPhoto.image = selectedImage
+//        filterPhoto.image =
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -70,13 +71,12 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
         let newImage = resizeImage(image: selectedImage, newWidth: 150)
-        let context = CIContext(options: nil)
         let ciImage = CIImage(image: newImage)
-        let filter = CIFilter(name: "CIPhotoEffectChrome")
+        let filter = CIFilter(name: CIFilterNames[indexPath.item])
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
         if let filteredImage = filter?.value(forKey: kCIInputImageKey) as? CIImage {
-//            let result = context.cre
-            cell.filterPhoto.image = UIImage(ciImage: filteredImage)
+            let result = context.createCGImage(filteredImage, from: filteredImage.extent)
+            cell.filterPhoto.image = UIImage(cgImage: result!)
         }
         
         return cell
@@ -88,7 +88,8 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let filter = CIFilter(name: CIFilterNames[indexPath.item])
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
         if let filteredImage = filter?.value(forKey: kCIInputImageKey) as? CIImage {
-            self.filterPhoto.image = UIImage(ciImage: filteredImage)
+            let result = context.createCGImage(filteredImage, from: filteredImage.extent)
+            self.filterPhoto.image = UIImage(cgImage: result!)
         }
     }
 }

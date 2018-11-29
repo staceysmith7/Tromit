@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0FF4C439233C687CF1BA0F372CD7524C"
+               BlueprintIdentifier = "C9C5BC3D938E30260E680CEB36397B6F"
                BuildableName = "Pods_Tromit.framework"
                BlueprintName = "Pods-Tromit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0FF4C439233C687CF1BA0F372CD7524C"
+            BlueprintIdentifier = "C9C5BC3D938E30260E680CEB36397B6F"
             BuildableName = "Pods_Tromit.framework"
             BlueprintName = "Pods-Tromit"
             ReferencedContainer = "container:Pods.xcodeproj">
