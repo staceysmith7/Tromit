@@ -75,10 +75,16 @@ extension DetailViewController: UITableViewDataSource {
 }
 
 extension DetailViewController: HomeTableViewCellDelegate {
+    
     func goToCommentVC(postId: String) {
         performSegue(withIdentifier: "DetailCommentSegue", sender: postId)
     }
+    
     func goToProfileUserVC(userId: String) {
         performSegue(withIdentifier: "DetailProfileUserSegue", sender: userId)
+    }
+    
+    func goToHashTag(tag: String) {
+        performSegue(withIdentifier: "DetailHashTagSegue", sender: tag)
     }
 }

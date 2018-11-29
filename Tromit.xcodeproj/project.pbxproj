@@ -44,6 +44,7 @@
 		5E61D6AF21AFFE56001768E4 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61D6AE21AFFE56001768E4 /* FilterViewController.swift */; };
 		5E61D6B121B009A1001768E4 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61D6B021B009A1001768E4 /* FilterCollectionViewCell.swift */; };
 		5E61D6B321B021E0001768E4 /* HashTagApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61D6B221B021E0001768E4 /* HashTagApi.swift */; };
+		5E61D6B521B02E7A001768E4 /* HashTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61D6B421B02E79001768E4 /* HashTagViewController.swift */; };
 		5E94D20121AE8A58006A5151 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94D20021AE8A58006A5151 /* DetailViewController.swift */; };
 		5E9CA4B621ADDF4C00079A6F /* ProfileUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9CA4B521ADDF4C00079A6F /* ProfileUserViewController.swift */; };
 		5E9E6EF621AD53AA006510AA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E6EF521AD53AA006510AA /* SearchViewController.swift */; };
@@ -102,6 +103,7 @@
 		5E61D6AE21AFFE56001768E4 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		5E61D6B021B009A1001768E4 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E61D6B221B021E0001768E4 /* HashTagApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagApi.swift; sourceTree = "<group>"; };
+		5E61D6B421B02E79001768E4 /* HashTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagViewController.swift; sourceTree = "<group>"; };
 		5E94D20021AE8A58006A5151 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5E9CA4B521ADDF4C00079A6F /* ProfileUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserViewController.swift; sourceTree = "<group>"; };
 		5E9E6EF521AD53AA006510AA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				5E94D20021AE8A58006A5151 /* DetailViewController.swift */,
 				0140F71F21A2D9E60099D68E /* DiscoverViewController.swift */,
 				5E61D6AE21AFFE56001768E4 /* FilterViewController.swift */,
+				5E61D6B421B02E79001768E4 /* HashTagViewController.swift */,
 				0140F71D21A2D9D40099D68E /* HomeViewController.swift */,
 				01311FA721AD5BD300FB3B7E /* PeopleViewController.swift */,
 				5E9CA4B521ADDF4C00079A6F /* ProfileUserViewController.swift */,
@@ -427,6 +430,7 @@
 				01311FAE21AD8CC600FB3B7E /* FeedApi.swift in Sources */,
 				0140F72621A2DA2A0099D68E /* ProfileViewController.swift in Sources */,
 				5EEB018221AB050800738084 /* PostApi.swift in Sources */,
+				5E61D6B521B02E7A001768E4 /* HashTagViewController.swift in Sources */,
 				0140F72221A2D9FD0099D68E /* CameraViewController.swift in Sources */,
 				5EEB018621AB0B1E00738084 /* Api.swift in Sources */,
 				5EEB018421AB076C00738084 /* UserApi.swift in Sources */,

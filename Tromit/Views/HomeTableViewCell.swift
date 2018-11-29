@@ -13,6 +13,7 @@ import KILabel
 protocol HomeTableViewCellDelegate {
     func goToCommentVC (postId: String)
     func goToProfileUserVC(userId: String)
+    func goToHashTag(tag: String)
 }
 class HomeTableViewCell: UITableViewCell {
     
@@ -26,7 +27,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var commentImageView: UIImageView!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeCountButton: UIButton!
-    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var captionLabel: KILabel!
     @IBOutlet weak var heightConstraintPhoto: NSLayoutConstraint!
     
     var delegate: HomeTableViewCellDelegate?
@@ -48,6 +49,10 @@ class HomeTableViewCell: UITableViewCell {
     
     func updateView() {
         captionLabel.text = post!.caption
+        captionLabel.hashtagLinkTapHandler = { label, string, range in
+            let tag = String(string.characters.dropFirst())
+            self.delegate?.goToHashTag(tag: tag)
+        }
         if let ratio = post?.ratio {
             heightConstraintPhoto.constant = UIScreen.main.bounds.width / ratio
             layoutIfNeeded()

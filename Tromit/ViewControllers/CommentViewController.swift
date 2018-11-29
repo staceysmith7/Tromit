@@ -117,6 +117,17 @@ class CommentViewController: UIViewController {
                 return
             }
             
+            let words = self.commentTextField.text!.components(separatedBy: CharacterSet.whitespacesAndNewlines)
+            
+            for var word in words {
+                if word.hasPrefix("#") {
+                    word = word.trimmingCharacters(in: CharacterSet.punctuationCharacters)
+                    let newHashTagRef = Api.HashTag.REF_HASHTAG.child(word.lowercased())
+                    newHashTagRef.updateChildValues([self.postId: true])
+                }
+                
+            }
+            
             let postCommentRef = Api.Post_Comment.REF_POSTS_COMMENTS.child(self.postId).child(newCommentId!)
             postCommentRef.setValue(true, withCompletionBlock: {
                 ( error, ref ) in

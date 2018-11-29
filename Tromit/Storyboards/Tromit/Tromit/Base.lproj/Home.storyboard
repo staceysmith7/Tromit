@@ -162,7 +162,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="captionLabel" destination="cwS-CQ-UeI" id="ayS-DH-cb8"/>
+                                            <outlet property="captionLabel" destination="cwS-CQ-UeI" id="2Zb-WO-lVW"/>
                                             <outlet property="commentImageView" destination="VOs-KG-vqB" id="WXR-S2-bsq"/>
                                             <outlet property="heightConstraintPhoto" destination="K11-ty-CT4" id="EA1-cZ-8fc"/>
                                             <outlet property="likeCountButton" destination="E6o-W5-hW9" id="R4y-aY-HA8"/>
@@ -198,11 +198,27 @@
                         <outlet property="tableView" destination="1EU-fR-45X" id="gx1-qx-KLj"/>
                         <segue destination="wMW-7M-p1n" kind="show" identifier="commentSegue" id="g0i-B2-0yw"/>
                         <segue destination="9C4-ce-5VE" kind="show" identifier="HomeToProfileSegue" id="zi5-U6-vtu"/>
+                        <segue destination="Cd7-Ek-lCN" kind="show" identifier="HomeHashTagSegue" id="iL5-2Z-2pt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aI6-hI-HhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660" y="-774.06296851574223"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DUI-j0-gRw">
+            <objects>
+                <viewController id="Cd7-Ek-lCN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AYc-bz-gAt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HjS-UC-V7a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0om-Jh-YhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="15"/>
         </scene>
         <!--ProfileUserViewController-->
         <scene sceneID="2gB-4X-8Jx">
@@ -252,7 +268,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OES-0F-liB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OES-0F-liB" customClass="KILabel">
                                                     <rect key="frame" x="63" y="39" width="289" height="10"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -282,7 +298,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="commentLabel" destination="OES-0F-liB" id="fAv-r6-9bA"/>
+                                            <outlet property="commentLabel" destination="OES-0F-liB" id="3lR-gB-1Yz"/>
                                             <outlet property="nameLabel" destination="UYK-Uu-gW2" id="pt7-F9-lsx"/>
                                             <outlet property="profileImageView" destination="Bkt-UP-9vj" id="Rma-jW-5CC"/>
                                         </connections>
@@ -380,6 +396,6 @@
         <image name="share" width="37" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zi5-U6-vtu"/>
+        <segue reference="ZBb-Tg-0kw"/>
     </inferredMetricsTieBreakers>
 </document>
