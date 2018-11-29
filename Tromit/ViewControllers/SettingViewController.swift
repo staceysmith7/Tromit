@@ -23,7 +23,7 @@ class SettingViewController: UITableViewController {
     @IBAction func changeProfileButtonTapped(_ sender: Any) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        self.present(pickerController, animated: true, completion: nil)
+        present(pickerController, animated: true, completion: nil)
     }
 
     
@@ -41,9 +41,9 @@ class SettingViewController: UITableViewController {
         if let profileImg = self.profileImageView.image, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
             AuthService.updateUserInfo(username: usernameTextField.text!, email: emailTextField.text!, imageData: imageData, onSuccess: {
                 ProgressHUD.showSuccess("Success")
-            }) { (errorMessage) in
+            }, onError: { (errorMessage) in
                 ProgressHUD.showError(errorMessage)
-            }
+            })
             
         }
     }
@@ -54,7 +54,7 @@ class SettingViewController: UITableViewController {
 }
 extension SettingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ _picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         if  let  image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             profileImageView.image = image
