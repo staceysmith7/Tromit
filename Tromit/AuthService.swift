@@ -68,10 +68,10 @@ class AuthService {
     }
     
     static func updateUserInfo (username: String, email: String,imageData: Data, onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
-        Auth.auth().currentUser?.updateEmail(to: email, completion: { (error) in
+        Auth.auth().currentUser!.updateEmail(to: email, completion: { (error) in
             if error != nil {
                 onError(error!.localizedDescription)
-            } else {
+            }
                 let userId = Auth.auth().currentUser?.uid
                 let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("profileImage").child(userId!)
                 storageRef.putData(imageData, metadata: nil, completion: { (metadata,  error) in
@@ -89,7 +89,6 @@ class AuthService {
                         self.updateDatabase(profileImageUrl: profileImageUrl!, username: username, email: email, onSuccess: onSuccess, onError: onError)
                     })
                 })
-            }
             })
     }
         
