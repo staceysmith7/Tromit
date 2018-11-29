@@ -8,15 +8,25 @@
 
 import UIKit
 
+protocol SettingViewControllerDelegate {
+    func updateUserInfo ()
+    
+}
+
 class SettingViewController: UITableViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    var delegate: SettingViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Edit Profile"
+        usernameTextField.delegate = self
+        emailTextField.delegate = self
+       
         fetchCurrentUser ()
     }
     
@@ -41,15 +51,24 @@ class SettingViewController: UITableViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let profileImg = self.profileImageView.image, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
+            ProgressHUD.showSuccess("Waiting...")
             AuthService.updateUserInfo(username: usernameTextField.text!, email: emailTextField.text!, imageData: imageData, onSuccess: {
                 ProgressHUD.showSuccess("Success")
+                self.delegate?.updateUserInfo()
             }, onError: { (errorMessage) in
-                ProgressHUD.showError(errorMessage)
+                ProgressHUD.showError("Error")
             })
             
         }
     }
     @IBAction func logoutButtonTapped(_ sender: Any) {
+        AuthService.logout(onSuccess: {
+            let storyboard = UIStoryboard(name: "Start", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController" )
+            self.present(loginVC, animated: true, completion: nil)
+        }) { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
+        }
         
     }
     
@@ -63,5 +82,12 @@ extension SettingViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SettingViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

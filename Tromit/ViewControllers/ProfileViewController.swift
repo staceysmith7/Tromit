@@ -36,20 +36,21 @@ class ProfileViewController: UIViewController {
             })
         })
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ProfileToSetting" {
-//            let settingVC = segue.destination as! SettingTableViewController
-//            settingVC.delegate = self
-//        }
         
-        if segue.identifier == "ProfileDetailSegue" {
-            let detailVC = segue.destination as! DetailViewController
-            let postId = sender as! String
-            detailVC.postId = postId
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "ProfileToSettingSegue" {
+                let settingVC = segue.destination as! SettingViewController
+                settingVC.delegate = self
+            
+            }
+            if segue.identifier == "ProfileDetailSegue" {
+                let detailVC = segue.destination as! DetailViewController
+                let postId = sender as! String
+                detailVC.postId = postId
+            }
         }
-    }
-    
+
+
     func fetchUser() {
         Api.User.observeCurrentUser { (user) in
             self.user = user
@@ -109,5 +110,11 @@ extension ProfileViewController: PhotoCollectionViewCellDelegate {
     
     func goToDetailVC(postId: String) {
         performSegue(withIdentifier: "ProfileDetailSegue", sender: postId)
+    }
+}
+
+extension ProfileViewController: SettingViewControllerDelegate {
+    func updateUserInfo() {
+        self.fetchUser()
     }
 }

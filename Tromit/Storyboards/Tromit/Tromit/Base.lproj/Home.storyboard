@@ -157,13 +157,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="enw-8T-dsL"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="gTc-ZE-yxq">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="5pU-ql-7ZW">
-                            <connections>
-                                <action selector="LogOutTapped:" destination="Xth-zT-JFS" id="ysw-ZP-yXV"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Home" id="gTc-ZE-yxq"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="zzE-xv-sqX" id="aDX-7K-2l1"/>
                         <outlet property="tableView" destination="1EU-fR-45X" id="gx1-qx-KLj"/>
@@ -350,6 +344,6 @@
         <image name="share" width="37" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZBb-Tg-0kw"/>
+        <segue reference="zi5-U6-vtu"/>
     </inferredMetricsTieBreakers>
 </document>
