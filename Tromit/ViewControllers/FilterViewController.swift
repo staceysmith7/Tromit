@@ -70,10 +70,12 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
         let newImage = resizeImage(image: selectedImage, newWidth: 150)
+        let context = CIContext(options: nil)
         let ciImage = CIImage(image: newImage)
-        let filter = CIFilter(name: CIFilterNames[indexPath.item])
+        let filter = CIFilter(name: "CIPhotoEffectChrome")
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
         if let filteredImage = filter?.value(forKey: kCIInputImageKey) as? CIImage {
+//            let result = context.cre
             cell.filterPhoto.image = UIImage(ciImage: filteredImage)
         }
         
