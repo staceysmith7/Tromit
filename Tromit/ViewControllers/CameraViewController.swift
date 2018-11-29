@@ -85,6 +85,13 @@ class CameraViewController: UIViewController {
         self.photo.image = UIImage(named: "profileimage2")
         self.selectedImage = nil
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FilterSegue" {
+            let filterVC = segue.destination as! FilterViewController
+            filterVC.selectedImage = self.selectedImage
+        }
+    }
 }
 
 extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -97,13 +104,16 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
                 photo.image = thumbnailImage
                 self.videoUrl = videoUrl
             }
+            dismiss(animated: true, completion: nil)
         }
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             selectedImage = image
             photo.image = image
+            dismiss(animated: true, completion: {
+                self.performSegue(withIdentifier: "FilterSegue", sender: nil)
+            })
         }
-        dismiss(animated: true, completion: nil)
     }
     
     func thumbnailImageForFileUrl(_ fileUrl: URL) -> UIImage? {
