@@ -47,7 +47,7 @@ class AuthService {
                     
                     if error != nil {
                         return
-                    }
+                    } 
                     
                     if let profileImageUrl = url?.absoluteString {
                         
