@@ -51,7 +51,7 @@ class SettingViewController: UITableViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let profileImg = self.profileImageView.image, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
-            ProgressHUD.showSuccess("Waiting...")
+            ProgressHUD.show("Waiting...")
             AuthService.updateUserInfo(username: usernameTextField.text!, email: emailTextField.text!, imageData: imageData, onSuccess: {
                 ProgressHUD.showSuccess("Success")
                 self.delegate?.updateUserInfo()
