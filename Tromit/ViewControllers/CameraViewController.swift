@@ -81,7 +81,7 @@ class CameraViewController: UIViewController {
     
     func clean() {
         
-        self.captionTextView.text = ""
+        self.captionTextView.text = "" 
         self.photo.image = UIImage(named: "profileimage2")
         self.selectedImage = nil
     }
