@@ -58,7 +58,7 @@ class SettingViewController: UITableViewController {
             }, onError: { (errorMessage) in
                 ProgressHUD.showError(errorMessage)
             })
-            
+             
         }
     }
     @IBAction func logoutButtonTapped(_ sender: Any) {
