@@ -56,7 +56,7 @@ class SettingViewController: UITableViewController {
                 ProgressHUD.showSuccess("Success")
                 self.delegate?.updateUserInfo()
             }, onError: { (errorMessage) in
-                ProgressHUD.showError("Error")
+                ProgressHUD.showError(errorMessage)
             })
             
         }

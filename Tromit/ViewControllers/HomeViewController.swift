@@ -59,16 +59,6 @@ class HomeViewController: UIViewController {
         })
     }
     
-//    @IBAction func LogOutTapped(_ sender: Any) {
-//        AuthService.logout(onSuccess: {
-//            let storyboard = UIStoryboard(name: "Start", bundle: nil)
-//            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController" )
-//            self.present(loginVC, animated: true, completion: nil)
-//        }) { (errorMessage) in
-//            ProgressHUD.showError(errorMessage)
-//        }
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == "CommentSegue" {
             let commentVC = segue.destination as! CommentViewController
