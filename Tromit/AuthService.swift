@@ -49,7 +49,6 @@ class AuthService {
                         return
                     }
                     
-                    
                     if let profileImageUrl = url?.absoluteString {
                         
                     self.setUserInformation(profileImageUrl: profileImageUrl, username: username, email: email, uid: userId!, onSuccess: onSuccess)
