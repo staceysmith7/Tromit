@@ -16,6 +16,8 @@ protocol HomeTableViewCellDelegate {
 class HomeTableViewCell: UITableViewCell {
     
     
+    @IBOutlet weak var volumeButton: UIButton!
+    @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var likeImageView: UIImageView!
@@ -41,6 +43,8 @@ class HomeTableViewCell: UITableViewCell {
         }
     }
     
+    var isMuted = true
+    
     func updateView() {
         captionLabel.text = post!.caption
         if let ratio = post?.ratio {
@@ -53,12 +57,15 @@ class HomeTableViewCell: UITableViewCell {
         }
         if let videoUrlString = post?.videoUrl, let videoUrl = URL(string: videoUrlString) {
             
+            self.volumeView.isHidden = false
             player = AVPlayer(url: videoUrl)
             playerLayer = AVPlayerLayer(player: player)
             playerLayer?.frame = postImageView.frame
             playerLayer?.frame.size.width = UIScreen.main.bounds.width
             self.contentView.layer.addSublayer(playerLayer!)
+            self.volumeView.layer.zPosition = 1
             player?.play()
+            player?.isMuted = isMuted
         }
         
         self.updateLike(post: self.post!)
@@ -76,6 +83,17 @@ class HomeTableViewCell: UITableViewCell {
             likeCountButton.setTitle("be the first to", for: UIControl.State.normal)
         }
     }
+    @IBAction func volumeButtonTapped(_ sender: UIButton) {
+        if isMuted {
+            isMuted = !isMuted
+            volumeButton.setImage(UIImage(named: "Icon_Volume"), for: UIControl.State.normal)
+        } else {
+            isMuted = !isMuted
+            volumeButton.setImage(UIImage(named: "Icon_Mute"), for: UIControl.State.normal)
+        }
+        player?.isMuted = isMuted
+    }
+    
     
     func setupUserInfo() {
         nameLabel.text = user?.username
@@ -130,6 +148,7 @@ class HomeTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.awakeFromNib()
+        volumeView.isHidden = true
         profileImageView.image = UIImage(named: "placeholderImg")
         playerLayer?.removeFromSuperlayer()
         player?.pause()

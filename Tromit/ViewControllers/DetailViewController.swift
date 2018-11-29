@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 509
+        tableView.rowHeight = UITableView.automaticDimension
         loadPost()
     }
     

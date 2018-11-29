@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YQw-Qw-dyo">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YQw-Qw-dyo">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="101"/>
                                                 </imageView>
                                             </subviews>
@@ -235,7 +235,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fIE-uV-sjK">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fIE-uV-sjK">
                                                     <rect key="frame" x="15" y="7" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="glc-zf-rv0"/>
@@ -350,7 +350,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vCN-W0-uUs">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vCN-W0-uUs">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="101"/>
                                                 </imageView>
                                             </subviews>
@@ -710,6 +710,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Uyf-fM-kvU"/>
-        <segue reference="m1T-nI-N1n"/>
+        <segue reference="McY-EK-JTs"/>
     </inferredMetricsTieBreakers>
 </document>
