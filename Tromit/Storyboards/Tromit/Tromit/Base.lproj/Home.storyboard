@@ -124,6 +124,12 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJI-LO-J7U">
+                                                    <rect key="frame" x="329" y="27.5" width="31" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -135,12 +141,14 @@
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="E6o-W5-hW9" secondAttribute="trailing" priority="250" constant="292" id="8Bx-P6-2PP"/>
                                                 <constraint firstItem="cwS-CQ-UeI" firstAttribute="leading" secondItem="ky2-YY-Dtu" secondAttribute="leading" constant="15" id="9Eo-Xp-88n"/>
                                                 <constraint firstItem="0Sc-G6-Uif" firstAttribute="leading" secondItem="ky2-YY-Dtu" secondAttribute="leading" constant="15" id="BQL-KY-nKt"/>
+                                                <constraint firstItem="MJI-LO-J7U" firstAttribute="centerY" secondItem="6Iw-bF-e5E" secondAttribute="centerY" id="KlR-Gq-uB5"/>
                                                 <constraint firstAttribute="trailing" secondItem="hJS-k8-Le0" secondAttribute="trailing" id="NEs-ET-Rbq"/>
                                                 <constraint firstAttribute="trailing" secondItem="gNS-RF-AgA" secondAttribute="trailing" id="Nc0-Ms-J3u"/>
                                                 <constraint firstItem="hJS-k8-Le0" firstAttribute="top" secondItem="0Sc-G6-Uif" secondAttribute="bottom" constant="8" id="Rh8-gb-VoF"/>
                                                 <constraint firstItem="VOs-KG-vqB" firstAttribute="width" secondItem="u6c-6b-l8n" secondAttribute="width" id="UUB-DT-kbC"/>
                                                 <constraint firstItem="E6o-W5-hW9" firstAttribute="top" secondItem="gNS-RF-AgA" secondAttribute="bottom" constant="7" id="VRg-Yn-5MJ"/>
                                                 <constraint firstItem="VOs-KG-vqB" firstAttribute="leading" secondItem="u6c-6b-l8n" secondAttribute="trailing" constant="20" id="Zy6-La-kfY"/>
+                                                <constraint firstAttribute="trailing" secondItem="MJI-LO-J7U" secondAttribute="trailing" constant="15" id="bKd-r6-rh5"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="6Iw-bF-e5E" secondAttribute="trailing" priority="250" constant="261" id="bjz-QV-EQf"/>
                                                 <constraint firstItem="cwS-CQ-UeI" firstAttribute="trailing" secondItem="ky2-YY-Dtu" secondAttribute="trailingMargin" constant="15" id="crY-8G-Sv6"/>
                                                 <constraint firstItem="E6o-W5-hW9" firstAttribute="leading" secondItem="ky2-YY-Dtu" secondAttribute="leading" constant="15" id="fAU-xs-KCv"/>

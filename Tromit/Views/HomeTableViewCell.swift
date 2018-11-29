@@ -68,6 +68,9 @@ class HomeTableViewCell: UITableViewCell {
             player?.isMuted = isMuted
         }
         
+        if let timestamp = post?.timestamp{
+        }
+        
         self.updateLike(post: self.post!)
     }
     

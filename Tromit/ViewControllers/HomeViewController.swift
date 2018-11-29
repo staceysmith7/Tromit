@@ -37,7 +37,8 @@ class HomeViewController: UIViewController {
                 return
             }
             self.fetchUser(uid: postUid, completed: {
-                self.posts.append(post)
+                self.posts.insert(post, at: 0)
+                
                 //self.activityIndicatorView.stopAnimating()
                 self.tableView.reloadData()
             })
@@ -54,7 +55,7 @@ class HomeViewController: UIViewController {
         
         Api.User.observeUser(withId: uid, completion: {
             user in
-            self.users.append(user)
+            self.users.insert(user, at: 0)
             completed()
         })
     }
