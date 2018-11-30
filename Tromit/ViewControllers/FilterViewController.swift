@@ -87,7 +87,7 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         }
         
-        return cell
+        return cell 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
