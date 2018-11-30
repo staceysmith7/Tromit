@@ -111,7 +111,7 @@ class HomeTableViewCell: UITableViewCell {
             timeLabel.text = timeText
         }
         
-        if let timestamp = post?.timestamp{
+        if (post?.timestamp) != nil{
         }
         
         self.updateLike(post: self.post!)
