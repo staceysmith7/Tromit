@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
             }
             self.fetchUser(uid: postUid, completed: {
                 self.posts.insert(post, at: 0)
+                
                 //self.activityIndicatorView.stopAnimating()
                 self.tableView.reloadData()
             })
