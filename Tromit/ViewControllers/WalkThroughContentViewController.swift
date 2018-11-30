@@ -43,7 +43,6 @@ class WalkThroughContentViewController: UIViewController {
             let pageVC = parent as! WalkthroughViewController
             pageVC.forward(index: index)
         case 2:
-            
             let defaults = UserDefaults.standard
             defaults.set(true, forKey: "hasViewedWalkthrough")
             

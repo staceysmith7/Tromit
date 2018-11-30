@@ -13,7 +13,7 @@
         <!--Walkthrough View Controller-->
         <scene sceneID="URU-ff-38V">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Vrg-8W-g4j" customClass="WalkthroughViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="WalkthroughViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Vrg-8W-g4j" customClass="WalkthroughViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJJ-sj-YUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1524" y="-368"/>

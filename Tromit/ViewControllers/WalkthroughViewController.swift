@@ -41,6 +41,7 @@ class WalkthroughViewController: UIPageViewController, UIPageViewControllerDataS
         }
         if let pageContentVC = storyboard?.instantiateViewController(withIdentifier: "WalkThroughContentViewController") as? WalkThroughContentViewController {
             pageContentVC.content = pageContent[index]
+            pageContentVC.index = index
             pageContentVC.imageFileName = pageImage[index]
             return pageContentVC
         }
@@ -49,7 +50,7 @@ class WalkthroughViewController: UIPageViewController, UIPageViewControllerDataS
     
     func forward(index: Int) {
         if let nextVC = viewControllerAtIndex(index: index + 1) {
-            setViewControllers(nextVC, direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
+            setViewControllers([nextVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         }
     }
     
