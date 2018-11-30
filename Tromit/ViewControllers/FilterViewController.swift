@@ -52,7 +52,7 @@ class FilterViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-        delegate?.updatePhoto(image: self.filterPhoto.image!)
+        self.delegate?.updatePhoto(image: self.filterPhoto.image!)
     }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
@@ -65,6 +65,7 @@ class FilterViewController: UIViewController {
         
         return newImage!
     }
+    
 }
 
 extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -98,6 +99,7 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if let filteredImage = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
             let result = context.createCGImage(filteredImage, from: filteredImage.extent)
             self.filterPhoto.image = UIImage(cgImage: result!)
+            
         }
     }
 }
