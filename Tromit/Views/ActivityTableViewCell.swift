@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ActivityTableViewCellDelegate {
+    func goToDetailVC(postId: String)
+//    func goToProfileVC(usrId: String)
+}
+
 class ActivityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
@@ -15,6 +20,8 @@ class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var photo: UIImageView!
+    
+    var delegate: ActivityTableViewCellDelegate?
     
     var notification: Notification? {
         didSet {
@@ -44,7 +51,7 @@ class ActivityTableViewCell: UITableViewCell {
         }
         
         if let timestamp = notification?.timestamp {
-            let timestampDate = Date(timeIntervalSince1970: Double(timestamp))
+            let timestampDate = Date(timeIntervalSince1970: Double(timestamp)!)
             let now = Date()
             let components = Set<Calendar.Component>([.second, .minute, .hour, .day, .weekOfMonth])
             let diff = Calendar.current.dateComponents(components, from: timestampDate, to: now)
@@ -70,6 +77,17 @@ class ActivityTableViewCell: UITableViewCell {
             }
             
             timeLabel.text = timeText
+        }
+        
+        let tapGestureForPhoto = UITapGestureRecognizer(target: self, action: #selector(self.cellTapped))
+        addGestureRecognizer(tapGestureForPhoto)
+        isUserInteractionEnabled = true
+        
+    }
+    
+    func cellTapped() {
+        if let id = notification?.objectId {
+            delegate?.goToDetailVC(postId: id)
         }
     }
     

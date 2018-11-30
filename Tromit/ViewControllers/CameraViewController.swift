@@ -133,6 +133,6 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
 
 extension CameraViewController: FilterViewControllerDelegate {
     func updatePhoto(image: UIImage) {
-        self.image = image
+        self.photo.image = image
     }
 }
