@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreImage
+
 
 protocol  FilterViewControllerDelegate {
     func updatePhoto(image: UIImage)
@@ -28,13 +30,17 @@ class FilterViewController: UIViewController {
         "CIPhotoEffectTransfer",
         "CISepiaTone"
     ]
+    
+    
     var context = CIContext(options: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         filterPhoto.image = selectedImage
-//        filterPhoto.image =
+        //selectedImage = filterPhoto.image
+
     }
+   
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -63,6 +69,7 @@ class FilterViewController: UIViewController {
 
 extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return CIFilterNames.count
     }
@@ -72,11 +79,12 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
         let newImage = resizeImage(image: selectedImage, newWidth: 150)
         let ciImage = CIImage(image: newImage)
-        let filter = CIFilter(name: "CIPhotoEffectNoir")
+        let filter = CIFilter(name: CIFilterNames[indexPath.item])
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
-        if let filteredImage = filter?.value(forKey: kCIInputImageKey) as? CIImage {
+        if let filteredImage = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
             let result = context.createCGImage(filteredImage, from: filteredImage.extent)
             cell.filterPhoto.image = UIImage(cgImage: result!)
+        
         }
         
         return cell
@@ -87,9 +95,11 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let ciImage = CIImage(image: selectedImage)
         let filter = CIFilter(name: CIFilterNames[indexPath.item])
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
-        if let filteredImage = filter?.value(forKey: kCIInputImageKey) as? CIImage {
+        if let filteredImage = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
             let result = context.createCGImage(filteredImage, from: filteredImage.extent)
             self.filterPhoto.image = UIImage(cgImage: result!)
         }
     }
 }
+
+
