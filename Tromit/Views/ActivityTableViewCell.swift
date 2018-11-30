@@ -85,7 +85,7 @@ class ActivityTableViewCell: UITableViewCell {
         
     }
     
-    func cellTapped() {
+    @objc func cellTapped() {
         if let id = notification?.objectId {
             delegate?.goToDetailVC(postId: id)
         }

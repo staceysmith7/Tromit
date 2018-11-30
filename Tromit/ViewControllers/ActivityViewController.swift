@@ -69,7 +69,7 @@ extension ActivityViewController: UITableViewDataSource {
         let user = users[indexPath.row]
         cell.notification = notification
         cell.user = user
-        cell.delegate = self. 
+        cell.delegate = self
         return cell
     }
 }
