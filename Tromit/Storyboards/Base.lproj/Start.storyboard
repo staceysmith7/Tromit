@@ -10,6 +10,83 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Walkthrough View Controller-->
+        <scene sceneID="URU-ff-38V">
+            <objects>
+                <pageViewController storyboardIdentifier="WalkthroughViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Vrg-8W-g4j" customClass="WalkthroughViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJJ-sj-YUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1524" y="-368"/>
+        </scene>
+        <!--Walk Through Content View Controller-->
+        <scene sceneID="M6u-Za-vyj">
+            <objects>
+                <viewController storyboardIdentifier="WalkThroughContentViewController" id="nvf-ne-icJ" customClass="WalkThroughContentViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vsL-oC-kte">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="gKm-Wi-uEf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tromit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gt5-fd-DVk">
+                                <rect key="frame" x="121" y="62" width="133" height="58"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnT-Pk-oUl">
+                                <rect key="frame" x="16" y="539" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ydy-WD-hjg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zY-gq-khu">
+                                <rect key="frame" x="328" y="629" width="31" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="EBm-x4-aVs"/>
+                                    <constraint firstAttribute="width" constant="31" id="nJG-JO-JvP"/>
+                                </constraints>
+                                <state key="normal" image="arrow"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="nvf-ne-icJ" eventType="touchUpInside" id="pFM-W4-bY0"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pqb-aH-7NX">
+                                <rect key="frame" x="168" y="607" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gt5-fd-DVk" firstAttribute="top" secondItem="ppG-sd-G24" secondAttribute="top" constant="42" id="0R1-yY-ged"/>
+                            <constraint firstItem="0zY-gq-khu" firstAttribute="trailing" secondItem="ppG-sd-G24" secondAttribute="trailing" constant="-16" id="1iO-m2-YCf"/>
+                            <constraint firstItem="0zY-gq-khu" firstAttribute="top" secondItem="EnT-Pk-oUl" secondAttribute="bottom" constant="30" id="3LP-DZ-dsn"/>
+                            <constraint firstItem="gKm-Wi-uEf" firstAttribute="bottom" secondItem="ppG-sd-G24" secondAttribute="bottom" id="HD1-og-smA"/>
+                            <constraint firstItem="gKm-Wi-uEf" firstAttribute="trailing" secondItem="ppG-sd-G24" secondAttribute="trailing" id="KOf-5K-yDn"/>
+                            <constraint firstItem="EnT-Pk-oUl" firstAttribute="trailing" secondItem="ppG-sd-G24" secondAttribute="trailing" constant="-16" id="eFH-Ce-Vi3"/>
+                            <constraint firstItem="Gt5-fd-DVk" firstAttribute="centerX" secondItem="vsL-oC-kte" secondAttribute="centerX" id="jgN-Nz-4Wm"/>
+                            <constraint firstItem="EnT-Pk-oUl" firstAttribute="leading" secondItem="ppG-sd-G24" secondAttribute="leading" constant="16" id="tn6-4c-qY5"/>
+                            <constraint firstItem="0zY-gq-khu" firstAttribute="bottom" secondItem="ppG-sd-G24" secondAttribute="bottom" constant="-16" id="vU1-LK-rlq"/>
+                            <constraint firstItem="gKm-Wi-uEf" firstAttribute="leading" secondItem="ppG-sd-G24" secondAttribute="leading" id="wSM-Nk-9BF"/>
+                            <constraint firstItem="gKm-Wi-uEf" firstAttribute="top" secondItem="vsL-oC-kte" secondAttribute="top" id="zaK-5A-zH9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ppG-sd-G24"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImg" destination="gKm-Wi-uEf" id="Bd5-kC-mfu"/>
+                        <outlet property="contentLabel" destination="EnT-Pk-oUl" id="WiD-1e-bCR"/>
+                        <outlet property="forwardButton" destination="0zY-gq-khu" id="Q1T-1t-znQ"/>
+                        <outlet property="pageControl" destination="pqb-aH-7NX" id="Sh8-X4-NYH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="reU-FN-QJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-746.39999999999998" y="-362.06896551724139"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="qHX-IS-f6G">
             <objects>
@@ -207,6 +284,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="24" height="20"/>
+        <image name="background1" width="1242" height="2208"/>
         <image name="placeholderImg" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>

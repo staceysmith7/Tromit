@@ -78,7 +78,7 @@ class HomeTableViewCell: UITableViewCell {
             playerLayer?.frame = postImageView.frame
             playerLayer?.frame.size.width = UIScreen.main.bounds.width
             self.contentView.layer.addSublayer(playerLayer!)
-            self.volumeView.layer.zPosition = 1
+            self.volumeView.layer.zPosition = 2
             player?.play()
             player?.isMuted = isMuted
         }

@@ -45,6 +45,16 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        let defaults = UserDefaults.standard
+        let hasViewedWalkthrough = defaults.bool(forKey: "hasViewedWalkthrough")
+        if !hasViewedWalkthrough {
+            if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController {
+                present(pageVC, animated: true, completion: nil)
+            }
+        }
+        
+        
         if Auth.auth().currentUser != nil {
             self.performSegue(withIdentifier: "loginToTabBarVC", sender: nil)
         }
