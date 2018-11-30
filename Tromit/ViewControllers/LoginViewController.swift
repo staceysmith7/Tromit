@@ -56,7 +56,14 @@ class LoginViewController: UIViewController {
         
         
         if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "loginToTabBarVC", sender: nil)
+//            self.performSegue(withIdentifier: "loginToTabBarVC", sender: nil)
+            do {
+                try Auth.auth().signOut()
+//                onSuccess()
+                
+            } catch let logoutError {
+//                onError(logoutError.localizedDescription)
+            }
         }
     }
     
