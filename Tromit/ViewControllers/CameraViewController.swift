@@ -44,7 +44,7 @@ class CameraViewController: UIViewController {
             
             self.postButton.isEnabled = false
             self.removeButton.isEnabled = true
-            self.postButton.backgroundColor = .lightGray
+            self.postButton.backgroundColor = .orange
         }
     }
     
@@ -62,15 +62,15 @@ class CameraViewController: UIViewController {
     
     @IBAction func postButtonTapped(_ sender: Any) {
         ProgressHUD.show("Waiting...", interaction: false)
-        if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.5) {
-            let ratio = profileImg.size.width / profileImg.size.height
+        if let postedImg = self.photo.image, let imageData = postedImg.jpegData(compressionQuality: 0.5) {
+            let ratio = postedImg.size.width / postedImg.size.height
             HelperService.uploadDataToServer(data: imageData, videoUrl: self.videoUrl, ratio: ratio, caption: captionTextView.text!, onSuccess: {
                 self.clean()
                 self.tabBarController?.selectedIndex = 0
                 })
         } else {
             
-            ProgressHUD.showError("profile Image can't be Empty")
+            ProgressHUD.showError("Image can't be Empty")
         }
     }
     
