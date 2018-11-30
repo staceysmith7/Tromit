@@ -38,6 +38,9 @@
 		5E06F39221A8221F0039A58B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06F39121A8221F0039A58B /* Post.swift */; };
 		5E0F36FF21A9C0D400ACAE16 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0F36FE21A9C0D400ACAE16 /* HomeTableViewCell.swift */; };
 		5E0F370221A9D0F700ACAE16 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0F370121A9D0F700ACAE16 /* User.swift */; };
+		5E128CFC21B12693000B5D27 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E128CFB21B12693000B5D27 /* ActivityTableViewCell.swift */; };
+		5E128CFE21B12BDD000B5D27 /* NotificationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E128CFD21B12BDD000B5D27 /* NotificationApi.swift */; };
+		5E128D0021B12E7E000B5D27 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E128CFF21B12E7E000B5D27 /* Notification.swift */; };
 		5E17590021AC792A00F52D02 /* HeaderProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1758FF21AC792A00F52D02 /* HeaderProfileCollectionReusableView.swift */; };
 		5E17590221AC86BF00F52D02 /* MyPostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E17590121AC86BF00F52D02 /* MyPostsApi.swift */; };
 		5E17590421AC91A900F52D02 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E17590321AC91A900F52D02 /* PhotoCollectionViewCell.swift */; };
@@ -97,6 +100,9 @@
 		5E06F39121A8221F0039A58B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		5E0F36FE21A9C0D400ACAE16 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		5E0F370121A9D0F700ACAE16 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5E128CFB21B12693000B5D27 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		5E128CFD21B12BDD000B5D27 /* NotificationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationApi.swift; sourceTree = "<group>"; };
+		5E128CFF21B12E7E000B5D27 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		5E1758FF21AC792A00F52D02 /* HeaderProfileCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProfileCollectionReusableView.swift; sourceTree = "<group>"; };
 		5E17590121AC86BF00F52D02 /* MyPostsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsApi.swift; sourceTree = "<group>"; };
 		5E17590321AC91A900F52D02 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 				5E61D6B221B021E0001768E4 /* HashTagApi.swift */,
 				01311FA521AD403500FB3B7E /* HelperService.swift */,
 				5E17590121AC86BF00F52D02 /* MyPostsApi.swift */,
+				5E128CFD21B12BDD000B5D27 /* NotificationApi.swift */,
 				5EEB018121AB050800738084 /* PostApi.swift */,
 				5EEB018921AB10EC00738084 /* Post_CommentApi.swift */,
 				5EEB018321AB076C00738084 /* UserApi.swift */,
@@ -197,9 +204,9 @@
 		01C133A621A2EE14001C3665 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0140F72321A2DA160099D68E /* ActivityViewController.swift */,
 				0140F72121A2D9FD0099D68E /* CameraViewController.swift */,
 				5EEB017B21AAD64500738084 /* CommentViewController.swift */,
-				0140F72321A2DA160099D68E /* ActivityViewController.swift */,
 				5E94D20021AE8A58006A5151 /* DetailViewController.swift */,
 				0140F71F21A2D9E60099D68E /* DiscoverViewController.swift */,
 				5E61D6AE21AFFE56001768E4 /* FilterViewController.swift */,
@@ -228,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				5EEB017F21AAECAF00738084 /* Comment.swift */,
+				5E128CFF21B12E7E000B5D27 /* Notification.swift */,
 				5E06F39121A8221F0039A58B /* Post.swift */,
 				5E0F370121A9D0F700ACAE16 /* User.swift */,
 			);
@@ -237,6 +245,7 @@
 		5E0F370021A9C0E100ACAE16 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E128CFB21B12693000B5D27 /* ActivityTableViewCell.swift */,
 				5EEB017D21AAD68D00738084 /* CommentTableViewCell.swift */,
 				5E61D6B021B009A1001768E4 /* FilterCollectionViewCell.swift */,
 				5E1758FF21AC792A00F52D02 /* HeaderProfileCollectionReusableView.swift */,
@@ -430,11 +439,14 @@
 				01311FAE21AD8CC600FB3B7E /* FeedApi.swift in Sources */,
 				0140F72621A2DA2A0099D68E /* ProfileViewController.swift in Sources */,
 				5EEB018221AB050800738084 /* PostApi.swift in Sources */,
+				5E128D0021B12E7E000B5D27 /* Notification.swift in Sources */,
+				5E128CFE21B12BDD000B5D27 /* NotificationApi.swift in Sources */,
 				5E61D6B521B02E7A001768E4 /* HashTagViewController.swift in Sources */,
 				0140F72221A2D9FD0099D68E /* CameraViewController.swift in Sources */,
 				5EEB018621AB0B1E00738084 /* Api.swift in Sources */,
 				5EEB018421AB076C00738084 /* UserApi.swift in Sources */,
 				01311FAC21AD689900FB3B7E /* FollowApi.swift in Sources */,
+				5E128CFC21B12693000B5D27 /* ActivityTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

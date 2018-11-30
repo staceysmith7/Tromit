@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseStorage
 import FirebaseAuth
+import FirebaseDatabase
 
 class HelperService {
     static func uploadDataToServer(data: Data, videoUrl: URL?, ratio: CGFloat, caption: String, onSuccess:  @escaping () -> Void) {
@@ -108,7 +109,16 @@ class HelperService {
                 return
             }
             Api.Feed.REF_FEED.child(Auth.auth().currentUser!.uid).child(newPostId!).setValue(true)
-            
+            Api.Follow.REF_FOLLOWERS.child(Auth.auth().currentUser!.uid).observeSingleEvent(of: .value, with: {
+                snapshot in
+                let arraySnapshot = snapshot.children.allObjects as! [DataSnapshot]
+                arraySnapshot.forEach({ (child) in
+                    Api.Feed.REF_FEED.child(child.key).updateChildValues(["\(newPostId)": true])
+                    let newNotificationId = Api.Notification.REF_NOTIFICATION.child(child.key).childByAutoId().key
+                    let newNotificationReference = Api.Notification.REF_NOTIFICATION.child(child.key).child(newNotificationId!)
+                    newNotificationReference.setValue(["from": Auth.auth().currentUser!.uid, "type": "feed", "objectId": newPostId!, "timestamp": timestamp])
+                })
+            })
             let myPostRef = Api.MyPosts.REF_MYPOSTS.child(currentUserId).child((newPostId!))
             myPostRef.setValue(true, withCompletionBlock: { (error, ref) in
                 if error != nil {
