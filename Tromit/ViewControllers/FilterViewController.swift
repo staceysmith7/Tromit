@@ -63,7 +63,7 @@ class FilterViewController: UIViewController {
         image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+         
         return newImage!
     }
     
