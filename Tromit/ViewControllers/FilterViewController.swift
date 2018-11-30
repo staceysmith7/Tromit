@@ -35,10 +35,18 @@ class FilterViewController: UIViewController {
     
     var context = CIContext(options: nil)
     
+    
+    var imageOrientation: UIImage.Orientation!
+    
+    
+//    var fixedImage = UIImage? = scaleAndRotateImage(imageView.image)
+//    if let anImage = fixedImage?.cgImage{
+//        img = CIImage(cgImage: anImage)
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         filterPhoto.image = selectedImage
-        //selectedImage = filterPhoto.image
 
     }
    
@@ -61,10 +69,10 @@ class FilterViewController: UIViewController {
         let newHeight = image.size.height * scale
         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
         image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-         
-        return newImage!
+        
+        return newImage
     }
     
 }
@@ -80,10 +88,11 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
         let newImage = resizeImage(image: selectedImage, newWidth: 150)
+//       let fixedOrientation = UIImage(cgImage: selectedImage.cgImage!, scale: selectedImage.scale, orientation: .up)
         let ciImage = CIImage(image: newImage)
         let filter = CIFilter(name: CIFilterNames[indexPath.item])
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
-        if let filteredImage = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
+        if let filteredImage =  filter?.value(forKey: kCIOutputImageKey) as? CIImage {
             let result = context.createCGImage(filteredImage, from: filteredImage.extent)
             cell.filterPhoto.image = UIImage(cgImage: result!)
         
@@ -105,4 +114,22 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 }
 
+//extension UIImage {
+//    func fixedOrientation() -> UIImage? {
+//        guard imageOrientation != UIImage.Orientation.up else {
+//            //This is default orientation, don't need to do anything
+//            return self.copy() as? UIImage
+//        }
+//        guard let cgImage = self.cgImage else {
+//            //CGImage is not available
+//            return nil
+//        }
+//
+//        return UIImage(cgImage: cgImage)
+//    }
+//}
 
+//let newImage = UIGraphicsGetImageFromCurrentImageContext()!
+//UIGraphicsEndImageContext()
+
+//cell.filterPhoto.image = UIImage(cgImage: result!)

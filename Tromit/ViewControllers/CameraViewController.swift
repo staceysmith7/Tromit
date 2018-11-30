@@ -136,3 +136,4 @@ extension CameraViewController: FilterViewControllerDelegate {
         self.photo.image = image
     }
 }
+
