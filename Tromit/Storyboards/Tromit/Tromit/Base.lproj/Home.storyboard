@@ -127,6 +127,12 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ila-v7-OLP">
+                                                    <rect key="frame" x="327" y="27" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -138,6 +144,8 @@
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="E6o-W5-hW9" secondAttribute="trailing" priority="250" constant="292" id="8Bx-P6-2PP"/>
                                                 <constraint firstItem="cwS-CQ-UeI" firstAttribute="leading" secondItem="ky2-YY-Dtu" secondAttribute="leading" constant="15" id="9Eo-Xp-88n"/>
                                                 <constraint firstItem="0Sc-G6-Uif" firstAttribute="leading" secondItem="ky2-YY-Dtu" secondAttribute="leading" constant="15" id="BQL-KY-nKt"/>
+                                                <constraint firstAttribute="trailing" secondItem="ila-v7-OLP" secondAttribute="trailing" constant="15" id="G02-X0-uQE"/>
+                                                <constraint firstItem="ila-v7-OLP" firstAttribute="centerY" secondItem="6Iw-bF-e5E" secondAttribute="centerY" id="Ldq-3v-XIP"/>
                                                 <constraint firstAttribute="trailing" secondItem="hJS-k8-Le0" secondAttribute="trailing" id="NEs-ET-Rbq"/>
                                                 <constraint firstAttribute="trailing" secondItem="gNS-RF-AgA" secondAttribute="trailing" id="Nc0-Ms-J3u"/>
                                                 <constraint firstItem="hJS-k8-Le0" firstAttribute="top" secondItem="0Sc-G6-Uif" secondAttribute="bottom" constant="8" id="Rh8-gb-VoF"/>
@@ -171,6 +179,7 @@
                                             <outlet property="postImageView" destination="hJS-k8-Le0" id="k1l-cp-ju1"/>
                                             <outlet property="profileImageView" destination="0Sc-G6-Uif" id="lF1-VB-xGU"/>
                                             <outlet property="shareImageView" destination="iDg-Jf-EQ9" id="aEa-1b-lWB"/>
+                                            <outlet property="timeLabel" destination="ila-v7-OLP" id="C8P-da-1zj"/>
                                             <outlet property="volumeButton" destination="2XW-UK-VmH" id="j1e-kM-Z1f"/>
                                             <outlet property="volumeView" destination="59K-NU-m2I" id="Y5c-kl-6yP"/>
                                         </connections>
@@ -205,20 +214,74 @@
             </objects>
             <point key="canvasLocation" x="1660" y="-774.06296851574223"/>
         </scene>
-        <!--View Controller-->
+        <!--Hash Tag View Controller-->
         <scene sceneID="DUI-j0-gRw">
             <objects>
-                <viewController id="Cd7-Ek-lCN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HashTagViewController" id="Cd7-Ek-lCN" customClass="HashTagViewController" customModule="Tromit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AYc-bz-gAt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hpi-Bo-NRR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hh0-XR-Y4y">
+                                    <size key="itemSize" width="110" height="101"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="Wmu-pH-waI" customClass="PhotoCollectionViewCell" customModule="Tromit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="101"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A1q-WG-0YE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="101"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="A1q-WG-0YE" firstAttribute="leading" secondItem="Wmu-pH-waI" secondAttribute="leading" id="2s4-t8-2y0"/>
+                                            <constraint firstAttribute="bottom" secondItem="A1q-WG-0YE" secondAttribute="bottom" id="LDl-Wu-cm2"/>
+                                            <constraint firstItem="A1q-WG-0YE" firstAttribute="top" secondItem="Wmu-pH-waI" secondAttribute="top" id="ezX-mo-lFi"/>
+                                            <constraint firstAttribute="trailing" secondItem="A1q-WG-0YE" secondAttribute="trailing" id="sNC-0L-QW3"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photo" destination="A1q-WG-0YE" id="9h4-5O-fyw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hpi-Bo-NRR" firstAttribute="bottom" secondItem="HjS-UC-V7a" secondAttribute="bottom" id="9go-jV-LYy"/>
+                            <constraint firstItem="hpi-Bo-NRR" firstAttribute="top" secondItem="AYc-bz-gAt" secondAttribute="top" id="ZmX-0P-AdG"/>
+                            <constraint firstItem="hpi-Bo-NRR" firstAttribute="trailing" secondItem="HjS-UC-V7a" secondAttribute="trailing" id="os3-w4-0Eo"/>
+                            <constraint firstItem="hpi-Bo-NRR" firstAttribute="leading" secondItem="HjS-UC-V7a" secondAttribute="leading" id="xyE-gg-Ppo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HjS-UC-V7a"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="hpi-Bo-NRR" id="eIy-Uw-eJ2"/>
+                        <segue destination="kid-ZH-IsW" kind="show" identifier="HashTagDetailSegue" id="jcf-Dm-lCX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0om-Jh-YhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660" y="15"/>
+        </scene>
+        <!--DetailViewController-->
+        <scene sceneID="q39-je-1Wd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" referencedIdentifier="DetailViewController" id="kid-ZH-IsW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvN-pI-bBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2294" y="-35"/>
         </scene>
         <!--ProfileUserViewController-->
         <scene sceneID="2gB-4X-8Jx">
@@ -360,6 +423,7 @@
                         <outlet property="sendButton" destination="SCr-gq-AET" id="qRG-ba-TWg"/>
                         <outlet property="tableView" destination="Wk1-wc-oe0" id="zgE-EA-HlX"/>
                         <segue destination="9C4-ce-5VE" kind="show" identifier="CommentToProfileSegue" id="ZBb-Tg-0kw"/>
+                        <segue destination="Cd7-Ek-lCN" kind="show" identifier="CommentHashTagSegue" id="yZd-ex-9YT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVn-9o-d8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,6 +460,7 @@
         <image name="share" width="37" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZBb-Tg-0kw"/>
+        <segue reference="zi5-U6-vtu"/>
+        <segue reference="iL5-2Z-2pt"/>
     </inferredMetricsTieBreakers>
 </document>

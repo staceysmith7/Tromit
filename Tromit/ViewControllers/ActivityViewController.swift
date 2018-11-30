@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DealsViewController: UIViewController {
+class ActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

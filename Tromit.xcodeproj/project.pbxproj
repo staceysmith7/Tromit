@@ -20,7 +20,7 @@
 		0140F71E21A2D9D40099D68E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F71D21A2D9D40099D68E /* HomeViewController.swift */; };
 		0140F72021A2D9E60099D68E /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F71F21A2D9E60099D68E /* DiscoverViewController.swift */; };
 		0140F72221A2D9FD0099D68E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F72121A2D9FD0099D68E /* CameraViewController.swift */; };
-		0140F72421A2DA160099D68E /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F72321A2DA160099D68E /* DealsViewController.swift */; };
+		0140F72421A2DA160099D68E /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F72321A2DA160099D68E /* ActivityViewController.swift */; };
 		0140F72621A2DA2A0099D68E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F72521A2DA2A0099D68E /* ProfileViewController.swift */; };
 		01BF338221A2AE6A00A8CD4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BF338121A2AE6A00A8CD4B /* AppDelegate.swift */; };
 		01BF338921A2AE6A00A8CD4B /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01BF338721A2AE6A00A8CD4B /* Start.storyboard */; };
@@ -32,7 +32,7 @@
 		01C1339A21A2E17C001C3665 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C1339821A2E17C001C3665 /* Home.storyboard */; };
 		01C1339C21A2E2DE001C3665 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C1339B21A2E2DE001C3665 /* Discover.storyboard */; };
 		01C1339F21A2E34D001C3665 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C1339D21A2E34D001C3665 /* Camera.storyboard */; };
-		01C133A121A2E382001C3665 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A021A2E382001C3665 /* Deals.storyboard */; };
+		01C133A121A2E382001C3665 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A021A2E382001C3665 /* Activity.storyboard */; };
 		01C133A421A2E3C8001C3665 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A221A2E3C8001C3665 /* Profile.storyboard */; };
 		01C133A821A2F04B001C3665 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01C133A721A2F04B001C3665 /* GoogleService-Info.plist */; };
 		5E06F39221A8221F0039A58B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06F39121A8221F0039A58B /* Post.swift */; };
@@ -75,7 +75,7 @@
 		0140F71D21A2D9D40099D68E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0140F71F21A2D9E60099D68E /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		0140F72121A2D9FD0099D68E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		0140F72321A2DA160099D68E /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
+		0140F72321A2DA160099D68E /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		0140F72521A2DA2A0099D68E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		01BF337E21A2AE6A00A8CD4B /* Tromit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tromit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01BF338121A2AE6A00A8CD4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		01C1339921A2E17C001C3665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tromit/Tromit/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		01C1339B21A2E2DE001C3665 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		01C1339E21A2E34D001C3665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tromit/Tromit/Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
-		01C133A021A2E382001C3665 /* Deals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
+		01C133A021A2E382001C3665 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		01C133A321A2E3C8001C3665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tromit/Tromit/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		01C133A721A2F04B001C3665 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1267D232787A23BAC9E4AD15 /* Pods-Tromit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tromit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tromit/Pods-Tromit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 				01C1339521A2DDC4001C3665 /* Main.storyboard */,
 				01C1339B21A2E2DE001C3665 /* Discover.storyboard */,
 				01C1339D21A2E34D001C3665 /* Camera.storyboard */,
-				01C133A021A2E382001C3665 /* Deals.storyboard */,
+				01C133A021A2E382001C3665 /* Activity.storyboard */,
 				01C133A221A2E3C8001C3665 /* Profile.storyboard */,
 			);
 			path = Storyboards;
@@ -199,7 +199,7 @@
 			children = (
 				0140F72121A2D9FD0099D68E /* CameraViewController.swift */,
 				5EEB017B21AAD64500738084 /* CommentViewController.swift */,
-				0140F72321A2DA160099D68E /* DealsViewController.swift */,
+				0140F72321A2DA160099D68E /* ActivityViewController.swift */,
 				5E94D20021AE8A58006A5151 /* DetailViewController.swift */,
 				0140F71F21A2D9E60099D68E /* DiscoverViewController.swift */,
 				5E61D6AE21AFFE56001768E4 /* FilterViewController.swift */,
@@ -318,7 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				010E102621A5993800CFE18C /* ProgressHUD.bundle in Resources */,
-				01C133A121A2E382001C3665 /* Deals.storyboard in Resources */,
+				01C133A121A2E382001C3665 /* Activity.storyboard in Resources */,
 				01BF338E21A2AE6D00A8CD4B /* LaunchScreen.storyboard in Resources */,
 				01C1339F21A2E34D001C3665 /* Camera.storyboard in Resources */,
 				01C1339A21A2E17C001C3665 /* Home.storyboard in Resources */,
@@ -400,7 +400,7 @@
 				5E94D20121AE8A58006A5151 /* DetailViewController.swift in Sources */,
 				5E17590021AC792A00F52D02 /* HeaderProfileCollectionReusableView.swift in Sources */,
 				01311FA821AD5BD300FB3B7E /* PeopleViewController.swift in Sources */,
-				0140F72421A2DA160099D68E /* DealsViewController.swift in Sources */,
+				0140F72421A2DA160099D68E /* ActivityViewController.swift in Sources */,
 				01311FAA21AD5C2B00FB3B7E /* PeopleTableViewCell.swift in Sources */,
 				01311FB021AF963300FB3B7E /* SettingViewController.swift in Sources */,
 				0140F72021A2D9E60099D68E /* DiscoverViewController.swift in Sources */,

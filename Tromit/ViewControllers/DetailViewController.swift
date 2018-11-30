@@ -71,6 +71,11 @@ extension DetailViewController: UITableViewDataSource {
             let userId = sender as! String
             profileVC.userId = userId
         }
+        if segue.identifier == "DetailHashTagSegue" {
+            let hashTagVC = segue.destination as! HashTagViewController
+            let tag = sender as! String
+            hashTagVC.tag = tag
+        }
     }
 }
 
