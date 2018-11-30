@@ -29,7 +29,48 @@ class ActivityTableViewCell: UITableViewCell {
     }
     
     func updateView() {
+        switch notification!.type! {
+        case "feed":
+            descriptionLabel.text = "added a new post"
+            let postId = notification!.objectId!
+            Api.Post.observePost(withId: postId, completion:{ (post) in
+            if let photoUrlString = post.photoUrl {
+                let photoUrl = URL(string: photoUrlString)
+                self.photo.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
+            }
+            })
+        default:
+            print("non3")
+        }
         
+        if let timestamp = notification?.timestamp {
+            let timestampDate = Date(timeIntervalSince1970: Double(timestamp))
+            let now = Date()
+            let components = Set<Calendar.Component>([.second, .minute, .hour, .day, .weekOfMonth])
+            let diff = Calendar.current.dateComponents(components, from: timestampDate, to: now)
+            
+            var timeText = ""
+            if diff.second! <= 0 {
+                timeText = "Now"
+            }
+            if diff.second! > 0 && diff.minute == 0 {
+                timeText = "\(diff.second!)s"
+            }
+            if diff.minute! > 0 && diff.hour! == 0 {
+                timeText = "\(diff.minute!)m"
+            }
+            if diff.hour! > 0 && diff.day! == 0 {
+                timeText = "\(diff.hour!)h"
+            }
+            if diff.day! > 0 && diff.weekOfMonth! == 0 {
+                timeText = "\(diff.day!)d"
+            }
+            if diff.weekOfMonth! > 0 {
+                timeText = "\(diff.weekOfMonth!)w"
+            }
+            
+            timeLabel.text = timeText
+        }
     }
     
     func setupUserInfo() {
