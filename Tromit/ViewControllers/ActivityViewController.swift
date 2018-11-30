@@ -46,6 +46,14 @@ class ActivityViewController: UIViewController {
             completed()
         })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ActivityDetailSegue" {
+            let detailVC = segue.destination as! DetailViewController
+            let postId = sender as! String
+            detailVC.postId = postId
+        }
+    }
 
 }
 
@@ -61,6 +69,14 @@ extension ActivityViewController: UITableViewDataSource {
         let user = users[indexPath.row]
         cell.notification = notification
         cell.user = user
+        cell.delegate = self. 
         return cell
+    }
+}
+
+extension ActivityViewController: ActivityTableViewCellDelegate {
+    
+    func goToDetailVC(postId: String) {
+        performSegue(withIdentifier: "ActivityDetailSegue", sender: postId)
     }
 }
