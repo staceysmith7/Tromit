@@ -72,6 +72,11 @@ class HomeViewController: UIViewController {
             profileVC.userId = userId
         }
         
+        if segue.identifier == "HomeHashTagSegue" {
+            let hashTagVC = segue.destination as! HashTagViewController
+            let tag = sender as! String
+            hashTagVC.tag = tag
+        }
     }
 }
 
@@ -94,10 +99,15 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: HomeTableViewCellDelegate {
+    
     func goToCommentVC(postId: String) {
         performSegue(withIdentifier: "CommentSegue", sender: postId)
     }
     func goToProfileUserVC(userId: String) {
         performSegue(withIdentifier: "HomeToProfileSegue", sender: userId)
+    }
+    
+    func goToHashTag(tag: String) {
+        performSegue(withIdentifier: "HomeHashTagSegue", sender: tag)
     }
 }
