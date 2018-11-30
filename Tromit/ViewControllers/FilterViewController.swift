@@ -12,6 +12,7 @@ import CoreImage
 
 protocol  FilterViewControllerDelegate {
     func updatePhoto(image: UIImage)
+    
 }
 
 class FilterViewController: UIViewController {
@@ -52,7 +53,7 @@ class FilterViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-        delegate?.updatePhoto(image: self.filterPhoto.image!)
+        self.delegate?.updatePhoto(image: self.filterPhoto.image!)
     }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
@@ -87,7 +88,7 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         }
         
-        return cell 
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

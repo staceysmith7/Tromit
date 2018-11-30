@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="3118" y="-1930"/>
         </scene>
-        <!--NavigationDeals-->
+        <!--NavigationActivity-->
         <scene sceneID="bw0-Cm-3VQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Deals" referencedIdentifier="NavigationDeals" id="5UM-yo-z7W" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Activity" referencedIdentifier="NavigationActivity" id="5UM-yo-z7W" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="8ho-Ht-s5v"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iq9-nh-EDx" userLabel="First Responder" sceneMemberID="firstResponder"/>

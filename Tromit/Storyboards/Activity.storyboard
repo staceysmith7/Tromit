@@ -102,7 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="V51-5C-chA"/>
                     <connections>
-                        <outlet property="tabelView" destination="QEf-jr-VKu" id="zhr-sQ-G2M"/>
+                        <outlet property="tableView" destination="QEf-jr-VKu" id="3Da-ml-CIK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTS-97-E9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,7 +112,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Xau-UT-fRU">
             <objects>
-                <navigationController storyboardIdentifier="NavigationDeals" automaticallyAdjustsScrollViewInsets="NO" id="xlL-YU-G3o" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationActivity" automaticallyAdjustsScrollViewInsets="NO" id="xlL-YU-G3o" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="deals" selectedImage="deals" id="MMD-4m-ctl">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>

@@ -1,5 +1,5 @@
 //
-//  DealsViewController.swift
+// ActivityViewController.swift
 //  Tromit
 //
 //  Created by Stacey Smith on 11/19/18.
@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class ActivityViewController: UIViewController {
 
-    @IBOutlet weak var tabelView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var notifications = [Notification]()
     var users = [User]()
