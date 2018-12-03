@@ -30,9 +30,9 @@ class HomeViewController: UIViewController {
         //UITabBar.appearance().shadowImage = nil
 
         
-        tableView.estimatedRowHeight = 465
+//        tableView.estimatedRowHeight = 465
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.rowHeight = 468
+//        tableView.rowHeight = 468
         tableView.dataSource = self
         loadPosts()
     }

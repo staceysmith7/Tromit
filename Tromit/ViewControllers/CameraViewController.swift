@@ -63,7 +63,7 @@ class CameraViewController: UIViewController {
     
     @IBAction func postButtonTapped(_ sender: Any) {
         ProgressHUD.show("Waiting...", interaction: false)
-        if let postedImg = self.photo.image, let imageData = postedImg.jpegData(compressionQuality: 0.5) {
+        if let postedImg = self.selectedImage, let imageData = postedImg.jpegData(compressionQuality: 0.5) {
             let ratio = postedImg.size.width / postedImg.size.height
             HelperService.uploadDataToServer(data: imageData, videoUrl: self.videoUrl, ratio: ratio, caption: captionTextView.text!, onSuccess: {
                 self.clean()
