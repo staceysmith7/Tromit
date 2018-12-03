@@ -137,7 +137,7 @@
         <scene sceneID="Xau-UT-fRU">
             <objects>
                 <navigationController storyboardIdentifier="NavigationActivity" automaticallyAdjustsScrollViewInsets="NO" id="xlL-YU-G3o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="deals" selectedImage="deals" id="MMD-4m-ctl">
+                    <tabBarItem key="tabBarItem" title="" image="albums" selectedImage="albums" id="MMD-4m-ctl">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -160,6 +160,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="deals" width="30" height="30"/>
+        <image name="albums" width="30" height="30"/>
     </resources>
 </document>

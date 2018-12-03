@@ -152,11 +152,11 @@ class HomeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        shadowView.layer.cornerRadius = 3
+        shadowView.layer.cornerRadius = 17
         shadowView.layer.shadowColor = UIColor.black.cgColor
-        shadowView.layer.shadowOffset = CGSize(width: 0, height: 1.75)
-        shadowView.layer.shadowRadius = 1.7
-        shadowView.layer.shadowOpacity = 0.45
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 2.5)
+        shadowView.layer.shadowRadius = 2.5
+        shadowView.layer.shadowOpacity = 0.7
         
         nameLabel.text = ""
         captionLabel.text = ""

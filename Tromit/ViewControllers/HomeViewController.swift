@@ -24,18 +24,45 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
         //UITabBar.appearance().shadowImage = nil
 
         
-        tableView.estimatedRowHeight = 470
+        tableView.estimatedRowHeight = 465
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.rowHeight = 480
+        tableView.rowHeight = 468
         tableView.dataSource = self
         loadPosts()
     }
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        //navigationController?.setToolbarHidden(true, animated: false)
+//        let screenSize: CGRect = UIScreen.main.bounds
+//        let screenWidth = screenSize.width
+////        let nav = self.navigationController?.navigationBar
+////        let imageView = UIImageView(frame: CGRect(x:0,y:0,width: screenWidth, height:40))
+////        imageView.contentMode = .scaleAspectFit
+////
+////        let image = UIImage(named: "bg4")
+////        imageView.image = image
+////
+////        navigationItem.titleView = imageView
+//        let imageView = UIImageView(frame: CGRect(x:0,y:0,width: screenWidth, height:40))
+//        let image = UIImage(named: "bg4")
+//       imageView.contentMode = .scaleAspectFill
+//    navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+//
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//
+//        navigationController?.setToolbarHidden(false, animated: true)
+//
+//    }
+//
     func loadPosts() {
         
         Api.Feed.observeFeed(withId: Auth.auth().currentUser!.uid) {
