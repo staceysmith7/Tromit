@@ -23,6 +23,8 @@ class CommentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
         title = "Comments"
         tableView.dataSource = self
         tableView.estimatedRowHeight = 77

@@ -19,6 +19,7 @@ class ActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNotifications()
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
     
     func loadNotifications() {

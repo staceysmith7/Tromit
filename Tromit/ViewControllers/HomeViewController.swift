@@ -16,12 +16,19 @@ class HomeViewController: UIViewController {
     var posts = [Post]()
     var users = [User]()
     
+   
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
+        //UITabBar.appearance().shadowImage = nil
+
+        
         tableView.estimatedRowHeight = 509
         tableView.rowHeight = UITableView.automaticDimension
         tableView.rowHeight = 521

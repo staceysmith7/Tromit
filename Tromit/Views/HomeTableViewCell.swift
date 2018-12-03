@@ -17,7 +17,7 @@ protocol HomeTableViewCellDelegate {
 }
 class HomeTableViewCell: UITableViewCell {
     
-    
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var volumeButton: UIButton!
     @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -126,7 +126,7 @@ class HomeTableViewCell: UITableViewCell {
         if count != 0 {
             likeCountButton.setTitle("\(count) likes", for: UIControl.State.normal)
         } else {
-            likeCountButton.setTitle("be the first to", for: UIControl.State.normal)
+            likeCountButton.setTitle("like", for: UIControl.State.normal)
         }
     }
     @IBAction func volumeButtonTapped(_ sender: UIButton) {
@@ -151,6 +151,12 @@ class HomeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        shadowView.layer.cornerRadius = 3
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 1.75)
+        shadowView.layer.shadowRadius = 1.7
+        shadowView.layer.shadowOpacity = 0.45
         
         nameLabel.text = ""
         captionLabel.text = ""
@@ -204,4 +210,5 @@ class HomeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
+    
 }
