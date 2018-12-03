@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController {
                 settingVC.delegate = self
             
             }
-            if segue.identifier == "ProfileDetailSegue" {
+            if segue.identifier == "ProfileToDetailSegue" {
                 let detailVC = segue.destination as! DetailViewController
                 let postId = sender as! String
                 detailVC.postId = postId
@@ -111,7 +111,7 @@ extension ProfileViewController: UICollectionViewDelegate {
 extension ProfileViewController: PhotoCollectionViewCellDelegate {
     
     func goToDetailVC(postId: String) {
-        performSegue(withIdentifier: "ProfileDetailSegue", sender: postId)
+        performSegue(withIdentifier: "ProfileToDetailSegue", sender: postId)
     }
 }
 
