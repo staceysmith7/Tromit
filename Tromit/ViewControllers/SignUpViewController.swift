@@ -82,7 +82,7 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        self.signUpButton.setTitleColor(.red, for: UIControl.State.normal)
+        self.signUpButton.setTitleColor(.white, for: UIControl.State.normal)
         self.signUpButton.isEnabled = true
     }
     

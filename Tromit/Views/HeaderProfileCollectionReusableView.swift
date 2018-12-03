@@ -92,6 +92,7 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
     func configureFollowButton () {
         followButton.layer.borderWidth = 1
         followButton.layer.borderColor = UIColor(red: 226/255, green: 228/255, blue: 232/255, alpha: 1).cgColor
+        
         followButton.layer.cornerRadius = 5
         followButton.clipsToBounds = true
         
@@ -105,6 +106,7 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
     func configureUnfollowButton() {
         followButton.layer.borderWidth = 1
         followButton.layer.borderColor = UIColor(red: 226/255, green: 228/255, blue: 232/255, alpha: 1).cgColor
+       
         followButton.layer.cornerRadius = 5
         followButton.clipsToBounds = true
         
