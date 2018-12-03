@@ -40,7 +40,7 @@ class HomeTableViewCell: UITableViewCell {
         }
     }
     
-    var user: User? {
+    var user: User? { 
         didSet {
             setupUserInfo()
         }
