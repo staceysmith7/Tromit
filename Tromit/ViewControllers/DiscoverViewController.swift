@@ -16,6 +16,8 @@ class DiscoverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         

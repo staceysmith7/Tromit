@@ -28,29 +28,29 @@ class SignUpViewController: UIViewController {
         usernameTextField.backgroundColor = UIColor.clear
         usernameTextField.tintColor = UIColor.white
         usernameTextField.textColor = UIColor.white
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: usernameTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
-        let bottomLayerUsername = CALayer()
-        bottomLayerUsername.frame = CGRect (x: 0, y: 29, width: 1000, height: 0.6)
-        bottomLayerUsername.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-        usernameTextField.layer.addSublayer(bottomLayerUsername)
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: usernameTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.5)])
+//        let bottomLayerUsername = CALayer()
+//        bottomLayerUsername.frame = CGRect (x: 0, y: 29, width: 1000, height: 0.6)
+//        bottomLayerUsername.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
+//        usernameTextField.layer.addSublayer(bottomLayerUsername)
         
         emailTextField.backgroundColor = UIColor.clear
         emailTextField.tintColor = UIColor.white
         emailTextField.textColor = UIColor.white
-        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
-        let bottomLayer = CALayer()
-        bottomLayer.frame = CGRect (x: 0, y: 29, width: 1000, height: 0.6)
-        bottomLayer.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-        emailTextField.layer.addSublayer(bottomLayer)
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.5)])
+//        let bottomLayer = CALayer()
+//        bottomLayer.frame = CGRect (x: 0, y: 29, width: 1000, height: 0.6)
+//        bottomLayer.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
+//        emailTextField.layer.addSublayer(bottomLayer)
         
         passwordTextField.backgroundColor = UIColor.clear
         passwordTextField.tintColor = UIColor.white
         passwordTextField.textColor = UIColor.white
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
-        let bottomLayerPassword = CALayer()
-        bottomLayerPassword.frame = CGRect (x: 0, y: 29, width: 1000, height: 0.6)
-        bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-        passwordTextField.layer.addSublayer(bottomLayerPassword)
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.5)])
+//        let bottomLayerPassword = CALayer()
+//        bottomLayerPassword.frame = CGRect (x: 0, y: 29, width: 1000, height: 0.6)
+//        bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
+//        passwordTextField.layer.addSublayer(bottomLayerPassword)
         
         profileImage.layer.cornerRadius = 60
         profileImage.clipsToBounds = true

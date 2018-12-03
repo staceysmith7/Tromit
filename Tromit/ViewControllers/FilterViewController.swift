@@ -35,10 +35,20 @@ class FilterViewController: UIViewController {
     
     var context = CIContext(options: nil)
     
+    
+    var imageOrientation: UIImage.Orientation!
+    
+    
+//    var fixedImage = UIImage? = scaleAndRotateImage(imageView.image)
+//    if let anImage = fixedImage?.cgImage{
+//        img = CIImage(cgImage: anImage)
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
         filterPhoto.image = selectedImage
-        //selectedImage = filterPhoto.image
 
     }
    
@@ -84,7 +94,7 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let ciImage = CIImage(image: selectedImage)
         let filter = CIFilter(name: CIFilterNames[indexPath.item])
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
-        if let filteredImage = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
+        if let filteredImage =  filter?.value(forKey: kCIOutputImageKey) as? CIImage {
             let result = context.createCGImage(filteredImage, from: filteredImage.extent)
             cell.filterPhoto.image = UIImage(cgImage: result!)
         
@@ -106,4 +116,22 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 }
 
+//extension UIImage {
+//    func fixedOrientation() -> UIImage? {
+//        guard imageOrientation != UIImage.Orientation.up else {
+//            //This is default orientation, don't need to do anything
+//            return self.copy() as? UIImage
+//        }
+//        guard let cgImage = self.cgImage else {
+//            //CGImage is not available
+//            return nil
+//        }
+//
+//        return UIImage(cgImage: cgImage)
+//    }
+//}
 
+//let newImage = UIGraphicsGetImageFromCurrentImageContext()!
+//UIGraphicsEndImageContext()
+
+//cell.filterPhoto.image = UIImage(cgImage: result!)
