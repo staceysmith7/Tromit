@@ -40,7 +40,7 @@ class HomeTableViewCell: UITableViewCell {
         }
     }
     
-    var user: User? {
+    var user: User? { 
         didSet {
             setupUserInfo()
         }
@@ -64,6 +64,7 @@ class HomeTableViewCell: UITableViewCell {
         
         if let ratio = post?.ratio {
             heightConstraintPhoto.constant = UIScreen.main.bounds.width / ratio
+//            heightConstraintPhoto.constant = profileImageView.bounds.width / ratio
             layoutIfNeeded()
         }
         if let photoUrlString = post!.photoUrl {
