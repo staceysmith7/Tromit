@@ -79,12 +79,13 @@ class HomeTableViewCell: UITableViewCell {
             player = AVPlayer(url: videoUrl)
             playerLayer = AVPlayerLayer(player: player)
             playerLayer?.frame = postImageView.frame
-            playerLayer?.frame.size.width = postImageView.frame.size.width
+            playerLayer?.frame.size = postImageView.frame.size
             playerLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             self.contentView.layer.addSublayer(playerLayer!)
             self.volumeView.layer.zPosition = 1
             player?.play()
             player?.isMuted = isMuted
+            layoutIfNeeded()
         }
         if let timestamp = post?.timestamp {
             let timestampDate = Date(timeIntervalSince1970: Double(timestamp))
