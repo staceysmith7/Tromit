@@ -37,6 +37,19 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         clear()
+        let outerView = UIView (frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        outerView.layer.cornerRadius = 80
+        outerView.layer.shadowColor = UIColor.black.cgColor
+        outerView.layer.shadowOffset = CGSize(width: 0, height: 2.5)
+        outerView.layer.shadowRadius = 2.5
+        outerView.layer.shadowOpacity = 1
+        outerView.clipsToBounds = false
+        outerView.layer.shadowPath = UIBezierPath(roundedRect: outerView.bounds, cornerRadius: 10).cgPath
+        
+        outerView.addSubview(profileImage)
+        
+        
+        
     }
     
     func updateView() {
