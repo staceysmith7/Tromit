@@ -63,8 +63,10 @@ class HomeTableViewCell: UITableViewCell {
         }
         
         if let ratio = post?.ratio {
-            heightConstraintPhoto.constant = UIScreen.main.bounds.width / ratio
-//            heightConstraintPhoto.constant = profileImageView.bounds.width / ratio
+            print("frsme psot Image: \(postImageView.frame)")
+            print("frsme psot Image: \(ratio)")
+//            heightConstraintPhoto.constant = UIScreen.main.bounds.width / ratio
+            heightConstraintPhoto.constant = postImageView.frame.size.width / ratio
             layoutIfNeeded()
         }
         if let photoUrlString = post!.photoUrl {
@@ -77,7 +79,8 @@ class HomeTableViewCell: UITableViewCell {
             player = AVPlayer(url: videoUrl)
             playerLayer = AVPlayerLayer(player: player)
             playerLayer?.frame = postImageView.frame
-            playerLayer?.frame.size.width = UIScreen.main.bounds.width
+            playerLayer?.frame.size.width = postImageView.frame.size.width
+            playerLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             self.contentView.layer.addSublayer(playerLayer!)
             self.volumeView.layer.zPosition = 1
             player?.play()
